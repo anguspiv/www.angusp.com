@@ -8,9 +8,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Reset } from 'styled-reset';
+import styled from 'styled-components';
 
 import Header from './Header';
-import './layout.css';
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem 1.45rem;
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,14 +32,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Reset />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Wrapper>
         <main>{children}</main>
         <footer>
           © 
@@ -42,7 +44,7 @@ const Layout = ({ children }) => {
           {' '}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </Wrapper>
     </>
   );
 };
