@@ -1,8 +1,8 @@
 const theme = {
   global: {
     colors: {
-      brand: '#3772FF',
-      accent: ['#b41443', '#43b414'],
+      brand: '#214397',
+      accent: ['#b41443', '#43b414', '#FFFFFF'],
     },
     input: {
       border: {

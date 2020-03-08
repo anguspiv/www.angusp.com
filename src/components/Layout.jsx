@@ -30,8 +30,10 @@ const Layout = ({ children }) => {
     <Grommet theme={theme}>
       <Reset />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Main pad="medium">{children}</Main>
-      <Footer pad="medium">
+      <Main pad="medium" as="main" role="main">
+        {children}
+      </Main>
+      <Footer pad="medium" role="contentinfo">
         <Text>
           © 
           {' '}

@@ -5,6 +5,9 @@ on:
     branches-ignore:
       - master
 
+env:
+  FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
+
 jobs:
   build-and-test:
     name: Build and Test

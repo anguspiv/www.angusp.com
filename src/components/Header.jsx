@@ -1,24 +1,27 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
-import { Header as GHeader, Nav, Anchor } from 'grommet';
-
-const Headline = styled.h1`
-  margin: 0;
-`;
+import { Header as GHeader, Nav, Anchor, Heading } from 'grommet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Header = ({ siteTitle }) => (
-  <GHeader background="brand" flex pad="medium" justify="between">
-    <Headline>
-      <Anchor as={Link} to="/">
+  <GHeader as="header" background="brand" flex pad="medium" justify="between" role="banner">
+    <Heading as="div">
+      <Anchor as={Link} to="/" color="white">
         {siteTitle}
       </Anchor>
-    </Headline>
-    <Nav direction="row" background="brand">
-      <Anchor as={Link} to="/page-2">
+    </Heading>
+    <Nav direction="row" background="brand" role="navigation">
+      <Anchor as={Link} to="/page-2" color="white">
         Page 2
       </Anchor>
+      <Anchor
+        href="https://twitter.com/angusp"
+        a11yTitle="Angus's Twitter Account"
+        icon={<FontAwesomeIcon icon={faTwitter} />}
+        color="white"
+      />
     </Nav>
   </GHeader>
 );
