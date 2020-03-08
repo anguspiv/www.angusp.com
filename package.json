@@ -23,9 +23,14 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
+    "@testing-library/cypress": "^5.3.0",
+    "axe-core": "^3.5.1",
+    "cypress": "^4.1.0",
+    "cypress-axe": "^0.5.3",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
@@ -35,7 +40,9 @@
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
-    "semantic-release": "^17.0.4"
+    "semantic-release": "^17.0.4",
+    "serve": "^11.3.0",
+    "start-server-and-test": "^1.10.8"
   },
   "keywords": [
     "gatsby"
@@ -44,12 +51,16 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "cy:ci": "CYPRESS_BASE_URL=http://localhost:5000 cypress run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint --ext js,jsx ./src",
-    "start": "npm run develop",
+    "lint": "eslint --ext js,jsx ./",
+    "start": "serve public",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:ci": "start-server-and-test start http://localhost:5000 cy:ci",
     "semantic-release": "semantic-release"
   },
   "repository": {
