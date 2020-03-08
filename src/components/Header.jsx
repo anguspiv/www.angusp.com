@@ -4,8 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.header`
-  background: rebeccapurple;
   margin-bottom: 1.45rem;
+  background: rebeccapurple;
 `;
 
 const NavLink = styled(Link)`
@@ -18,8 +18,8 @@ const Headline = styled.h1`
 `;
 
 const Wrapper = styled.div`
-  margin: 0 auto;
   max-width: 960px;
+  margin: 0 auto;
   padding: 1.45rem 1.0875rem;
 `;
 

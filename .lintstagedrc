@@ -1,3 +1,4 @@
 "*.{js,jsx}":
   - prettier-eslint --write
   - eslint --cache --fix
+  - stylelint --cache

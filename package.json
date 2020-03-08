@@ -46,7 +46,13 @@
     "prettier-eslint": "^9.0.1",
     "semantic-release": "^17.0.4",
     "serve": "^11.3.0",
-    "start-server-and-test": "^1.10.8"
+    "start-server-and-test": "^1.10.8",
+    "stylelint": "^13.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^4.0.0",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "keywords": [
     "gatsby"
@@ -59,7 +65,9 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint --ext js,jsx ./",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --ext js,jsx ./",
+    "lint:css": "stylelint './src/**/*.{js,jsx}'",
     "start": "serve public",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
