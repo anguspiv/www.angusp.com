@@ -1,0 +1,21 @@
+name: Build and Test
+
+on: [push]
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-versions: [12.x]
+      fail-fast: true
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Nodes.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
