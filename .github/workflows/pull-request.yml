@@ -2,6 +2,9 @@ name: Linting
 
 on: [pull_request]
 
+env:
+  FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
+
 jobs:
   lint:
     runs-on: ubuntu-latest
