@@ -9,15 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Reset } from 'styled-reset';
-import styled from 'styled-components';
+import { Grommet, Main, Footer, Text } from 'grommet';
+
+import theme from '../styles/theme';
 
 import Header from './Header';
-
-const Wrapper = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1.0875rem 1.45rem;
-`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,21 +27,21 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <Grommet theme={theme}>
       <Reset />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Wrapper>
-        <main>{children}</main>
-        <footer>
+      <Main pad="medium">{children}</Main>
+      <Footer pad="medium">
+        <Text>
           © 
           {' '}
           {new Date().getFullYear()}
           , Built with 
           {' '}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Wrapper>
-    </>
+        </Text>
+      </Footer>
+    </Grommet>
   );
 };
 
