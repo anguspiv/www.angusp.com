@@ -17,6 +17,28 @@ jobs:
           node-versions: 12
       - name: Install Dependencies
         run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        uses: cypress-io/github-action@v1
+        with:
+          build: npm run build
+          start: npm start
+          wait-on: "http://localhost:5000"
+        env:
+          CYPRESS_BASE_URL: http://localhost:5000
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

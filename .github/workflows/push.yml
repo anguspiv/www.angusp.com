@@ -1,11 +1,14 @@
 name: Build and Test
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   build-and-test:
     name: Build and Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     strategy:
       matrix:
         node-versions: [12.x]
@@ -16,6 +19,27 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        uses: cypress-io/github-action@v1
+        with:
+          build: npm run build
+          start: npm start
+          wait-on: "http://localhost:5000"
+        env:
+          CYPRESS_BASE_URL: http://localhost:5000
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
