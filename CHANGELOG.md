@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/anguspiv/www.angusp.com/compare/v1.1.0...v1.2.0) (2020-03-12)
+
+
+### Features
+
+* adds grommet themes ([91c6593](https://github.com/anguspiv/www.angusp.com/commit/91c65933ac1d7a15f1b5200a13a75fc8975aba07))
+
 # [1.1.0](https://github.com/anguspiv/www.angusp.com/compare/v1.0.0...v1.1.0) (2020-03-08)
 
 
