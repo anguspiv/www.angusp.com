@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -13,7 +14,7 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const ProfileImage = () => {
+function ProfileImage({ className }) {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
@@ -26,7 +27,15 @@ const ProfileImage = () => {
     }
   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return <Img className={className} fluid={data.placeholderImage.childImageSharp.fluid} />;
+}
+
+ProfileImage.propTypes = {
+  className: PropTypes.string,
+};
+
+ProfileImage.defaultProps = {
+  className: null,
 };
 
 export default ProfileImage;
