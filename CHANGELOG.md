@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/anguspiv/www.angusp.com/compare/v1.2.0...v1.3.0) (2020-04-20)
+
+
+### Features
+
+* adds profile image ([dc2d401](https://github.com/anguspiv/www.angusp.com/commit/dc2d401e0f7d21ee77592e24f8b57de4e4bdb83c)), closes [#8](https://github.com/anguspiv/www.angusp.com/issues/8)
+* **avatar:** animates avatar on hover ([5fffea1](https://github.com/anguspiv/www.angusp.com/commit/5fffea19f7e41015baf61ccfff4faa8ecd1ce0cd))
+
 # [1.2.0](https://github.com/anguspiv/www.angusp.com/compare/v1.1.0...v1.2.0) (2020-03-12)
 
 
