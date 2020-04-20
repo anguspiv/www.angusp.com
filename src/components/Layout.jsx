@@ -32,7 +32,7 @@ const Page = styled.div`
   ${breakpoint('md')`
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(auto, 300px) 1fr;
   `}
 `;
 
