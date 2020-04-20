@@ -1,53 +1,43 @@
 import { Link } from 'gatsby';
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { useCallback } from 'react';
-import { Header as GHeader, Nav, Anchor, Heading, CheckBox } from 'grommet';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
+import { rem } from 'polished';
+import breakpoint from 'styled-components-breakpoint';
+import Avatar from './Avatar';
+import { spacing } from '../styles';
 
-export const THEME_LIGHT = 'Light';
-export const THEME_DARK = 'Dark';
+const Container = styled.header`
+  padding: ${spacing(1)};
+  text-align: center;
 
-function Header({ siteTitle, onThemeToggle, theme }) {
-  const onThemeChange = useCallback(() => {
-    const newTheme = theme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT;
-    onThemeToggle(newTheme);
-  }, [onThemeToggle]);
+  ${breakpoint('md')`
+    padding: 20vh ${spacing(1)};
+  `}
+`;
 
+const HeaderAvatar = styled(Avatar)`
+  min-width: ${rem('180px')};
+  max-width: ${rem('240px')};
+  margin: ${spacing(0.5, 'auto')};
+`;
+
+function Header({ className }) {
   return (
-    <GHeader as="header" flex pad="medium" justify="between" role="banner" background="brand">
-      <Heading as="div">
-        <Anchor as={Link} to="/" label={siteTitle} />
-      </Heading>
-      <Nav direction="row" role="navigation">
-        <Anchor as={Link} to="/page-2">
-          Page 2
-        </Anchor>
-        <Anchor
-          href="https://twitter.com/angusp"
-          a11yTitle="Angus's Twitter Account"
-          icon={<FontAwesomeIcon icon={faTwitter} />}
-        />
-      </Nav>
-      <div>
-        Theme:
-        {' '}
-        <CheckBox toggle checked={theme === THEME_LIGHT} label={theme} onClick={onThemeChange} />
-      </div>
-    </GHeader>
+    <Container role="banner" className={className}>
+      <Link to="/" aria-label="Angus Perkerson - Home Page">
+        <HeaderAvatar />
+      </Link>
+    </Container>
   );
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  onThemeToggle: PropTypes.func,
-  theme: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
-  onThemeToggle: () => {},
-  theme: THEME_LIGHT,
+  className: null,
 };
 
 export default Header;

@@ -1,6 +1,6 @@
 describe('Index Page', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('');
     cy.injectAxe();
   });
 

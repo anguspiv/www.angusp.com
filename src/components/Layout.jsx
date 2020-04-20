@@ -5,21 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Grommet, Main, Footer, Text, Anchor } from 'grommet';
-import deepMerge from 'deepmerge';
-import { createGlobalStyle } from 'styled-components';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { Normalize } from 'styled-normalize';
+import theme from '../styles';
 
-import lightTheme from '../styles/themes/light';
-import darkTheme from '../styles/themes/dark';
-import defaultTheme from '../styles/theme';
-
-import Header, { THEME_DARK, THEME_LIGHT } from './Header';
-
-const dark = deepMerge(defaultTheme, darkTheme);
-const light = deepMerge(defaultTheme, lightTheme);
+import Header from './Header';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -28,13 +22,33 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = ({ children }) => {
-  const [theme, setTheme] = useState(THEME_LIGHT);
+const Page = styled.div`
+  display: grid;
+  grid-template-areas: 'header' 'content' 'footer';
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
 
-  const onThemeToggle = useCallback(themeLabel => {
-    setTheme(themeLabel);
-  });
+  ${breakpoint('md')`
+    grid-template-areas: 'header content' 'header footer';
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+  `}
+`;
 
+const HeaderLayout = styled(Header)`
+  grid-area: header;
+`;
+
+const Main = styled.main`
+  grid-area: content;
+`;
+
+const Footer = styled.footer`
+  grid-area: 'footer';
+`;
+
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -46,31 +60,28 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <Grommet theme={theme === THEME_DARK ? dark : light}>
+    <>
       <GlobalStyle />
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        theme={theme}
-        onThemeToggle={onThemeToggle}
-      />
-      <Main pad="medium" as="main" role="main">
-        {children}
-      </Main>
-      <Footer pad="medium" role="contentinfo" background="accent-1">
-        <Text color="white">
-          © 
-          {' '}
-          {new Date().getFullYear()}
-          , Built with
-          {' '}
-          <Anchor href="https://www.gatsbyjs.org" color="white">
-            Gatsby
-          </Anchor>
-        </Text>
-      </Footer>
-    </Grommet>
+      <Normalize />
+      <ThemeProvider theme={theme}>
+        <Page>
+          <HeaderLayout siteTitle={data.site.siteMetadata.title} />
+          <Main role="main">{children}</Main>
+          <Footer role="contentinfo">
+            <span>
+              © 
+              {' '}
+              {new Date().getFullYear()}
+              , Built with
+              {' '}
+              <Link to="https://www.gatsbyjs.org">Gatsby</Link>
+            </span>
+          </Footer>
+        </Page>
+      </ThemeProvider>
+    </>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

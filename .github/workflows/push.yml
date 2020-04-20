@@ -33,6 +33,7 @@ jobs:
           start: npm start
           wait-on: "http://localhost:5000"
         env:
+          LOG_LEVEL: debug
           CYPRESS_BASE_URL: http://localhost:5000
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v1
