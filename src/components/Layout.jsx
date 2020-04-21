@@ -18,6 +18,7 @@ import Header from './Header';
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
+    font-family: ${theme.fonts.base};
     transition: background .5s ease-in-out .1s, color .5s ease-in-out .1s;
   }
 `;

@@ -33,6 +33,23 @@ module.exports = {
         icon: `src/images/avatar.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Open Sans',
+              variants: ['300', '400', '600'],
+            },
+            {
+              family: 'Fira Code',
+              variants: ['300', '400', '600'],
+            },
+          ],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
