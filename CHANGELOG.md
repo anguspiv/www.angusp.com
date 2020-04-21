@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/anguspiv/www.angusp.com/compare/v1.3.0...v1.4.0) (2020-04-21)
+
+
+### Features
+
+* **header:** adds header copy and links ([6af4006](https://github.com/anguspiv/www.angusp.com/commit/6af4006e4be6f33bf26bed3fed169a89c1965ec6)), closes [#7](https://github.com/anguspiv/www.angusp.com/issues/7) [#9](https://github.com/anguspiv/www.angusp.com/issues/9) [#10](https://github.com/anguspiv/www.angusp.com/issues/10)
+
 # [1.3.0](https://github.com/anguspiv/www.angusp.com/compare/v1.2.0...v1.3.0) (2020-04-20)
 
 
