@@ -70,7 +70,7 @@ const Email = styled.a`
   display: block;
   margin: 0 auto ${spacing(0.25)} auto;
   font-size: ${rem('18px')};
-  font-family: monospace;
+  font-family: ${({ theme }) => theme.fonts.monospace};
 `;
 
 const HeaderAvatar = styled(Avatar)`

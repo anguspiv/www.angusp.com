@@ -1,8 +1,7 @@
 const fonts = {};
 
-fonts['sans-serif'] =
-  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
-fonts.monospace = 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+fonts['sans-serif'] = '"Open Sans", sans-serif';
+fonts.monospace = '"Fira Code", monospace';
 fonts.base = fonts['sans-serif'];
 
 export default fonts;
