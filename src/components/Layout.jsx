@@ -11,15 +11,30 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
-import theme from '../styles';
+import theme, { spacing } from '../styles';
 
 import Header from './Header';
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
+    color: ${theme.colors.text.default};
     font-family: ${theme.fonts.base};
+    background: ${theme.colors.background.default};
     transition: background .5s ease-in-out .1s, color .5s ease-in-out .1s;
+  }
+
+  a {
+    color: ${theme.colors.link.default};
+    transition: color ease-in-out .2s;
+    
+    &:hover {
+      color: ${theme.colors.link.hover}
+    }
+
+    &:visited {
+      color: ${theme.colors.link.visited};
+    }
   }
 `;
 
@@ -43,10 +58,17 @@ const HeaderLayout = styled(Header)`
 
 const Main = styled.main`
   grid-area: content;
+  padding: ${spacing(4, 2)};
 `;
 
 const Footer = styled.footer`
   grid-area: 'footer';
+  padding: ${spacing(4, 2)};
+  text-align: center;
+
+  ${breakpoint('md')`
+    text-align: left;
+  `}
 `;
 
 function Layout({ children }) {
