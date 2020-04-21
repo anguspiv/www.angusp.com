@@ -111,8 +111,10 @@ function Header({ className }) {
       <Link to="/" aria-label={title}>
         <HeaderAvatar />
       </Link>
-      <Title as="span">{title}</Title>
-      <Subtitle>{description}</Subtitle>
+      <Title as="span" data-test-id="site-title">
+        {title}
+      </Title>
+      <Subtitle data-test-id="site-description">{description}</Subtitle>
       <Email href={`mailto:${email}`}>{email}</Email>
       <ProfileLinks>
         <ProfileLink
