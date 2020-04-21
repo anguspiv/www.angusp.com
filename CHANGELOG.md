@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/anguspiv/www.angusp.com/compare/v1.5.0...v1.6.0) (2020-04-21)
+
+
+### Features
+
+* adds global colors ([52da606](https://github.com/anguspiv/www.angusp.com/commit/52da6066119cb46aa1c796fcf210eba4c0fb09e8)), closes [#36](https://github.com/anguspiv/www.angusp.com/issues/36)
+
 # [1.5.0](https://github.com/anguspiv/www.angusp.com/compare/v1.4.0...v1.5.0) (2020-04-21)
 
 
