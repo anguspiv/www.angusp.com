@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/anguspiv/www.angusp.com/compare/v1.4.0...v1.5.0) (2020-04-21)
+
+
+### Features
+
+* adds webfonts ([4860718](https://github.com/anguspiv/www.angusp.com/commit/4860718e7bfdacbdbf164df7ed263ac1a9ff8697)), closes [#34](https://github.com/anguspiv/www.angusp.com/issues/34)
+
 # [1.4.0](https://github.com/anguspiv/www.angusp.com/compare/v1.3.0...v1.4.0) (2020-04-21)
 
 
