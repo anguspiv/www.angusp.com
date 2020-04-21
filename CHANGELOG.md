@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/anguspiv/www.angusp.com/compare/v1.6.0...v1.7.0) (2020-04-21)
+
+
+### Features
+
+* updates favicon to be rounded ([22b7f45](https://github.com/anguspiv/www.angusp.com/commit/22b7f45d3890eae0ada1b7273d1f08dee41e924a))
+
 # [1.6.0](https://github.com/anguspiv/www.angusp.com/compare/v1.5.0...v1.6.0) (2020-04-21)
 
 
