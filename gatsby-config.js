@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `Angus Perkerson`,
     description: `Software Engineer specializing in UI and Applicaton development.`,
-    author: `Angus Perkerson <angusp@angups.com>`,
+    author: `Angus Perkerson <angusp@angusp.com>`,
+    email: `angusp@angusp.com`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

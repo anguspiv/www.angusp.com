@@ -76,6 +76,7 @@ function Avatar({ className }) {
 
   return (
     <Frame
+      data-test-id="profile-image"
       className={className}
       style={{ rotateY }}
       onMouseMove={onMouseMove}
