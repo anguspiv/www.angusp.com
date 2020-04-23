@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/anguspiv/www.angusp.com/compare/v1.10.0...v1.10.1) (2020-04-23)
+
+
+### Bug Fixes
+
+* **icons:** fixes flash of large icons ([04b8536](https://github.com/anguspiv/www.angusp.com/commit/04b8536aa7d070dd3f104bf4b437bbb192d38f37)), closes [#44](https://github.com/anguspiv/www.angusp.com/issues/44)
+
 # [1.10.0](https://github.com/anguspiv/www.angusp.com/compare/v1.9.0...v1.10.0) (2020-04-23)
 
 
