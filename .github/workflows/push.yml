@@ -36,6 +36,7 @@ jobs:
           LOG_LEVEL: debug
           CYPRESS_BASE_URL: http://localhost:5000
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
