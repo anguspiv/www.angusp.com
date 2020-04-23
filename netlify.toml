@@ -9,7 +9,7 @@
   publish = "public/"
 
   # Default build command.
-  command = "gatsby build"
+  command = "npm run build"
 
 [build.environment]
   # cache Cypress binary in local "node_modules" folder

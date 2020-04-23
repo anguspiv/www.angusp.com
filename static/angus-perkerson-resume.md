@@ -1,14 +1,6 @@
----
-path: '/'
-title: ''
-date: ''
-description: ''
----
-
 # Angus Perkerson
 
-[Download PDF](/angus-perkerson-resume.pdf)  
-[angusp@angusp.com](mailto:angusp@angusp.com?subject=Hi, Angus!)
+angusp@angusp.com
 
 A Software Engineer, specializing in UI and Application development with an emphasis on maintainable, quality, and highly engaging products and features that help the customer solve their needs.
 
@@ -77,6 +69,6 @@ Part of a 10 person team responsible for the development of South Park’s onlin
 
 ## Activities
 
-Mentor and Participant in the Los Angeles, CA developer community.
-Co-organizor for [JS.LA](https://JS.LA)
+Mentor and Participant in the Los Angeles, CA developer community.  
+Co-organizor for [JS.LA](https://JS.LA)  
 Mentor for [Nodeschool - Los Angeles](https://nodeschool.io/los-angeles/)
