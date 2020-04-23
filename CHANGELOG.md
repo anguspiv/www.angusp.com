@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/anguspiv/www.angusp.com/compare/v1.9.0...v1.10.0) (2020-04-23)
+
+
+### Features
+
+* **index:** adds resume pdf ([c1545fb](https://github.com/anguspiv/www.angusp.com/commit/c1545fb4fe8a3c146ddc94f1b51c786e8b60363c)), closes [#12](https://github.com/anguspiv/www.angusp.com/issues/12)
+
 # [1.9.0](https://github.com/anguspiv/www.angusp.com/compare/v1.8.0...v1.9.0) (2020-04-23)
 
 
