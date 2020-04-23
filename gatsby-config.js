@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Angus Perkerson`,
+    title: `Angus Perkerson - Software Engineer`,
     description: `Software Engineer specializing in UI and Applicaton development.`,
     author: `Angus Perkerson <angusp@angusp.com>`,
     email: `angusp@angusp.com`,
@@ -50,6 +50,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

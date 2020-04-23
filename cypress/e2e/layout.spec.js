@@ -10,7 +10,7 @@ describe('Index Page', () => {
   });
 
   it('should have a site title', () => {
-    cy.get('[data-test-id="site-title"]').contains(config.siteMetadata.title);
+    cy.get('[data-test-id="site-title"]').should('have.text', 'Angus Perkerson');
   });
 
   it('should have a site description', () => {

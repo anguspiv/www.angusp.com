@@ -45,29 +45,47 @@ const Page = styled.div`
   grid-template-columns: 1fr;
   min-height: 100vh;
 
-  ${breakpoint('md')`
+  ${breakpoint('lg')`
+    max-height: 100vh;
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
-    grid-template-columns: minmax(auto, 300px) 1fr;
+    grid-template-columns: minmax(300px, 1fr) 3fr;
   `}
 `;
 
-const HeaderLayout = styled(Header)`
+const HeaderWrapper = styled.div`
+  position: relative;
   grid-area: header;
+`;
+
+const LayoutHeader = styled(Header)`
+  ${breakpoint('lg')`
+    position: sticky;
+    top: 0;
+  `}
 `;
 
 const Main = styled.main`
   grid-area: content;
-  padding: ${spacing(4, 2)};
+  max-width: 720px;
+  margin: 0 auto;
+  padding: ${spacing(2)};
+
+  ${breakpoint('lg')`
+    padding: ${spacing(4)};
+  `}
 `;
 
 const Footer = styled.footer`
-  grid-area: 'footer';
-  padding: ${spacing(4, 2)};
+  grid-area: footer;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: ${spacing(2)};
   text-align: center;
 
-  ${breakpoint('md')`
-    text-align: left;
+  ${breakpoint('lg')`
+    width: 100%;
+    padding: ${spacing(4)};
   `}
 `;
 
@@ -88,7 +106,9 @@ function Layout({ children }) {
       <Normalize />
       <ThemeProvider theme={theme}>
         <Page>
-          <HeaderLayout siteTitle={data.site.siteMetadata.title} />
+          <HeaderWrapper>
+            <LayoutHeader siteTitle={data.site.siteMetadata.title} />
+          </HeaderWrapper>
           <Main role="main">{children}</Main>
           <Footer role="contentinfo">
             <span>
