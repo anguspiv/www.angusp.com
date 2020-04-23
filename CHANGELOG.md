@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/anguspiv/www.angusp.com/compare/v1.7.0...v1.8.0) (2020-04-23)
+
+
+### Features
+
+* adds netlify sitemap plugin ([7afa7b0](https://github.com/anguspiv/www.angusp.com/commit/7afa7b0e1e476a9cf3f3555d5b8f619a36c4f122))
+
 # [1.7.0](https://github.com/anguspiv/www.angusp.com/compare/v1.6.0...v1.7.0) (2020-04-21)
 
 
