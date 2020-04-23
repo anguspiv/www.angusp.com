@@ -31,7 +31,7 @@ const Container = styled.header`
     content: '';
   }
 
-  ${breakpoint('md')`
+  ${breakpoint('lg')`
     padding: 20vh ${spacing(4)};
 
     &:after {
@@ -112,7 +112,7 @@ function Header({ className }) {
         <HeaderAvatar />
       </Link>
       <Title as="span" data-test-id="site-title">
-        {title}
+        Angus Perkerson
       </Title>
       <Subtitle data-test-id="site-description">{description}</Subtitle>
       <Email href={`mailto:${email}`}>{email}</Email>
