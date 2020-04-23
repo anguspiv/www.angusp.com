@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/anguspiv/www.angusp.com/compare/v1.8.0...v1.9.0) (2020-04-23)
+
+
+### Features
+
+* **index:** adds resume ([cf1a073](https://github.com/anguspiv/www.angusp.com/commit/cf1a0738ba3f1b333686347eb0b940f503507c78)), closes [#11](https://github.com/anguspiv/www.angusp.com/issues/11)
+
 # [1.8.0](https://github.com/anguspiv/www.angusp.com/compare/v1.7.0...v1.8.0) (2020-04-23)
 
 
