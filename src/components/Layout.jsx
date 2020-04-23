@@ -11,9 +11,12 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import theme, { spacing } from '../styles';
-
 import Header from './Header';
+
+config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
   body {
