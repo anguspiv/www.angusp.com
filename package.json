@@ -2,7 +2,7 @@
   "name": "www.angusp.com",
   "private": true,
   "description": "Personal Website for Angus Perkerson",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "author": "Angus Perkerson <angusp@angusp.com>",
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.12.1",

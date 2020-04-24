@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/anguspiv/www.angusp.com/compare/v1.12.0...v1.13.0) (2020-04-24)
+
+
+### Features
+
+* **header:** adds email subject line ([bc687f6](https://github.com/anguspiv/www.angusp.com/commit/bc687f6bf58f1a58c46284d5be2a1b4e45682f69)), closes [#35](https://github.com/anguspiv/www.angusp.com/issues/35)
+
 # [1.12.0](https://github.com/anguspiv/www.angusp.com/compare/v1.11.1...v1.12.0) (2020-04-24)
 
 
