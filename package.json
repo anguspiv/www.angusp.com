@@ -84,7 +84,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build && npm run build:resume",
-    "build:resume": "markdown-pdf --out ./public/angus-perkerson-resume.pdf -m '{ \"preset\": \"commonmark\" }' ./static/angus-perkerson-resume.md",
+    "build:resume": "markdown-pdf --out ./public/files/angus-perkerson-resume.pdf -m '{ \"preset\": \"commonmark\" }' ./static/files/angus-perkerson-resume.md",
     "develop": "gatsby develop",
     "cy:ci": "CYPRESS_BASE_URL=http://localhost:5000 cypress run",
     "cy:open": "cypress open",

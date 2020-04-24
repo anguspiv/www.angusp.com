@@ -7,7 +7,7 @@ description: ''
 
 # Angus Perkerson
 
-[Download PDF](/angus-perkerson-resume.pdf)  
+[Download PDF](/files/angus-perkerson-resume.pdf)  
 [angusp@angusp.com](mailto:angusp@angusp.com?subject=Hi, Angus!)
 
 A Software Engineer, specializing in UI and Application development with an emphasis on maintainable, quality, and highly engaging products and features that help the customer solve their needs.

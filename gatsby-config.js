@@ -8,7 +8,7 @@ module.exports = {
     description: `Software Engineer specializing in UI and Applicaton development.`,
     author: `Angus Perkerson <angusp@angusp.com>`,
     email: `angusp@angusp.com`,
-    image: '/angus-perkerson.jpg',
+    image: '/images/angus-perkerson.jpg',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
