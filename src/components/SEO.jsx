@@ -20,6 +20,8 @@ function SEO({ description, lang, meta, title, image }) {
             description
             author
             image
+            twitter
+            url
           }
         }
       }
@@ -28,7 +30,8 @@ function SEO({ description, lang, meta, title, image }) {
 
   const metaDescription = description || site.siteMetadata.description;
   let metaTitle = site.siteMetadata.title;
-  const metaImage = image || site.siteMetadata.image;
+  let metaImage = image || site.siteMetadata.image;
+  metaImage = `${site.siteMetadata.url}${metaImage}`;
 
   if (title) {
     metaTitle = `${title} | ${metaTitle}`;
@@ -63,6 +66,10 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
+          property: 'og:url',
+          content: site.siteMetadata.url,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -71,8 +78,12 @@ function SEO({ description, lang, meta, title, image }) {
           content: `summary`,
         },
         {
+          name: `twitter:site`,
+          content: site.siteMetadata.twitter,
+        },
+        {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitter,
         },
         {
           name: `twitter:title`,

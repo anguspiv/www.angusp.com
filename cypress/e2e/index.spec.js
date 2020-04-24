@@ -41,27 +41,28 @@ describe('Index Page', () => {
   });
 
   it('should have the site image', () => {
-    const { image } = config.siteMetadata;
+    const { image, url } = config.siteMetadata;
+    const fullImage = `${url}${image}`;
 
     cy.document()
       .get('meta[name="image"]')
-      .should('have.attr', 'content', image);
+      .should('have.attr', 'content', fullImage);
 
     cy.document()
       .get('meta[property="og:image"]')
-      .should('have.attr', 'content', image);
+      .should('have.attr', 'content', fullImage);
 
     cy.document()
       .get('meta[name="twitter:image"]')
-      .should('have.attr', 'content', image);
+      .should('have.attr', 'content', fullImage);
   });
 
-  it('should have the site author', () => {
-    const { author } = config.siteMetadata;
+  it('should have the site creator', () => {
+    const { twitter } = config.siteMetadata;
 
     cy.document()
       .get('meta[name="twitter:creator"]')
-      .should('have.attr', 'content', author);
+      .should('have.attr', 'content', twitter);
   });
 
   it('should have the og:type', () => {
@@ -74,5 +75,20 @@ describe('Index Page', () => {
     cy.document()
       .get('meta[name="twitter:card"]')
       .should('have.attr', 'content', 'summary');
+  });
+
+  it('should set the meta url', () => {
+    const { url } = config.siteMetadata;
+    cy.document()
+      .get('meta[property="og:url"]')
+      .should('have.attr', 'content', url);
+  });
+
+  it('should have the twitter site', () => {
+    const { twitter } = config.siteMetadata;
+
+    cy.document()
+      .get('meta[name="twitter:site"]')
+      .should('have.attr', 'content', twitter);
   });
 });
