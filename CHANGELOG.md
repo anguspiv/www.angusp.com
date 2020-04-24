@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/anguspiv/www.angusp.com/compare/v1.10.1...v1.11.0) (2020-04-24)
+
+
+### Features
+
+* **header:** adds ga tracking to links ([8d4fbd1](https://github.com/anguspiv/www.angusp.com/commit/8d4fbd11bdbfcefc789466f9b879f897bb464473)), closes [#47](https://github.com/anguspiv/www.angusp.com/issues/47)
+* **tracking:** adds google analytics tracking ([d7fafa1](https://github.com/anguspiv/www.angusp.com/commit/d7fafa10c7210d29b3cee6ed37af28030b4db583)), closes [#47](https://github.com/anguspiv/www.angusp.com/issues/47)
+
 ## [1.10.1](https://github.com/anguspiv/www.angusp.com/compare/v1.10.0...v1.10.1) (2020-04-23)
 
 
