@@ -115,7 +115,11 @@ function Header({ className }) {
         Angus Perkerson
       </Title>
       <Subtitle data-test-id="site-description">{description}</Subtitle>
-      <Email href={`mailto:${email}`} eventCategory="header-link" eventLabel="angusp@angusp.com">
+      <Email
+        href={`mailto:${email}?subject=Hi, Angus!`}
+        eventCategory="header-link"
+        eventLabel="angusp@angusp.com"
+      >
         {email}
       </Email>
       <ProfileLinks>

@@ -21,6 +21,12 @@ describe('Index Page', () => {
     cy.get(`a[href^="mailto:${config.siteMetadata.email}"]`).contains(config.siteMetadata.email);
   });
 
+  it('should have an email subject line', () => {
+    cy.get(`a[href^="mailto:${config.siteMetadata.email}"]`)
+      .should('have.attr', 'href')
+      .should('contain', 'subject=Hi, Angus!');
+  });
+
   it('should have a link to github', () => {
     cy.get('a[href="https://github.com/anguspiv"]').should('exist');
   });
