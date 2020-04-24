@@ -1,3 +1,16 @@
+# [1.12.0](https://github.com/anguspiv/www.angusp.com/compare/v1.11.1...v1.12.0) (2020-04-24)
+
+
+### Bug Fixes
+
+* **meta:** fixes the incorrect meta fields ([eff5efe](https://github.com/anguspiv/www.angusp.com/commit/eff5efe1c924ee1679fc9ee27d618e38febbc9e5))
+* **resume:** corrects spelling error ([ca2c5d8](https://github.com/anguspiv/www.angusp.com/commit/ca2c5d8fd6794cab5bdd1cda7d945b0ae23638d2))
+
+
+### Features
+
+* **meta:** adds meta image ([451a111](https://github.com/anguspiv/www.angusp.com/commit/451a1119dc7485c9a183c1b43ad88e8fc408554b)), closes [#46](https://github.com/anguspiv/www.angusp.com/issues/46)
+
 ## [1.11.1](https://github.com/anguspiv/www.angusp.com/compare/v1.11.0...v1.11.1) (2020-04-24)
 
 
