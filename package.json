@@ -44,6 +44,7 @@
     "styled-components": "^5.0.1",
     "styled-components-breakpoint": "^3.0.0-preview.20",
     "styled-normalize": "^8.0.7",
+    "styled-reboot": "^4.0.3",
     "styled-reset": "^4.1.1"
   },
   "devDependencies": {
