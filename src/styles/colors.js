@@ -11,7 +11,7 @@ colors.blue = '#025eae';
 colors.teal = '#0283f1';
 colors.pink = '#ff5b77';
 colors.purple = '#613d7c';
-colors.gray = '#333';
+colors.gray = '#666';
 
 colors.background = {
   default: colors.offWhite,
@@ -23,6 +23,7 @@ colors.text = {
   default: colors.black,
   light: colors.black,
   dark: colors.offWhite,
+  muted: colors.gray,
 };
 
 colors.link = {

@@ -11,6 +11,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
+import reboot from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import theme, { spacing } from '../styles';
@@ -18,27 +19,32 @@ import Header from './Header';
 
 config.autoAddCss = false;
 
+// Options are, of course, optional, these are the default options
+const options = {
+  black: theme.colors.text.default,
+  fontFamilyBase: theme.fonts.base,
+  fontFamilyMonospace: theme.fonts.monospace,
+  fontSizeBase: '1rem',
+  fontWeightBase: 400,
+  lineHeightBase: 1.5,
+  bodyColor: theme.colors.text.default,
+  bodyBg: theme.colors.background.default,
+  headingsMarginBottom: '0.5rem',
+  paragraphMarginBottom: '1rem',
+  labelMarginBottom: '0.5rem',
+  dtFontWeight: 700,
+  linkColor: theme.colors.link.default,
+  linkDecoration: 'none',
+  linkHoverColor: theme.colors.link.hover,
+  linkHoverDecoration: 'underline',
+  tableCellPadding: '0.75rem',
+  textMuted: theme.colors.text.muted,
+};
+
+const rebootCss = reboot(options);
+
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    color: ${theme.colors.text.default};
-    font-family: ${theme.fonts.base};
-    background: ${theme.colors.background.default};
-    transition: background .5s ease-in-out .1s, color .5s ease-in-out .1s;
-  }
-
-  a {
-    color: ${theme.colors.link.default};
-    transition: color ease-in-out .2s;
-    
-    &:hover {
-      color: ${theme.colors.link.hover}
-    }
-
-    &:visited {
-      color: ${theme.colors.link.visited};
-    }
-  }
+  ${rebootCss}
 `;
 
 const Page = styled.div`
