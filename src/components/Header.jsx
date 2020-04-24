@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { rem } from 'polished';
-
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import breakpoint from 'styled-components-breakpoint';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
@@ -66,7 +66,7 @@ const Subtitle = styled.span`
   font-style: italic;
 `;
 
-const Email = styled.a`
+const Email = styled(OutboundLink)`
   display: block;
   margin: 0 auto ${spacing(0.25)} auto;
   font-size: ${rem('18px')};
@@ -85,7 +85,7 @@ const ProfileLinks = styled.div`
   font-size: ${rem('32px')};
 `;
 
-const ProfileLink = styled.a`
+const ProfileLink = styled(OutboundLink)`
   margin: ${spacing(1)};
 `;
 
@@ -115,12 +115,16 @@ function Header({ className }) {
         Angus Perkerson
       </Title>
       <Subtitle data-test-id="site-description">{description}</Subtitle>
-      <Email href={`mailto:${email}`}>{email}</Email>
+      <Email href={`mailto:${email}`} eventCategory="header-link" eventLabel="angusp@angusp.com">
+        {email}
+      </Email>
       <ProfileLinks>
         <ProfileLink
           href="https://github.com/anguspiv"
           aria-label="Github Profile"
           title="Github Profile"
+          eventCategory="header-link"
+          eventLabel="Github Profile"
         >
           <FontAwesomeIcon icon={faGithub} />
         </ProfileLink>
@@ -128,6 +132,8 @@ function Header({ className }) {
           href="https://twitter.com/angusp"
           aria-label="Twitter Profile"
           title="Twitter Profile"
+          eventCategory="header-link"
+          eventLabel="Twitter Profile"
         >
           <FontAwesomeIcon transform="shrink-6" icon={faTwitter} mask={faCircle} />
         </ProfileLink>
@@ -135,6 +141,8 @@ function Header({ className }) {
           href="https://www.linkedin.com/in/aperkerson"
           aria-label="LinkedIn Profile"
           title="LinkedIn Profile"
+          eventCategory="header-link"
+          eventLabel="LinkedIn Profile"
         >
           <FontAwesomeIcon transform="shrink-6" icon={faLinkedinIn} mask={faCircle} />
         </ProfileLink>
