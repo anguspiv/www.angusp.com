@@ -66,9 +66,6 @@ module.exports = {
         annoymize: true,
         respectDNT: true,
         defer: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'angusp.com',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
