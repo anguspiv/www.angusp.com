@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/anguspiv/www.angusp.com/compare/v1.11.0...v1.11.1) (2020-04-24)
+
+
+### Bug Fixes
+
+* **layout:** adds reboot.css ([e39f60a](https://github.com/anguspiv/www.angusp.com/commit/e39f60a88aba86883da017cbad9d9ecc7aa682e5)), closes [#49](https://github.com/anguspiv/www.angusp.com/issues/49)
+
 # [1.11.0](https://github.com/anguspiv/www.angusp.com/compare/v1.10.1...v1.11.0) (2020-04-24)
 
 
