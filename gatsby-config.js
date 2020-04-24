@@ -2,12 +2,25 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+let siteUrl = 'http://localhost';
+
+if (process.env.CONTEXT === 'deploy-preview') {
+  siteUrl = process.env.DEPLOY_PRIME_URL;
+}
+
+if (process.env.CONTEXT === 'production') {
+  siteUrl = process.env.URL;
+}
+
 module.exports = {
   siteMetadata: {
     title: `Angus Perkerson - Software Engineer`,
     description: `Software Engineer specializing in UI and Applicaton development.`,
     author: `Angus Perkerson <angusp@angusp.com>`,
     email: `angusp@angusp.com`,
+    image: '/images/angus-perkerson.jpg',
+    twitter: 'angusp',
+    url: siteUrl,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -30,7 +43,7 @@ module.exports = {
         background_color: `#025eae`,
         theme_color: `#025eae`,
         display: `minimal-ui`,
-        icon: `src/images/rounded-avatar.png`, // This path is relative to the root of the site.
+        icon: `src/images/rounded-avatar.png`,
       },
     },
     {

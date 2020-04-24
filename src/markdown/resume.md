@@ -7,7 +7,7 @@ description: ''
 
 # Angus Perkerson
 
-[Download PDF](/angus-perkerson-resume.pdf)  
+[Download PDF](/files/angus-perkerson-resume.pdf)  
 [angusp@angusp.com](mailto:angusp@angusp.com?subject=Hi, Angus!)
 
 A Software Engineer, specializing in UI and Application development with an emphasis on maintainable, quality, and highly engaging products and features that help the customer solve their needs.
@@ -29,7 +29,7 @@ React, AngularJS, Nginx, Webpack, Rollup, Gulp
 
 ### [REX Exchange Inc.](https://www.rexhomes.com) - Sr. Software Engineer
 
-Software Engineer developing in **Javacript** (AngularJS, React, Node.js), **Python**, and **Java**. Engineer #5 and second Full Stack Engineer to help build and scale both the internal and external customer applications, for multiple sites and teams. Responsibilities include achitecture for all UI development, and helping to grow and lead the Customer Experience team. In addition to development, was also responsible for educating other team members on the latest trends and teachings for UI development, particularly JavaScript trends and new features.
+Software Engineer developing in **Javacript** (AngularJS, React, Node.js), **Python**, and **Java**. Engineer #5 and second Full Stack Engineer to help build and scale both the internal and external customer applications, for multiple sites and teams. Responsibilities include architecture for all UI development, and helping to grow and lead the Customer Experience team. In addition to development, was also responsible for educating other team members on the latest trends and teachings for UI development, particularly JavaScript trends and new features.
 
 Major Projects included:
 
