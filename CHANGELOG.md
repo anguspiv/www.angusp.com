@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/anguspiv/www.angusp.com/compare/v1.13.0...v1.14.0) (2020-04-26)
+
+
+### Features
+
+* **posts:** adds ghost blog posts ([e7728b9](https://github.com/anguspiv/www.angusp.com/commit/e7728b99ace315c544b60a27e565ea75368fc0f6))
+
 # [1.13.0](https://github.com/anguspiv/www.angusp.com/compare/v1.12.0...v1.13.0) (2020-04-24)
 
 
