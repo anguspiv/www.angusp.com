@@ -35,6 +35,34 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-ghost-images`,
+      options: {
+        // An array of node types and image fields per node
+        // Image fields must contain a valid absolute path to the image to be downloaded
+        lookup: [
+          {
+            type: `GhostPost`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostPage`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostSettings`,
+            imgTags: [`cover_image`],
+          },
+        ],
+        // Additional condition to exclude nodes
+        // Takes precedence over lookup
+        exclude: node => node.ghostId === undefined,
+        // Additional information messages useful for debugging
+        verbose: true,
+        // Option to disable the module (default: false)
+        disable: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -79,6 +107,15 @@ module.exports = {
         annoymize: true,
         respectDNT: true,
         defer: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `http://64.225.125.157`,
+        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        version: `v3`, // Ghost API version, optional, defaults to "v3".
+        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

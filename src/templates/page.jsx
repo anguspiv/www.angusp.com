@@ -12,7 +12,11 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} description={frontmatter.description} />
-      <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+      <div
+        className="blog-post-content"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </Layout>
   );
 }
