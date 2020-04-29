@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
@@ -124,9 +124,9 @@ function Layout({ children }) {
               © 
               {' '}
               {new Date().getFullYear()}
-              , Built with
+              , Built with 
               {' '}
-              <Link to="https://www.gatsbyjs.org">Gatsby</Link>
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
             </span>
           </Footer>
         </Page>

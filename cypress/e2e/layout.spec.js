@@ -38,4 +38,14 @@ describe('Index Page', () => {
   it('should have a link to linkedin', () => {
     cy.get('a[href="https://www.linkedin.com/in/aperkerson"]').should('exist');
   });
+
+  it('should have a footer link to gatsby', () => {
+    cy.get('a[href="https://www.gatsbyjs.org"]')
+      .should('exist')
+      .should('contain', 'Gatsby');
+  });
+
+  it('should have the copyright in the footer', () => {
+    cy.get('footer').should('contain', `© ${new Date().getFullYear()}`);
+  });
 });
