@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/anguspiv/www.angusp.com/compare/v1.14.0...v1.14.1) (2020-04-29)
+
+
+### Bug Fixes
+
+* **footer:** fixes link to gatsby ([9dcbd94](https://github.com/anguspiv/www.angusp.com/commit/9dcbd948cc7c7f2a9f86a7f6219313c4355b6da6)), closes [#60](https://github.com/anguspiv/www.angusp.com/issues/60)
+
 # [1.14.0](https://github.com/anguspiv/www.angusp.com/compare/v1.13.0...v1.14.0) (2020-04-26)
 
 
