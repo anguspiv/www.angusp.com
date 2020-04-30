@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/anguspiv/www.angusp.com/compare/v1.14.1...v1.15.0) (2020-04-30)
+
+
+### Features
+
+* **pages:** adds ghost pages ([9b6cdeb](https://github.com/anguspiv/www.angusp.com/commit/9b6cdeb6120a2a0629ed752b6075f059e081b066)), closes [#61](https://github.com/anguspiv/www.angusp.com/issues/61)
+
 ## [1.14.1](https://github.com/anguspiv/www.angusp.com/compare/v1.14.0...v1.14.1) (2020-04-29)
 
 
