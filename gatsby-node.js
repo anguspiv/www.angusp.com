@@ -8,35 +8,25 @@
 const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
-
   const pageTemplate = path.resolve(`src/templates/page.jsx`);
   const postTemplate = path.resolve(`src/templates/post.jsx`);
 
-  const result = await graphql(`
+  // Query Ghost data
+  const postResults = await graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allGhostPost(sort: { order: ASC, fields: published_at }) {
         edges {
           node {
-            frontmatter {
-              path
-            }
+            slug
           }
         }
       }
     }
   `);
 
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
-  }
-
-  // Query Ghost data
-  const postResults = await graphql(`
+  const pageResults = await graphql(`
     {
-      allGhostPost(sort: { order: ASC, fields: published_at }) {
+      allGhostPage {
         edges {
           node {
             slug
@@ -52,35 +42,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  if (!postResults.data.allGhostPost) {
-    reporter.panicOnBuild(`No Ghost posts`);
+  if (pageResults.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for ghost pages.`);
+    return;
+  }
+
+  if (!pageResults.data.allGhostPage) {
+    reporter.panicOnBuild(`No Ghost pages`);
     return;
   }
 
   // Create pages for each Ghost post
   const posts = postResults.data.allGhostPost.edges;
 
-  posts.forEach(({ node }) => {
-    const url = `/posts/${node.slug}/`;
+  const pages = pageResults.data.allGhostPage.edges;
+
+  pages.forEach(({ node }) => {
+    const url = node.slug === 'index' ? '/' : node.slug;
+
     actions.createPage({
       path: url,
-      component: postTemplate,
-      context: {
-        slug: node.slug,
-      },
-    });
-  });
-
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.path,
       component: pageTemplate,
-      context: {}, // additional data can be passed via context
+      context: {},
     });
   });
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const url = `/${node.slug}/`;
+  posts.forEach(({ node }) => {
+    const url = `/posts/${node.slug}/`;
     actions.createPage({
       path: url,
       component: postTemplate,

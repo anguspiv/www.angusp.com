@@ -62,6 +62,7 @@ export const postQuery = graphql`
       title
       slug
       feature_image
+      reading_time
       html
       featureImageSharp {
         childImageSharp {

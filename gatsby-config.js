@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-let siteUrl = 'http://localhost';
+let siteUrl = 'http://localhost:8000';
 
 if (process.env.CONTEXT === 'deploy-preview') {
   siteUrl = process.env.DEPLOY_PRIME_URL;
@@ -15,7 +15,7 @@ if (process.env.CONTEXT === 'production') {
 module.exports = {
   siteMetadata: {
     title: `Angus Perkerson - Software Engineer`,
-    description: `Software Engineer specializing in UI and Applicaton development.`,
+    description: `Software Engineer specializing in Web and Applicaton development.`,
     author: `Angus Perkerson <angusp@angusp.com>`,
     email: `angusp@angusp.com`,
     image: '/images/angus-perkerson.jpg',
@@ -91,14 +91,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown`,
-        path: `${__dirname}/src/markdown`,
-      },
-    },
-    `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
