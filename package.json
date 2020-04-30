@@ -36,7 +36,6 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-ghost": "^4.0.4",
     "gatsby-transformer-rehype": "^1.2.1",
-    "gatsby-transformer-remark": "^2.7.4",
     "gatsby-transformer-sharp": "^2.3.13",
     "lodash": "^4.17.15",
     "lodash.get": "^4.4.2",
@@ -90,8 +89,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build && npm run build:resume",
-    "build:resume": "markdown-pdf --out ./public/files/angus-perkerson-resume.pdf -m '{ \"preset\": \"commonmark\" }' ./static/files/angus-perkerson-resume.md",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "cy:ci": "CYPRESS_BASE_URL=http://localhost:5000 cypress run",
     "cy:open": "cypress open",
