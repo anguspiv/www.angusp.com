@@ -7,7 +7,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
@@ -99,16 +98,6 @@ const Footer = styled.footer`
 `;
 
 function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <GlobalStyle />
@@ -116,7 +105,7 @@ function Layout({ children }) {
       <ThemeProvider theme={theme}>
         <Page>
           <HeaderWrapper>
-            <LayoutHeader siteTitle={data.site.siteMetadata.title} />
+            <LayoutHeader />
           </HeaderWrapper>
           <Main role="main">{children}</Main>
           <Footer role="contentinfo">
