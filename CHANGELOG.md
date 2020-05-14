@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/anguspiv/www.angusp.com/compare/v1.15.0...v1.16.0) (2020-05-14)
+
+
+### Features
+
+* **header:** adds site navigation ([#65](https://github.com/anguspiv/www.angusp.com/issues/65)) ([10f8da3](https://github.com/anguspiv/www.angusp.com/commit/10f8da3dd1a4a1913e11175507f2711b8477e5e2)), closes [#64](https://github.com/anguspiv/www.angusp.com/issues/64)
+
 # [1.15.0](https://github.com/anguspiv/www.angusp.com/compare/v1.14.1...v1.15.0) (2020-04-30)
 
 
