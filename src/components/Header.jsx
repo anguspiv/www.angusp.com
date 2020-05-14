@@ -81,7 +81,7 @@ const HeaderAvatar = styled(Avatar)`
 const ProfileLinks = styled.div`
   display: flex;
   justify-content: center;
-  margin: ${spacing(1)} 0;
+  margin: 0;
   font-size: ${rem('32px')};
 `;
 
@@ -89,22 +89,55 @@ const ProfileLink = styled(OutboundLink)`
   margin: ${spacing(1)};
 `;
 
+const Nav = styled.nav``;
+
+const Menu = styled.ul`
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    flex: 0 0 auto;
+    margin: ${spacing(1)};
+  }
+
+  ${breakpoint('lg')`
+    flex-direction: column;
+  `}
+`;
+
+const SiteLink = styled(Link)``;
+
 function Header({ className }) {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
             email
+          }
+        }
+        allGhostSettings {
+          edges {
+            node {
+              description
+              title
+              navigation {
+                label
+                url
+              }
+            }
           }
         }
       }
     `,
   );
 
-  const { title, description, email } = site.siteMetadata;
+  const { email } = data.site.siteMetadata;
+  const [edge] = data.allGhostSettings.edges;
+  const { title, description, navigation } = edge.node;
 
   return (
     <Container role="banner" className={className}>
@@ -151,6 +184,15 @@ function Header({ className }) {
           <FontAwesomeIcon transform="shrink-6" icon={faLinkedinIn} mask={faCircle} />
         </ProfileLink>
       </ProfileLinks>
+      <Nav>
+        <Menu>
+          {navigation.map(({ url, label }) => (
+            <li>
+              <SiteLink to={url}>{label}</SiteLink>
+            </li>
+          ))}
+        </Menu>
+      </Nav>
     </Container>
   );
 }

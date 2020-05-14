@@ -41,20 +41,22 @@ describe('Index Page', () => {
   });
 
   it('should have the site image', () => {
-    const { image, url } = config.siteMetadata;
-    const fullImage = `${url}${image}`;
+    const { image } = config.siteMetadata;
 
     cy.document()
       .get('meta[name="image"]')
-      .should('have.attr', 'content', fullImage);
+      .should('have.attr', 'content')
+      .and('contain', image);
 
     cy.document()
       .get('meta[property="og:image"]')
-      .should('have.attr', 'content', fullImage);
+      .should('have.attr', 'content')
+      .and('contain', image);
 
     cy.document()
       .get('meta[name="twitter:image"]')
-      .should('have.attr', 'content', fullImage);
+      .should('have.attr', 'content')
+      .and('contain', image);
   });
 
   it('should have the site creator', () => {
@@ -78,10 +80,9 @@ describe('Index Page', () => {
   });
 
   it('should set the meta url', () => {
-    const { url } = config.siteMetadata;
     cy.document()
       .get('meta[property="og:url"]')
-      .should('have.attr', 'content', url);
+      .should('have.attr', 'content');
   });
 
   it('should have the twitter site', () => {
