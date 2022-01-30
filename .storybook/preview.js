@@ -4,6 +4,7 @@ import theme from '../src/styles';
 import { customRebootTheme, GlobalStyle } from '../src/components/Layout';
 import { Normalize } from 'styled-normalize';
 import { action } from '@storybook/addon-actions';
+import typography from '../src/utils/typography';
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -24,13 +25,17 @@ window.___navigate = (pathname) => {
 };
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={{ ...defaultRebootTheme, ...customRebootTheme, ...theme }}>
-      <GlobalStyle />
-      <Normalize />
-      <Story />
-    </ThemeProvider>
-  ),
+  (Story) => {
+    typography.injectStyles();
+
+    return (
+      <ThemeProvider theme={{ ...defaultRebootTheme, ...customRebootTheme, ...theme }}>
+        <GlobalStyle />
+        <Normalize />
+        <Story />
+      </ThemeProvider>
+    );
+  },
 ];
 
 export const parameters = {

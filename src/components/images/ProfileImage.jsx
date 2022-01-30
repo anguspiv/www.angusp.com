@@ -7,6 +7,7 @@ const Image = styled.img`
   width: 100%;
   max-width: 300px;
   aspect-ratio: 1;
+  margin: 0 auto;
 `;
 
 function ProfileImage({ className }) {

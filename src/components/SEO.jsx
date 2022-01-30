@@ -50,7 +50,7 @@ function SEO({ description, lang, meta, title, image }) {
     metaDescription = description;
   }
 
-  let metaTitle = ghostSettings.meta_description || ghostSettings.description;
+  let metaTitle = ghostSettings.meta_title || ghostSettings.title;
 
   if (title) {
     metaTitle = title;
