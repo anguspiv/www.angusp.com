@@ -33,6 +33,7 @@ jobs:
           CYPRESS_BASE_URL: http://localhost:5000
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
+          GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
