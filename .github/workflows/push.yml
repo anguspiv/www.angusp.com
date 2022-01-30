@@ -11,10 +11,10 @@ env:
 jobs:
   build-and-test:
     name: Build and Test
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-versions: [12.x]
+        node-versions: [14, 16]
       fail-fast: true
     steps:
       - uses: actions/checkout@v1
@@ -37,6 +37,7 @@ jobs:
           CYPRESS_BASE_URL: http://localhost:5000
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
+          GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
