@@ -1,10 +1,33 @@
 {
-  "extends": ["airbnb", "prettier", "plugin:cypress/recommended"],
-  "plugins": ["prettier", "cypress"],
-  "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["**/*.test.js", "**/*.spec.js", "cypress/**/*.js"] }
-    ]
-  }
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier", "cypress", "jest", "jest-dom", "testing-library"],
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/*.test.jsx"],
+      "excludedFiles": ["cypress/**/*.js"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/function-component-definition": "off"
+      },
+      "extends": ["plugin:jest/all", "plugin:jest/recommended", "plugin:jest-dom/recommended"]
+    },
+    {
+      "files": ["cypress/**/*.js"],
+      "env": {
+        "cypress/globals": true
+      },
+      "rules": {
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": "off"
+      },
+      "extends": ["plugin:cypress/recommended"]
+    }
+  ]
 }
