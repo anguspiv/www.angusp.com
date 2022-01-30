@@ -9,24 +9,10 @@ const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const pageTemplate = path.resolve(`src/templates/page.jsx`);
-  const postTemplate = path.resolve(`src/templates/post.jsx`);
-
-  // Query Ghost data
-  const postResults = await graphql(`
-    {
-      allGhostPost(sort: { order: ASC, fields: published_at }) {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `);
 
   const pageResults = await graphql(`
     {
-      allGhostPage {
+      allGhostPage(filter: { slug: { ne: "home" } }) {
         edges {
           node {
             slug
@@ -35,12 +21,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `);
-
-  // Handle errors
-  if (postResults.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
-  }
 
   if (pageResults.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query for ghost pages.`);
@@ -52,9 +32,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  // Create pages for each Ghost post
-  const posts = postResults.data.allGhostPost.edges;
-
   const pages = pageResults.data.allGhostPage.edges;
 
   pages.forEach(({ node }) => {
@@ -64,17 +41,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: url,
       component: pageTemplate,
       context: {},
-    });
-  });
-
-  posts.forEach(({ node }) => {
-    const url = `/posts/${node.slug}/`;
-    actions.createPage({
-      path: url,
-      component: postTemplate,
-      context: {
-        slug: node.slug,
-      },
     });
   });
 };

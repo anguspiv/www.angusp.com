@@ -40,9 +40,7 @@ describe('Index Page', () => {
   });
 
   it('should have a footer link to gatsby', () => {
-    cy.get('a[href="https://www.gatsbyjs.org"]')
-      .should('exist')
-      .should('contain', 'Gatsby');
+    cy.get('a[href="https://www.gatsbyjs.org"]').should('exist').should('contain', 'Gatsby');
   });
 
   it('should have the copyright in the footer', () => {

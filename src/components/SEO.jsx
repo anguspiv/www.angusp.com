@@ -11,27 +11,49 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title, image }) {
-  const { site } = useStaticQuery(
+  const { site, allGhostSettings } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
-            image
-            twitter
-            url
+            siteUrl
+          }
+        }
+        allGhostSettings {
+          edges {
+            node {
+              title
+              description
+              meta_description
+              meta_title
+              twitter
+              icon
+              logo
+            }
           }
         }
       }
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  let metaTitle = site.siteMetadata.title;
-  let metaImage = image || site.siteMetadata.image;
-  metaImage = `${site.siteMetadata.url}${metaImage}`;
+  const { siteUrl } = site.siteMetadata;
+  const ghostSettings = allGhostSettings.edges[0].node;
+
+  let metaDescription = ghostSettings.meta_description || ghostSettings.description;
+
+  if (description) {
+    metaDescription = description;
+  }
+
+  let metaTitle = ghostSettings.meta_description || ghostSettings.description;
+
+  if (title) {
+    metaTitle = title;
+  }
+
+  let metaImage = image || ghostSettings.icon;
+
+  metaImage = `${siteUrl}${metaImage}`;
 
   if (title) {
     metaTitle = `${title} | ${metaTitle}`;

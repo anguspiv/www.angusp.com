@@ -5,23 +5,22 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-function Page({ data }) {
+function HomePage({ data }) {
   const { title, html, meta_title, meta_description, og_image } = data.ghostPage || {};
+
   return (
     <Layout>
       <SEO title={meta_title} description={meta_description} image={og_image} />
-      <article>
-        <h1>{title}</h1>
-        <section
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </article>
+      <h1>{title || 'Hello World'}</h1>
+      <main
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </Layout>
   );
 }
 
-Page.propTypes = {
+HomePage.propTypes = {
   data: PropTypes.shape({
     ghostPage: PropTypes.shape({
       title: PropTypes.string,
@@ -30,24 +29,25 @@ Page.propTypes = {
       meta_title: PropTypes.string,
       meta_description: PropTypes.string,
       og_image: PropTypes.string,
-      reading_time: PropTypes.number,
     }),
   }),
 };
 
-Page.defaultProps = {
+HomePage.defaultProps = {
   data: {},
 };
 
-export default Page;
+export default HomePage;
 
-export const pageQuery = graphql`
-  query ($slug: String) {
-    ghostPage(slug: { eq: $slug }) {
+export const query = graphql`
+  {
+    ghostPage(slug: { eq: "home" }) {
       title
-      slug
       feature_image
       html
+      meta_title
+      meta_description
+      og_image
     }
   }
 `;
