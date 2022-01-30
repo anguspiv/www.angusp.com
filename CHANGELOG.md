@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/anguspiv/www.angusp.com/compare/v1.16.1...v1.17.0) (2022-01-30)
+
+
+### Features
+
+* adds typography.js for styling ([60a4cf5](https://github.com/anguspiv/www.angusp.com/commit/60a4cf5221da86c219c280c20635c85dadfbb334)), closes [#93](https://github.com/anguspiv/www.angusp.com/issues/93)
+
 ## [1.16.1](https://github.com/anguspiv/www.angusp.com/compare/v1.16.0...v1.16.1) (2022-01-30)
 
 
