@@ -59,11 +59,11 @@ const Title = styled.span`
   font-size: ${rem('24px')};
 `;
 
-const Subtitle = styled.span`
+const Subtitle = styled.p`
   display: block;
   margin: 0 auto ${spacing(1)} auto;
-  font-size: ${rem('16px')};
   font-style: italic;
+  line-height: 1.5;
 `;
 
 const Email = styled(OutboundLink)`

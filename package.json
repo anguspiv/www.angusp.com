@@ -39,6 +39,7 @@
     "gatsby-plugin-react-helmet": "^5.6.0",
     "gatsby-plugin-sharp": "^4.6.0",
     "gatsby-plugin-styled-components": "^5.6.0",
+    "gatsby-plugin-typography": "^4.6.0",
     "gatsby-plugin-webfonts": "^2.2.1",
     "gatsby-rehype-ghost-links": "^2.0.0",
     "gatsby-source-filesystem": "^4.6.0",
@@ -53,12 +54,14 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-typography": "^0.16.20",
     "styled-breakpoints": "^11.0.4",
     "styled-components": "^5.3.3",
     "styled-components-breakpoint": "^3.0.0-preview.20",
     "styled-normalize": "^8.0.7",
     "styled-reboot": "^5.0.0",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "typography": "^0.16.21"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",

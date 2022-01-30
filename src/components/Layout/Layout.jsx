@@ -13,6 +13,7 @@ import { Normalize } from 'styled-normalize';
 import { reboot, defaultRebootTheme } from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import typography from '../../utils/typography';
 import theme, { spacing } from '../../styles';
 import Header from '../Header';
 
@@ -23,13 +24,13 @@ export const customRebootTheme = {
   black: theme.colors.text.default,
   fontFamilyBase: theme.fonts.base,
   fontFamilyMonospace: theme.fonts.monospace,
-  fontSizeBase: '1rem',
+  fontSizeBase: '18px',
   fontWeightBase: 400,
-  lineHeightBase: 1.5,
+  lineHeightBase: 1.666,
   bodyColor: theme.colors.text.default,
   bodyBg: theme.colors.background.default,
-  headingsMarginBottom: '0.5rem',
-  paragraphMarginBottom: '1rem',
+  headingsMarginBottom: '1.666rem',
+  paragraphMarginBottom: '1.666rem',
   labelMarginBottom: '0.5rem',
   dtFontWeight: 700,
   linkColor: theme.colors.link.default,
@@ -42,6 +43,7 @@ export const customRebootTheme = {
 
 export const GlobalStyle = createGlobalStyle`
   ${reboot}
+  ${typography.toString()}
 `;
 
 const Page = styled.div`
@@ -55,7 +57,7 @@ const Page = styled.div`
     max-height: 100vh;
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
-    grid-template-columns: minmax(300px, 1fr) 3fr;
+    grid-template-columns: minmax(280px, 1fr) 3fr;
   `}
 `;
 
@@ -74,18 +76,19 @@ const LayoutHeader = styled(Header)`
 const Main = styled.main`
   grid-area: content;
   width: 100%;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: ${spacing(2)};
 
   ${breakpoint('lg')`
     padding: ${spacing(4)};
+    margin: 0;
   `}
 `;
 
 const Footer = styled.footer`
   grid-area: footer;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: ${spacing(2)};
   text-align: center;
@@ -93,6 +96,7 @@ const Footer = styled.footer`
   ${breakpoint('lg')`
     width: 100%;
     padding: ${spacing(4)};
+    margin: 0;
   `}
 `;
 
