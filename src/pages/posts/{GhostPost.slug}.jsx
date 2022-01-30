@@ -62,7 +62,7 @@ const FeaturedImageWrapper = styled.div`
   height: auto;
   max-height: 480px;
   margin-right: ${({ theme }) => theme.spacing(-2)};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.paragraphMarginBottom};
   margin-left: ${({ theme }) => theme.spacing(-2)};
   overflow: hidden;
 
