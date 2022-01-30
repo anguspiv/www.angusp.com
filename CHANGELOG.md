@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/anguspiv/www.angusp.com/compare/v1.17.0...v1.18.0) (2022-01-30)
+
+
+### Features
+
+* **post:** adds featured image to post page ([f4464d4](https://github.com/anguspiv/www.angusp.com/commit/f4464d4224b03e0073fbfe31f618fb7de8779208)), closes [#95](https://github.com/anguspiv/www.angusp.com/issues/95)
+
 # [1.17.0](https://github.com/anguspiv/www.angusp.com/compare/v1.16.1...v1.17.0) (2022-01-30)
 
 
