@@ -14,7 +14,7 @@ describe('Index Page', () => {
   });
 
   it('should have a site description', () => {
-    cy.get('[data-test-id="site-description"]').contains(config.siteMetadata.description);
+    cy.get('[data-test-id="site-description"]').should('not.be.empty');
   });
 
   it('should have an email link', () => {
