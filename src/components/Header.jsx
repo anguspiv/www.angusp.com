@@ -187,8 +187,8 @@ function Header({ className }) {
       <Nav>
         <Menu>
           {navigation.map(({ url, label }) => (
-            <li>
-              <SiteLink to={url}>{label}</SiteLink>
+            <li key={url}>
+              <SiteLink to={url.replace(/^https?:\/\/www\.angusp\.com/gm, '')}>{label}</SiteLink>
             </li>
           ))}
         </Menu>

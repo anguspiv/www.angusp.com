@@ -1,30 +1,29 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+// const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
+const config = require('./src/utils/config');
 
-let siteUrl = 'http://localhost:8000';
+let url = config.siteUrl;
 
 if (process.env.CONTEXT === 'deploy-preview') {
-  siteUrl = process.env.DEPLOY_PRIME_URL;
+  url = process.env.DEPLOY_PRIME_URL;
 }
 
 if (process.env.CONTEXT === 'production') {
-  siteUrl = process.env.URL;
+  url = process.env.URL;
 }
 
 module.exports = {
   siteMetadata: {
-    title: `Angus Perkerson - Software Engineer`,
-    description: `Software Engineer specializing in Web and Applicaton development.`,
-    author: `Angus Perkerson <angusp@angusp.com>`,
-    email: `angusp@angusp.com`,
-    image: '/images/angus-perkerson.jpg',
-    twitter: 'angusp',
-    url: siteUrl,
+    siteUrl: url,
+    email: config.email,
+    profileImage: config.profileImage,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-react-helmet`,
+    /**
+     * Gatsby's data processing layer begins with “source”
+     */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,48 +31,23 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-ghost-images`,
+      resolve: `gatsby-source-ghost`,
       options: {
-        // An array of node types and image fields per node
-        // Image fields must contain a valid absolute path to the image to be downloaded
-        lookup: [
-          {
-            type: `GhostPost`,
-            imgTags: [`feature_image`],
-          },
-          {
-            type: `GhostPage`,
-            imgTags: [`feature_image`],
-          },
-          {
-            type: `GhostSettings`,
-            imgTags: [`cover_image`],
-          },
-        ],
-        // Additional condition to exclude nodes
-        // Takes precedence over lookup
-        exclude: node => node.ghostId === undefined,
-        // Additional information messages useful for debugging
-        verbose: true,
-        // Option to disable the module (default: false)
-        disable: false,
+        apiUrl: process.env.GHOST_API_URL,
+        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        version: `v3`, // Ghost API version, optional, defaults to "v3".
+        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#025eae`,
-        theme_color: `#025eae`,
-        display: `minimal-ui`,
-        icon: `src/images/rounded-avatar.png`,
-      },
-    },
+    /**
+     * Build Plugins
+     */
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
@@ -96,22 +70,113 @@ module.exports = {
       options: {
         trackingId: 'UA-45031912-1',
         head: false,
-        annoymize: true,
+        anonymize: true,
         respectDNT: true,
         defer: true,
       },
     },
+    /**
+     * This plugin generates a service worker and AppShell
+     * html file so the site works offline and is otherwise
+     * resistant to bad networks. Works with almost any
+     * site!
+     * https://www.gatsbyjs.org/packages/gatsby-plugin-offline/
+     * https://www.gatsbyjs.org/packages/gatsby-plugin-appshell/
+     * https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/
+     *  */
     {
-      resolve: `gatsby-source-ghost`,
+      resolve: `gatsby-plugin-ghost-manifest`,
       options: {
-        apiUrl: `http://64.225.125.157`,
-        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-        version: `v3`, // Ghost API version, optional, defaults to "v3".
-        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
+        short_name: config.shortTitle,
+        start_url: `/`,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: `minimal-ui`,
+        legacy: true,
+        icon: config.siteIcon,
+        query: `
+        {
+            allGhostSettings {
+                edges {
+                    node {
+                        title
+                        description
+                    }
+                }
+            }
+        }
+      `,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        query: `
+          {
+              allGhostPost {
+                  edges {
+                      node {
+                          id
+                          slug
+                          updated_at
+                          created_at
+                          feature_image
+                      }
+                  }
+              }
+              allGhostPage {
+                  edges {
+                      node {
+                          id
+                          slug
+                          updated_at
+                          created_at
+                          feature_image
+                      }
+                  }
+              }
+              allGhostTag {
+                  edges {
+                      node {
+                          id
+                          slug
+                          feature_image
+                      }
+                  }
+              }
+              allGhostAuthor {
+                  edges {
+                      node {
+                          id
+                          slug
+                          profile_image
+                      }
+                  }
+              }
+          }`,
+        mapping: {
+          allGhostPost: {
+            sitemap: `posts`,
+          },
+          allGhostTag: {
+            sitemap: `tags`,
+          },
+          allGhostAuthor: {
+            sitemap: `authors`,
+          },
+          allGhostPage: {
+            sitemap: ``,
+          },
+        },
+        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/offline-plugin-app-shell-fallback`],
+        createLinkInHead: true,
+        addUncaughtPages: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-force-trailing-slashes`,
   ],
 };

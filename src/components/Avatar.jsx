@@ -15,7 +15,7 @@ const Frame = styled(motion.div)`
   padding: ${spacing(0.5)};
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: ${props => props.theme.elevation.medium};
+  box-shadow: ${(props) => props.theme.elevation.medium};
 `;
 
 const Glare = styled(motion.div)`
@@ -48,7 +48,7 @@ function Avatar({ className }) {
   const glareRotate = useSpring(30, { stiffness: 100 });
   const glareX = useSpring(0, { stiffness: 100 });
   const onMouseMove = useCallback(
-    evt => {
+    (evt) => {
       const width = evt.target.width ? evt.target.width : 180;
       const percentWidth = evt.nativeEvent.offsetX / width;
       const y = getRotationValue(evt.nativeEvent.offsetX, width);

@@ -1,33 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
+const Image = styled.img`
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
+`;
 
 function ProfileImage({ className }) {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+      site {
+        siteMetadata {
+          email
+          profileImage
         }
+      }
+      ghostAuthor(slug: { eq: "angusp" }) {
+        profile_image
+        name
       }
     }
   `);
 
-  return <Img className={className} fluid={data.placeholderImage.childImageSharp.fluid} />;
+  const profileImage = data.ghostAuthor.profile_image || data.site.siteMetadata.profileImage;
+
+  return <Image className={className} src={profileImage} alt={data.ghostAuthor.name} />;
 }
 
 ProfileImage.propTypes = {

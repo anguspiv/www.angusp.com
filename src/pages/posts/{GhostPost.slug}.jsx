@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import get from 'lodash.get';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 
 function Post({ data }) {
   const { title, html, meta_title, meta_description, og_image, reading_time, featureImageSharp } =
@@ -18,8 +18,7 @@ function Post({ data }) {
         {featureImageSharp ? <Img fluid={fluidImg} alt={title} /> : null}
         <h1>{title}</h1>
         <p>
-          Reading Time:
-          {reading_time}
+          Reading Time: {reading_time}
           min.
         </p>
         <section
@@ -56,21 +55,14 @@ Post.defaultProps = {
 
 export default Post;
 
-export const postQuery = graphql`
-  query($slug: String) {
-    ghostPost(slug: { eq: $slug }) {
+export const query = graphql`
+  query ($id: String) {
+    ghostPost(id: { eq: $id }) {
       title
       slug
       feature_image
       reading_time
       html
-      featureImageSharp {
-        childImageSharp {
-          fluid(maxWidth: 1280) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   }
 `;

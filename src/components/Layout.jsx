@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Normalize } from 'styled-normalize';
-import reboot from 'styled-reboot';
+import { reboot, defaultRebootTheme } from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import theme, { spacing } from '../styles';
@@ -19,7 +19,7 @@ import Header from './Header';
 config.autoAddCss = false;
 
 // Options are, of course, optional, these are the default options
-const options = {
+const customRebootTheme = {
   black: theme.colors.text.default,
   fontFamilyBase: theme.fonts.base,
   fontFamilyMonospace: theme.fonts.monospace,
@@ -40,10 +40,8 @@ const options = {
   textMuted: theme.colors.text.muted,
 };
 
-const rebootCss = reboot(options);
-
 const GlobalStyle = createGlobalStyle`
-  ${rebootCss}
+  ${reboot}
 `;
 
 const Page = styled.div`
@@ -99,28 +97,21 @@ const Footer = styled.footer`
 
 function Layout({ children }) {
   return (
-    <>
+    <ThemeProvider theme={{ ...defaultRebootTheme, ...customRebootTheme, ...theme }}>
       <GlobalStyle />
       <Normalize />
-      <ThemeProvider theme={theme}>
-        <Page>
-          <HeaderWrapper>
-            <LayoutHeader />
-          </HeaderWrapper>
-          <Main role="main">{children}</Main>
-          <Footer role="contentinfo">
-            <span>
-              © 
-              {' '}
-              {new Date().getFullYear()}
-              , Built with 
-              {' '}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </span>
-          </Footer>
-        </Page>
-      </ThemeProvider>
-    </>
+      <Page>
+        <HeaderWrapper>
+          <LayoutHeader />
+        </HeaderWrapper>
+        <Main role="main">{children}</Main>
+        <Footer role="contentinfo">
+          <span>
+            © {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </span>
+        </Footer>
+      </Page>
+    </ThemeProvider>
   );
 }
 
