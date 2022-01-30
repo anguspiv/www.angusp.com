@@ -2,7 +2,7 @@ import config from '../../gatsby-config';
 
 describe('Index Page', () => {
   beforeEach(() => {
-    cy.visit('');
+    cy.visit('/');
   });
 
   it('should have have a profile picture', () => {

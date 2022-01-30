@@ -1,6 +1,6 @@
 describe('Index Page', () => {
   beforeEach(() => {
-    cy.visit('');
+    cy.visit('/');
   });
 
   it('has no detectable a11y violations on load', () => {
