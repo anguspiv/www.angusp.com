@@ -1,5 +1,3 @@
-import config from '../../gatsby-config';
-
 describe('Index Page', () => {
   beforeEach(() => {
     cy.visit('');
@@ -11,49 +9,43 @@ describe('Index Page', () => {
   });
 
   it('should have the site title', () => {
-    const { title } = config.siteMetadata;
+    cy.title().should('not.be.empty');
 
-    cy.title().should('eq', title);
+    cy.document().get('meta[property="og:title"]').invoke('attr', 'content').should('not.be.empty');
 
-    cy.document().get('meta[property="og:title"]').should('have.attr', 'content', title);
-
-    cy.document().get('meta[name="twitter:title"]').should('have.attr', 'content', title);
+    cy.document()
+      .get('meta[name="twitter:title"]')
+      .invoke('attr', 'content')
+      .should('not.be.empty');
   });
 
   it('should have the site description', () => {
-    const { description } = config.siteMetadata;
-
-    cy.document().get('meta[name="description"]').should('have.attr', 'content', description);
+    cy.document().get('meta[name="description"]').invoke('attr', 'content').should('not.be.empty');
 
     cy.document()
       .get('meta[property="og:description"]')
-      .should('have.attr', 'content', description);
+      .invoke('attr', 'content')
+      .should('not.be.empty');
 
     cy.document()
       .get('meta[name="twitter:description"]')
-      .should('have.attr', 'content', description);
+      .invoke('attr', 'content')
+      .should('not.be.empty');
   });
 
   it('should have the site image', () => {
-    const { image } = config.siteMetadata;
+    cy.document().get('meta[name="image"]').invoke('attr', 'content').should('not.be.empty');
 
-    cy.document().get('meta[name="image"]').should('have.attr', 'content').and('contain', image);
-
-    cy.document()
-      .get('meta[property="og:image"]')
-      .should('have.attr', 'content')
-      .and('contain', image);
+    cy.document().get('meta[property="og:image"]').invoke('attr', 'content').should('not.be.empty');
 
     cy.document()
       .get('meta[name="twitter:image"]')
-      .should('have.attr', 'content')
-      .and('contain', image);
+      .invoke('attr', 'content')
+      .should('not.be.empty');
   });
 
   it('should have the site creator', () => {
-    const { twitter } = config.siteMetadata;
-
-    cy.document().get('meta[name="twitter:creator"]').should('have.attr', 'content', twitter);
+    cy.document().get('meta[name="twitter:creator"]').should('have.attr', 'content', '@angusp');
   });
 
   it('should have the og:type', () => {
@@ -69,8 +61,6 @@ describe('Index Page', () => {
   });
 
   it('should have the twitter site', () => {
-    const { twitter } = config.siteMetadata;
-
-    cy.document().get('meta[name="twitter:site"]').should('have.attr', 'content', twitter);
+    cy.document().get('meta[name="twitter:site"]').should('have.attr', 'content', '@angusp');
   });
 });

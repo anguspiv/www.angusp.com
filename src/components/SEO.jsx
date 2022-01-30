@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title, image }) {
-  const { site, allGhostSettings } = useStaticQuery(
+  const { site, allGhostSettings, ghostAuthor } = useStaticQuery(
     graphql`
       query {
         site {
@@ -32,6 +32,11 @@ function SEO({ description, lang, meta, title, image }) {
             }
           }
         }
+        ghostAuthor(slug: { eq: "angusp" }) {
+          profile_image
+          name
+          twitter
+        }
       }
     `,
   );
@@ -51,13 +56,7 @@ function SEO({ description, lang, meta, title, image }) {
     metaTitle = title;
   }
 
-  let metaImage = image || ghostSettings.icon;
-
-  metaImage = `${siteUrl}${metaImage}`;
-
-  if (title) {
-    metaTitle = `${title} | ${metaTitle}`;
-  }
+  const metaImage = image ? `${siteUrl}/${image}` : ghostSettings.logo;
 
   return (
     <Helmet
@@ -101,11 +100,11 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:site`,
-          content: site.siteMetadata.twitter,
+          content: ghostAuthor.twitter,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.twitter,
+          content: ghostAuthor.twitter,
         },
         {
           name: `twitter:title`,
