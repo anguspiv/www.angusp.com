@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/anguspiv/www.angusp.com/compare/v1.16.0...v1.16.1) (2022-01-30)
+
+
+### Bug Fixes
+
+* **home-page:** corrects meta data for the page ([7222c59](https://github.com/anguspiv/www.angusp.com/commit/7222c59b8124002787bdf7764be85cd6957959c8))
+
 # [1.16.0](https://github.com/anguspiv/www.angusp.com/compare/v1.15.0...v1.16.0) (2020-05-14)
 
 ### Features

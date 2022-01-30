@@ -2,7 +2,7 @@
   "name": "www.angusp.com",
   "private": true,
   "description": "Personal Website for Angus Perkerson",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "author": "Angus Perkerson <angusp@angusp.com>",
   "dependencies": {
     "@babel/core": "^7.16.12",
