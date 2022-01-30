@@ -26,26 +26,3 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-      - name: Test
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm start
-          wait-on: "http://localhost:3000"
-        env:
-          LOG_LEVEL: debug
-          CYPRESS_BASE_URL: http://localhost:3000
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
-          GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      # Test run video was always captured, so this action uses "always()" condition
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
