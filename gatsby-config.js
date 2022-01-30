@@ -6,11 +6,11 @@ const config = require('./src/utils/config');
 
 let url = config.siteUrl;
 
-if (process.env.CONTEXT === 'deploy-preview') {
+if (process.env.CONTEXT === 'deploy-preview' && process.env.DEPLOY_PRIME_URL) {
   url = process.env.DEPLOY_PRIME_URL;
 }
 
-if (process.env.CONTEXT === 'production') {
+if (process.env.CONTEXT === 'production' && process.env.URL) {
   url = process.env.URL;
 }
 

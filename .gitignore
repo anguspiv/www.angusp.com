@@ -73,3 +73,6 @@ cypress/screenshots
 cypress/videos
 .stylelintcache
 .vscode
+
+# storybook
+storybook-static
