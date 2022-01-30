@@ -137,7 +137,7 @@ function Header({ className }) {
 
   const { email } = data.site.siteMetadata;
   const [edge] = data.allGhostSettings.edges;
-  const { title, description, navigation } = edge.node;
+  const { title, description, navigation } = edge?.node || {};
 
   return (
     <Container role="banner" className={className}>
@@ -186,7 +186,7 @@ function Header({ className }) {
       </ProfileLinks>
       <Nav>
         <Menu>
-          {navigation.map(({ url, label }) => (
+          {navigation?.map(({ url, label }) => (
             <li key={url}>
               <SiteLink to={url.replace(/^https?:\/\/www\.angusp\.com/gm, '')}>{label}</SiteLink>
             </li>

@@ -4,6 +4,8 @@ on: [pull_request]
 
 env:
   FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
+  GHOST_API_URL: ${{secrets.GHOST_API_URL}}
+  GHOST_CONTENT_API_URL: ${{secrets.GHOST_CONTENT_API_URL}}
 
 jobs:
   lint:

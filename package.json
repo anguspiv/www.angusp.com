@@ -62,6 +62,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
+    "@babel/eslint-parser": "^7.16.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@commitlint/cli": "^16.1.0",
@@ -81,6 +82,7 @@
     "axe-core": "^4.3.5",
     "babel-jest": "^27.4.6",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.4.2",
     "cypress": "^9.3.1",
     "cypress-axe": "^0.14.0",
     "eslint": "^8.8.0",
@@ -136,8 +138,9 @@
     "test:ci": "start-server-and-test start http://localhost:5000 cy:ci",
     "semantic-release": "semantic-release",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "NODE_ENV=test start-storybook -p 6006 -s static",
+    "build-storybook": "NODE_ENV=test build-storybook -s static",
+    "chromatic": "npx chromatic"
   },
   "repository": {
     "type": "git",
