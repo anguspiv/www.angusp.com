@@ -11,8 +11,8 @@ function HomePage({ data }) {
   return (
     <Layout>
       <SEO title={meta_title} description={meta_description} image={og_image} />
-      <h1>{title || 'Hello World'}</h1>
-      <main
+      <h1>{title}</h1>
+      <div
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: html }}
       />
