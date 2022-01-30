@@ -8,8 +8,8 @@ import breakpoint from 'styled-components-breakpoint';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Avatar from './Avatar';
-import { spacing } from '../styles';
+import Avatar from '../Avatar';
+import { spacing } from '../../styles';
 
 const Container = styled.header`
   position: relative;

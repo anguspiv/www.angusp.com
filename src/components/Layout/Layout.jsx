@@ -13,13 +13,13 @@ import { Normalize } from 'styled-normalize';
 import { reboot, defaultRebootTheme } from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import theme, { spacing } from '../styles';
-import Header from './Header';
+import theme, { spacing } from '../../styles';
+import Header from '../Header';
 
 config.autoAddCss = false;
 
 // Options are, of course, optional, these are the default options
-const customRebootTheme = {
+export const customRebootTheme = {
   black: theme.colors.text.default,
   fontFamilyBase: theme.fonts.base,
   fontFamilyMonospace: theme.fonts.monospace,
@@ -40,7 +40,7 @@ const customRebootTheme = {
   textMuted: theme.colors.text.muted,
 };
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${reboot}
 `;
 
@@ -73,6 +73,7 @@ const LayoutHeader = styled(Header)`
 
 const Main = styled.main`
   grid-area: content;
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
   padding: ${spacing(2)};

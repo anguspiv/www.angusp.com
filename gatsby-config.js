@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     /**
-     * Gatsby's data processing layer begins with “source”
+     * Gatsby's data processing layer begins with "source"
      */
     {
       resolve: `gatsby-source-filesystem`,
