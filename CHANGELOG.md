@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/anguspiv/www.angusp.com/compare/v1.18.0...v1.18.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* **post:** corrects bottom margin on featured image ([19457fc](https://github.com/anguspiv/www.angusp.com/commit/19457fc366368f80ba2c6035d03432bb9a805684))
+
 # [1.18.0](https://github.com/anguspiv/www.angusp.com/compare/v1.17.0...v1.18.0) (2022-01-30)
 
 
