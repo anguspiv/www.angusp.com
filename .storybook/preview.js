@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components';
-import { defaultRebootTheme } from 'styled-reboot';
 import theme from '../src/styles';
-import { customRebootTheme, GlobalStyle } from '../src/components/Layout';
+import { GlobalStyle } from '../src/components/Layout';
 import { Normalize } from 'styled-normalize';
 import { action } from '@storybook/addon-actions';
 import typography from '../src/utils/typography';
@@ -26,10 +25,8 @@ window.___navigate = (pathname) => {
 
 export const decorators = [
   (Story) => {
-    typography.injectStyles();
-
     return (
-      <ThemeProvider theme={{ ...defaultRebootTheme, ...customRebootTheme, ...theme }}>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Normalize />
         <Story />

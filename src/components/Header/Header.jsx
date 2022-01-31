@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import breakpoint from 'styled-components-breakpoint';
+import { up } from 'styled-breakpoints';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -31,26 +31,26 @@ const Container = styled.header`
     content: '';
   }
 
-  ${breakpoint('lg')`
+  ${up('lg')} {
     padding: 20vh ${spacing(4)};
 
     &:after {
       position: absolute;
-      right: 0;
       top: 20%;
-      content: '';
-      height: 60%;
-      width: 1px;
+      right: 0;
       display: block;
+      width: 1px;
+      height: 60%;
       background: linear-gradient(
         0deg,
         rgba(127, 127, 127, 0) 0%,
-        rgba(127, 127, 127,1) 20%,
-        rgba(127, 127, 127,1) 80%,
-        rgba(127, 127, 127,0) 100%
+        rgba(127, 127, 127, 1) 20%,
+        rgba(127, 127, 127, 1) 80%,
+        rgba(127, 127, 127, 0) 100%
       );
+      content: '';
     }
-  `}
+  }
 `;
 
 const Title = styled.span`
@@ -103,9 +103,9 @@ const Menu = styled.ul`
     margin: ${spacing(1)};
   }
 
-  ${breakpoint('lg')`
+  ${up('lg')} {
     flex-direction: column;
-  `}
+  }
 `;
 
 const SiteLink = styled(Link)``;
