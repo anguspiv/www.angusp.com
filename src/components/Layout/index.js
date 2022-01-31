@@ -1,5 +1,5 @@
 import Layout from './Layout';
 
-export { GlobalStyle, customRebootTheme } from './Layout';
+export { GlobalStyle } from './Layout';
 
 export default Layout;

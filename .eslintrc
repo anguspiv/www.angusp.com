@@ -7,7 +7,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.js", "*.stories.jsx"],
+      "files": ["*.stories.js", "*.stories.jsx", "*.story.js", "*.story.jsx"],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/prop-types": "off",
@@ -24,6 +24,7 @@
       "rules": {
         "react/prop-types": "off",
         "import/no-extraneous-dependencies": "off",
+        "react/jsx-props-no-spreading": "off",
         "react/function-component-definition": "off"
       },
       "extends": ["plugin:jest/all", "plugin:jest/recommended", "plugin:jest-dom/recommended"]

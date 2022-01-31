@@ -8,9 +8,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+import { up } from 'styled-breakpoints';
 import { Normalize } from 'styled-normalize';
-import { reboot, defaultRebootTheme } from 'styled-reboot';
+import { reboot } from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import typography from '../../utils/typography';
@@ -18,28 +18,6 @@ import theme, { spacing } from '../../styles';
 import Header from '../Header';
 
 config.autoAddCss = false;
-
-// Options are, of course, optional, these are the default options
-export const customRebootTheme = {
-  black: theme.colors.text.default,
-  fontFamilyBase: theme.fonts.base,
-  fontFamilyMonospace: theme.fonts.monospace,
-  fontSizeBase: '18px',
-  fontWeightBase: 400,
-  lineHeightBase: 1.666,
-  bodyColor: theme.colors.text.default,
-  bodyBg: theme.colors.background.default,
-  headingsMarginBottom: '1.666rem',
-  paragraphMarginBottom: '1.666rem',
-  labelMarginBottom: '0.5rem',
-  dtFontWeight: 700,
-  linkColor: theme.colors.link.default,
-  linkDecoration: 'none',
-  linkHoverColor: theme.colors.link.hover,
-  linkHoverDecoration: 'underline',
-  tableCellPadding: '0.75rem',
-  textMuted: theme.colors.text.muted,
-};
 
 export const GlobalStyle = createGlobalStyle`
   ${reboot}
@@ -53,12 +31,12 @@ const Page = styled.div`
   grid-template-columns: 1fr;
   min-height: 100vh;
 
-  ${breakpoint('lg')`
-    max-height: 100vh;
+  ${up('lg')} {
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
     grid-template-columns: minmax(280px, 1fr) 3fr;
-  `}
+    max-height: 100vh;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -67,10 +45,10 @@ const HeaderWrapper = styled.div`
 `;
 
 const LayoutHeader = styled(Header)`
-  ${breakpoint('lg')`
+  ${up('lg')} {
     position: sticky;
     top: 0;
-  `}
+  }
 `;
 
 const Main = styled.main`
@@ -79,10 +57,10 @@ const Main = styled.main`
   margin: 0 auto;
   padding: ${spacing(2)};
 
-  ${breakpoint('lg')`
-    padding: ${spacing(4)};
+  ${up('lg')} {
     margin: 0;
-  `}
+    padding: ${spacing(4)};
+  }
 `;
 
 const Footer = styled.footer`
@@ -92,16 +70,16 @@ const Footer = styled.footer`
   padding: ${spacing(2)};
   text-align: center;
 
-  ${breakpoint('lg')`
+  ${up('lg')} {
     width: 100%;
-    padding: ${spacing(4)};
     margin: 0;
-  `}
+    padding: ${spacing(4)};
+  }
 `;
 
 function Layout({ children }) {
   return (
-    <ThemeProvider theme={{ ...defaultRebootTheme, ...customRebootTheme, ...theme }}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Normalize />
       <Page>

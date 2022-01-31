@@ -8,13 +8,13 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const Article = styled.article`
-  max-width: 800px;
+  max-width: ${({ theme }) => theme.page.width};
   margin: 0 auto;
 `;
 
 const Title = styled.h1`
   width: 100%;
-  max-width: 800px;
+  max-width: ${({ theme }) => theme.page.width};
   margin: 0 auto ${({ theme }) => theme.headingsMarginBottom};
 `;
 
@@ -44,6 +44,10 @@ const FeaturedImageWrapper = styled.div`
     margin-right: ${theme.spacing(-4)};
     margin-left: ${theme.spacing(-4)};
   `}
+`;
+
+const Image = styled.img`
+  margin-bottom: 0;
 `;
 
 function Post({ data }) {
@@ -79,7 +83,7 @@ function Post({ data }) {
       <Header>
         {feature_image && (
           <FeaturedImageWrapper>
-            <img src={feature_image} alt={meta_title} />
+            <Image src={feature_image} alt={meta_title} />
           </FeaturedImageWrapper>
         )}
         <Title>{title}</Title>
