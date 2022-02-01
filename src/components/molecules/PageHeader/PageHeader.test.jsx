@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../styles';
+import theme from '@styles';
+import { axe } from 'jest-axe';
 import PageHeader from './PageHeader';
 
 describe('<PageHeader />', () => {
@@ -78,5 +79,21 @@ describe('<PageHeader />', () => {
     const { getByRole } = setupPageHeader({ featuredImage });
 
     expect(getByRole('img')).toHaveAttribute('src', featuredImage);
+  });
+
+  it('should be accessible', async () => {
+    expect.assertions(1);
+
+    const { container } = setupPageHeader({
+      title: 'Test Header Text',
+      excerpt: 'Test excerpt text for the page header',
+      featuredImage: 'https://via.placeholder.com/300x200',
+      readingTime: 7,
+      publishDate: '2020-01-01',
+    });
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });

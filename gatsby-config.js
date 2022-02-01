@@ -1,3 +1,4 @@
+const path = require('path');
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -24,6 +25,17 @@ module.exports = {
     /**
      * Gatsby's data processing layer begins with "source"
      */
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@styles': path.resolve(__dirname, 'src/styles'),
+          '@utils': path.resolve(__dirname, 'src/utils'),
+        },
+        extensions: [],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

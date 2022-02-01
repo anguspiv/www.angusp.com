@@ -3,7 +3,7 @@ import Avatar from './Avatar';
 
 export default {
   component: Avatar,
-  title: 'Components/Avatar',
+  title: 'Components/Molecules/Avatar',
 };
 
 const Template = (args) => <Avatar {...args} />;

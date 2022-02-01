@@ -2,8 +2,7 @@ import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { motion, useSpring } from 'framer-motion';
-import ProfileImage from '../images/ProfileImage';
-import { spacing } from '../../styles';
+import ProfileImage from '@components/atoms/ProfileImage';
 
 const Image = styled(ProfileImage)`
   overflow: hidden;
@@ -13,7 +12,7 @@ const Image = styled(ProfileImage)`
 const Frame = styled(motion.div)`
   position: relative;
   display: inline-block;
-  padding: ${spacing(0.5)};
+  padding: ${({ theme }) => theme.spacing(0.5)};
   overflow: hidden;
   border-radius: 50%;
   box-shadow: ${(props) => props.theme.elevation.medium};
