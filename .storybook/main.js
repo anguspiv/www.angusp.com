@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: ['../src/**/*.@(stories|story).mdx', '../src/**/*.@(stories|story).@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
@@ -16,6 +18,11 @@ module.exports = {
         staticQueryDir: './page-data/sq/d',
       },
     ]);
+
+    config.resolve.alias['@components'] = path.resolve(__dirname, '../src/components');
+    config.resolve.alias['@styles'] = path.resolve(__dirname, '../src/styles');
+    config.resolve.alias['@utils'] = path.resolve(__dirname, '../src/utils');
+
     return config;
   },
 };

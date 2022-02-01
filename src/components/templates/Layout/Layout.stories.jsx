@@ -13,7 +13,7 @@ const Content = styled.div`
 
 export default {
   component: Layout,
-  title: 'Components/Layout',
+  title: 'Components/Templates/Layout',
 };
 
 const Template = (args) => (

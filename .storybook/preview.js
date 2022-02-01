@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import theme from '../src/styles';
-import { GlobalStyle } from '../src/components/Layout';
+import { GlobalStyle } from '../src/components/templates/Layout';
 import { Normalize } from 'styled-normalize';
 import { action } from '@storybook/addon-actions';
 import typography from '../src/utils/typography';

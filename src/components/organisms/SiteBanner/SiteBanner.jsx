@@ -8,12 +8,11 @@ import { up } from 'styled-breakpoints';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Avatar from '../Avatar';
-import { spacing } from '../../styles';
+import Avatar from '@components/molecules/Avatar';
 
 const Container = styled.header`
   position: relative;
-  padding: ${spacing(1)};
+  padding: ${({ theme }) => theme.spacing(1)};
   text-align: center;
 
   &:after {
@@ -32,7 +31,7 @@ const Container = styled.header`
   }
 
   ${up('lg')} {
-    padding: 20vh ${spacing(4)};
+    padding: 20vh ${({ theme }) => theme.spacing(4)};
 
     &:after {
       position: absolute;
@@ -55,27 +54,27 @@ const Container = styled.header`
 
 const Title = styled.span`
   display: block;
-  margin: 0 auto ${spacing(0.5)} auto;
+  margin: 0 auto ${({ theme }) => theme.spacing(0.5)} auto;
   font-size: ${rem('24px')};
 `;
 
 const Subtitle = styled.p`
   display: block;
-  margin: 0 auto ${spacing(1)} auto;
+  margin: 0 auto ${({ theme }) => theme.spacing(1)} auto;
   font-style: italic;
   line-height: 1.5;
 `;
 
 const Email = styled(OutboundLink)`
   display: block;
-  margin: 0 auto ${spacing(0.25)} auto;
+  margin: 0 auto ${({ theme }) => theme.spacing(0.25)} auto;
   font-size: ${rem('18px')};
   font-family: ${({ theme }) => theme.fonts.monospace};
 `;
 
 const HeaderAvatar = styled(Avatar)`
   width: ${rem('180px')};
-  margin: ${spacing(2, 'auto')};
+  margin: ${({ theme }) => theme.spacing(2, 'auto')};
 `;
 
 const ProfileLinks = styled.div`
@@ -86,7 +85,7 @@ const ProfileLinks = styled.div`
 `;
 
 const ProfileLink = styled(OutboundLink)`
-  margin: ${spacing(1)};
+  margin: ${({ theme }) => theme.spacing(1)};
 `;
 
 const Nav = styled.nav``;
@@ -100,7 +99,7 @@ const Menu = styled.ul`
 
   & > li {
     flex: 0 0 auto;
-    margin: ${spacing(1)};
+    margin: ${({ theme }) => theme.spacing(1)};
   }
 
   ${up('lg')} {
@@ -110,7 +109,7 @@ const Menu = styled.ul`
 
 const SiteLink = styled(Link)``;
 
-function Header({ className }) {
+function SiteBanner({ className }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -197,12 +196,12 @@ function Header({ className }) {
   );
 }
 
-Header.propTypes = {
+SiteBanner.propTypes = {
   className: PropTypes.string,
 };
 
-Header.defaultProps = {
+SiteBanner.defaultProps = {
   className: null,
 };
 
-export default Header;
+export default SiteBanner;

@@ -3,7 +3,7 @@ import PageHeader from './PageHeader';
 
 export default {
   component: PageHeader,
-  title: 'Components/PageHeader',
+  title: 'Components/Molecules/PageHeader',
   argTypes: {
     publishDate: {
       control: {

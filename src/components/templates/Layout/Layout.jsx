@@ -13,9 +13,9 @@ import { Normalize } from 'styled-normalize';
 import { reboot } from 'styled-reboot';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import typography from '../../utils/typography';
-import theme, { spacing } from '../../styles';
-import Header from '../Header';
+import typography from '@utils/typography';
+import theme, { spacing } from '@styles';
+import SiteBanner from '@components/organisms/SiteBanner';
 
 config.autoAddCss = false;
 
@@ -44,7 +44,7 @@ const HeaderWrapper = styled.div`
   grid-area: header;
 `;
 
-const LayoutHeader = styled(Header)`
+const LayoutBanner = styled(SiteBanner)`
   ${up('lg')} {
     position: sticky;
     top: 0;
@@ -85,7 +85,7 @@ function Layout({ children }) {
       <Normalize />
       <Page>
         <HeaderWrapper>
-          <LayoutHeader />
+          <LayoutBanner />
         </HeaderWrapper>
         <Main role="main">{children}</Main>
         <Footer role="contentinfo">

@@ -5,6 +5,17 @@
   "globals": {
     "__PATH_PREFIX__": true
   },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@styles", "./src/styles"],
+          ["@utils", "./src/utils"]
+        ]
+      }
+    }
+  },
   "overrides": [
     {
       "files": ["*.stories.js", "*.stories.jsx", "*.story.js", "*.story.jsx"],

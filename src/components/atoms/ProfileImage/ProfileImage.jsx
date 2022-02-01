@@ -15,7 +15,6 @@ function ProfileImage({ className }) {
     query {
       site {
         siteMetadata {
-          email
           profileImage
         }
       }
