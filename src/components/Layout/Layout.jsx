@@ -35,7 +35,7 @@ const Page = styled.div`
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
     grid-template-columns: minmax(280px, 1fr) 3fr;
-    max-height: 100vh;
+    min-height: 100vh;
   }
 `;
 
@@ -58,6 +58,7 @@ const Main = styled.main`
   padding: ${spacing(2)};
 
   ${up('lg')} {
+    align-self: center;
     margin: 0;
     padding: ${spacing(4)};
   }
