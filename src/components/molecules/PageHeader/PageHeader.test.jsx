@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import theme from '@styles';
 import { axe } from 'jest-axe';
+import theme from '@styles';
 import PageHeader from './PageHeader';
 
 describe('<PageHeader />', () => {
