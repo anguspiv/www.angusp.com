@@ -1,3 +1,15 @@
+# [1.19.0](https://github.com/anguspiv/www.angusp.com/compare/v1.18.1...v1.19.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* **layout:** vertically centers content in page ([e569c6a](https://github.com/anguspiv/www.angusp.com/commit/e569c6a028afb7a708247036b20c435acb420583))
+
+
+### Features
+
+* adds page header component ([4c20cf5](https://github.com/anguspiv/www.angusp.com/commit/4c20cf50c5bd0fa9e28184b5e11204a9a59a52a7))
+
 ## [1.18.1](https://github.com/anguspiv/www.angusp.com/compare/v1.18.0...v1.18.1) (2022-01-31)
 
 
