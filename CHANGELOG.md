@@ -1,3 +1,12 @@
+# [1.20.0](https://github.com/anguspiv/www.angusp.com/compare/v1.19.0...v1.20.0) (2022-02-03)
+
+
+### Features
+
+* adds the article card component ([0d37238](https://github.com/anguspiv/www.angusp.com/commit/0d37238ab1a69841a965cbcb83f8615e537e8243)), closes [#84](https://github.com/anguspiv/www.angusp.com/issues/84)
+* adds the article page ([0b12b39](https://github.com/anguspiv/www.angusp.com/commit/0b12b394df935f50a3e89e39885ef90fcb6aff67)), closes [#84](https://github.com/anguspiv/www.angusp.com/issues/84)
+* adds the divider component ([271eee2](https://github.com/anguspiv/www.angusp.com/commit/271eee2034b8b6aec32d6d6ebbbbf6fbd5b55305))
+
 # [1.19.0](https://github.com/anguspiv/www.angusp.com/compare/v1.18.1...v1.19.0) (2022-02-03)
 
 
