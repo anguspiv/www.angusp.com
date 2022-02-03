@@ -1,49 +1,76 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { rem } from 'polished';
+import styled, { useTheme } from 'styled-components';
+import { up } from 'styled-breakpoints';
 import Divider from '@components/atoms/Divider';
 
 const Content = styled.div`
   max-width: ${({ theme }) => theme.page.width};
 `;
 
-const Title = styled.h2`
+const Title = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 0;
   color: ${({ theme }) => theme.colors.link.default};
+  font-size: ${({ featured }) => (featured ? rem('26px') : rem('20px'))};
   transition: all 0.2s ease-in-out;
 `;
 
-const TitleLabel = styled.span``;
+const TitleLabel = styled.span`
+  line-height: 1.2;
+`;
 
 const TitleDivider = styled(Divider)`
-  margin-bottom: ${({ theme }) => theme.spacing(1)};
+  width: 0;
+  margin-bottom: ${({ theme }) => theme.spacing(0.5)};
 `;
 
 const Excerpt = styled.p`
   margin-bottom: ${({ theme }) => theme.spacing(1)};
+  font-size: ${({ featured }) => (featured ? rem('16px') : rem('14px'))};
 `;
 
-const Date = styled.p`
-  margin-bottom: ${({ theme }) => theme.spacing(0.5)};
+const Detail = styled.p`
+  margin-bottom: 0;
+  font-size: ${({ featured }) => (featured ? rem('14px') : rem('12px'))};
+  text-transform: uppercase;
+
+  ${up('sm')} {
+    & + &::before {
+      margin-right: ${({ theme }) => theme.spacing(0.5)};
+      margin-left: ${({ theme }) => theme.spacing(0.5)};
+      content: '-';
+    }
+  }
+`;
+
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${up('sm')} {
+    flex-direction: row;
+  }
+`;
+
+const Date = styled(Detail)`
   color: ${({ theme }) => theme.colors.blue};
-  font-size: 0.8rem;
-  text-transform: uppercase;
 `;
 
-const ReadingTime = styled.p`
-  margin-bottom: ${({ theme }) => theme.spacing(1)};
+const ReadingTime = styled(Detail)`
   color: ${({ theme }) => theme.colors.text.muted};
-  font-size: 0.8rem;
   font-style: italic;
-  text-transform: uppercase;
 `;
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  margin-bottom: ${({ theme }) => theme.paragraphMarginBottom};
   color: ${({ theme }) => theme.colors.text.default};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -55,20 +82,28 @@ const Card = styled.div`
     & ${Title} {
       color: ${({ theme }) => theme.colors.link.hover};
     }
+
+    & ${TitleDivider} {
+      width: 100%;
+    }
   }
 `;
 
-function ArticleCard({ date, excerpt, readingTime, slug, title }) {
+function ArticleCard({ date, excerpt, featured, readingTime, slug, title }) {
+  const theme = useTheme();
+
   return (
     <Card as={Link} to={`/articles/${slug}`}>
       <Content>
-        {date && <Date>{date}</Date>}
-        <Title>
+        <Title featured={featured}>
           <TitleLabel>{title}</TitleLabel>
-          <TitleDivider />
+          <TitleDivider color={theme.colors.blue} />
         </Title>
-        <Excerpt>{excerpt}</Excerpt>
-        {readingTime && <ReadingTime>{readingTime} min. read</ReadingTime>}
+        <Excerpt featured={featured}>{excerpt}</Excerpt>
+        <Details>
+          {date && <Date featured={featured}>{date}</Date>}
+          {readingTime && <ReadingTime featured={featured}>{readingTime} min. read</ReadingTime>}
+        </Details>
       </Content>
     </Card>
   );
@@ -77,6 +112,7 @@ function ArticleCard({ date, excerpt, readingTime, slug, title }) {
 ArticleCard.propTypes = {
   date: PropTypes.string,
   excerpt: PropTypes.string,
+  featured: PropTypes.bool,
   readingTime: PropTypes.number,
   slug: PropTypes.string,
   title: PropTypes.string,
@@ -85,6 +121,7 @@ ArticleCard.propTypes = {
 ArticleCard.defaultProps = {
   date: '',
   excerpt: '',
+  featured: false,
   readingTime: 0,
   slug: '',
   title: '',

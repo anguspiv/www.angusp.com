@@ -6,7 +6,12 @@ export default {
   title: 'Components/Molecules/ArticleCard',
 };
 
-const Template = (args) => <ArticleCard {...args} />;
+const Template = (args) => (
+  <>
+    <ArticleCard {...args} />
+    <ArticleCard {...args} />
+  </>
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -17,6 +22,7 @@ Default.args = {
     ipsum duis consectetur quis sunt. Nostrud nostrud mollit amet amet cupidatat
     et. Eiusmod enim consequat deserunt exercitation ut minim aute cupidatat
     cillum.`,
+  featured: false,
   readingTime: 3,
   slug: 'article-slug',
   title: 'Article Title',
