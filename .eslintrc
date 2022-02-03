@@ -27,7 +27,8 @@
           { "pattern": "@utils/**", "group": "internal" }
         ]
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off"
   },
   "overrides": [
     {
@@ -35,7 +36,6 @@
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/prop-types": "off",
-        "react/jsx-props-no-spreading": "off",
         "react/function-component-definition": "off"
       }
     },
@@ -48,7 +48,6 @@
       "rules": {
         "react/prop-types": "off",
         "import/no-extraneous-dependencies": "off",
-        "react/jsx-props-no-spreading": "off",
         "react/function-component-definition": "off"
       },
       "extends": ["plugin:jest/all", "plugin:jest/recommended", "plugin:jest-dom/recommended"]
