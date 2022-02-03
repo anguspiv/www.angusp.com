@@ -1,3 +1,13 @@
+# [1.21.0](https://github.com/anguspiv/www.angusp.com/compare/v1.20.0...v1.21.0) (2022-02-03)
+
+
+### Features
+
+* adds page section component ([0ebf96d](https://github.com/anguspiv/www.angusp.com/commit/0ebf96d53ecc26e1dc6f9e4813286851892da896))
+* adds the featured article component ([cf4c2d4](https://github.com/anguspiv/www.angusp.com/commit/cf4c2d48c9dae62b9580e68a4c4be6024eee5bb9))
+* **article-card:** adds styling for featured ([8ec8333](https://github.com/anguspiv/www.angusp.com/commit/8ec8333ed5545b8f7d080fe6f0391740084767c1))
+* **articles:** adds the featured articles section ([ca99948](https://github.com/anguspiv/www.angusp.com/commit/ca99948994beb29e17823015aa11cc974408cab3))
+
 # [1.20.0](https://github.com/anguspiv/www.angusp.com/compare/v1.19.0...v1.20.0) (2022-02-03)
 
 
