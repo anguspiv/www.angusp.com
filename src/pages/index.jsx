@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '@components/templates/Layout';
 import SEO from '@components/organisms/SEO';
+import PageHeader from '@components/molecules/PageHeader';
+import PageSection from '@components/atoms/PageSection';
 
 function HomePage({ data }) {
   const { title, html, meta_title, meta_description, og_image } = data.ghostPage || {};
@@ -11,11 +13,8 @@ function HomePage({ data }) {
   return (
     <Layout>
       <SEO title={meta_title} description={meta_description} image={og_image} />
-      <h1>{title}</h1>
-      <div
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <PageHeader title={title} />
+      <PageSection as="article" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 }

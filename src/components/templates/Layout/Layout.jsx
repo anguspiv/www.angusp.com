@@ -11,6 +11,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { Normalize } from 'styled-normalize';
 import { reboot } from 'styled-reboot';
+import { rem } from 'polished';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import typography from '@utils/typography';
@@ -27,15 +28,16 @@ export const GlobalStyle = createGlobalStyle`
 const Page = styled.div`
   display: grid;
   grid-template-areas: 'header' 'content' 'footer';
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
+  max-width: ${rem(800 + 320)};
   min-height: 100vh;
+  margin: 0 auto;
 
   ${up('lg')} {
     grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
-    grid-template-columns: minmax(280px, 1fr) 3fr;
-    min-height: 100vh;
+    grid-template-columns: minmax(auto, 380px) 1fr;
   }
 `;
 
@@ -73,7 +75,6 @@ const Footer = styled.footer`
 
   ${up('lg')} {
     width: 100%;
-    margin: 0;
     padding: ${spacing(4)};
   }
 `;
