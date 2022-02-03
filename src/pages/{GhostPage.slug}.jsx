@@ -2,53 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 import Layout from '@components/templates/Layout';
 import SEO from '@components/organisms/SEO';
-
-const Article = styled.article`
-  max-width: ${({ theme }) => theme.page.width};
-  margin: 0 auto;
-`;
-
-const Title = styled.h1`
-  width: 100%;
-  max-width: ${({ theme }) => theme.page.width};
-  margin: 0 auto ${({ theme }) => theme.headingsMarginBottom};
-`;
-
-const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-`;
-
-const FeaturedImageWrapper = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% + ${({ theme }) => theme.spacing(4)});
-  max-width: none;
-  height: auto;
-  max-height: 480px;
-  margin-right: ${({ theme }) => theme.spacing(-2)};
-  margin-bottom: ${({ theme }) => theme.paragraphMarginBottom};
-  margin-left: ${({ theme }) => theme.spacing(-2)};
-  overflow: hidden;
-
-  ${({ theme }) => breakpoint('lg')`
-    width: calc(100% + ${theme.spacing(8)});
-    margin-right: ${theme.spacing(-4)};
-    margin-left: ${theme.spacing(-4)};
-  `}
-`;
-
-const Image = styled.img`
-  margin-bottom: 0;
-`;
+import PageHeader from '@components/molecules/PageHeader';
+import PageSection from '@components/atoms/PageSection';
 
 function Post({ data }) {
   const {
@@ -80,20 +37,8 @@ function Post({ data }) {
   return (
     <Layout>
       <SEO title={seoTitle} description={seoDescription} image={og_image} />
-      <Header>
-        {feature_image && (
-          <FeaturedImageWrapper>
-            <Image src={feature_image} alt={meta_title} />
-          </FeaturedImageWrapper>
-        )}
-        <Title>{title}</Title>
-      </Header>
-      <Article>
-        <section
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </Article>
+      <PageHeader title={title} featuredImage={feature_image} imageFirst />
+      <PageSection as="article" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 }
