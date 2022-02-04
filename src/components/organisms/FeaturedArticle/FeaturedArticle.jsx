@@ -1,34 +1,13 @@
 import React from 'react';
-import { rem } from 'polished';
 import { get } from 'lodash';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Divider from '@components/atoms/Divider';
 import ArticleCard from '@components/molecules/ArticleCard';
+import SectionTitle from '@components/atoms/SectionTitle';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing(1.25)};
-`;
-
-const Title = styled.h2`
-  margin-right: ${({ theme }) => theme.spacing(1)};
-  margin-bottom: 0;
-  font-weight: normal;
-  font-size: ${rem('14px')};
-  font-style: italic;
-`;
-
-const TitleDivider = styled(Divider)`
-  max-width: ${rem('280px')};
 `;
 
 function FeaturedArticle() {
@@ -59,10 +38,7 @@ function FeaturedArticle() {
 
   return (
     <Wrapper>
-      <Header>
-        <Title>Featured</Title>
-        <TitleDivider />
-      </Header>
+      <SectionTitle>Featured</SectionTitle>
       <ArticleCard
         // eslint-disable-next-line camelcase
         date={created_at}
