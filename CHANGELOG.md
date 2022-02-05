@@ -1,3 +1,14 @@
+# [1.22.0](https://github.com/anguspiv/www.angusp.com/compare/v1.21.0...v1.22.0) (2022-02-05)
+
+
+### Features
+
+* adds pagination component ([a669c8d](https://github.com/anguspiv/www.angusp.com/commit/a669c8d7fac6c0b36360bcc6b5deaf3500dee2ac))
+* adds the article list component ([7004f0c](https://github.com/anguspiv/www.angusp.com/commit/7004f0cc1e1921521dd4ffb270acea8708dd671e))
+* adds the section title section ([0d43247](https://github.com/anguspiv/www.angusp.com/commit/0d43247835fbbd6fb599a141f4607feda1a2a88a))
+* **articles:** adds the article list ([ad9300a](https://github.com/anguspiv/www.angusp.com/commit/ad9300ae975a43f1610111f1296fd7747955d0e3))
+* **section-title:** cleans up the section title styling ([c110f7f](https://github.com/anguspiv/www.angusp.com/commit/c110f7fc13ee963475dc3f3f8b20df55ec5fc0a9))
+
 # [1.21.0](https://github.com/anguspiv/www.angusp.com/compare/v1.20.0...v1.21.0) (2022-02-03)
 
 
