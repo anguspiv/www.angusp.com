@@ -3,7 +3,7 @@ import FeaturedArticle from './FeaturedArticle';
 
 export default {
   component: FeaturedArticle,
-  title: 'Components/Molecules/FeaturedArticle',
+  title: 'Components/Organisms/FeaturedArticle',
 };
 
 const Template = (args) => <FeaturedArticle {...args} />;
