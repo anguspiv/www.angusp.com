@@ -9,10 +9,13 @@ const Header = styled.div`
   flex-direction: row;
   align-content: center;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing(1.25)};
+  justify-content: flex-start;
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 const Title = styled.h2`
+  display: inline-block;
+  flex: 0 0 auto;
   margin-right: ${({ theme }) => theme.spacing(1)};
   margin-bottom: 0;
   font-weight: normal;
@@ -21,6 +24,7 @@ const Title = styled.h2`
 `;
 
 const TitleDivider = styled(Divider)`
+  flex: 1 1 100%;
   max-width: ${rem('280px')};
 `;
 
