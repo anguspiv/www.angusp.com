@@ -104,6 +104,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.6",
     "eslint-plugin-testing-library": "^5.0.4",
+    "gatsby-awesome-pagination": "^0.3.8",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "jest-axe": "^5.0.1",
