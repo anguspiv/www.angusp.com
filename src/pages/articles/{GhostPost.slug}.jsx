@@ -19,6 +19,7 @@ function Post({ data }) {
     og_image,
     reading_time,
     title,
+    tags,
   } = data.ghostPost || {};
 
   const seoTitle = meta_title || title;
@@ -45,6 +46,7 @@ function Post({ data }) {
         readingTime={reading_time}
         excerpt={excerpt}
         featuredImage={feature_image}
+        tags={tags}
       />
       <PageSection as="article" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
@@ -65,6 +67,13 @@ Post.propTypes = {
       reading_time: PropTypes.number,
       slug: PropTypes.string,
       title: PropTypes.string,
+      tags: PropTypes.arrayOf(
+        PropTypes.shape({
+          accent_color: PropTypes.string,
+          name: PropTypes.string,
+          slug: PropTypes.string,
+        }),
+      ),
     }),
   }),
 };
@@ -89,6 +98,11 @@ export const query = graphql`
       reading_time
       slug
       title
+      tags {
+        name
+        accent_color
+        slug
+      }
     }
   }
 `;
