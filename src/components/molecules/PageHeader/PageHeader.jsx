@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { up } from 'styled-breakpoints';
+import { rem } from 'polished';
+import Tags from '@components/molecules/Tags';
 
 const Header = styled.header`
   display: flex;
@@ -19,7 +21,7 @@ const Details = styled.div`
   order: 2;
   width: 100%;
   max-width: ${({ theme }) => theme.page.width};
-  margin: 0 auto ${({ theme }) => theme.headingsMarginBottom};
+  margin: 0 auto ${({ theme }) => theme.spacing(1)};
 `;
 
 const Title = styled.h1`
@@ -31,6 +33,17 @@ const Title = styled.h1`
   & + ${Details} {
     margin-top: calc(0.25rem - ${({ theme }) => theme.headingsMarginBottom});
   }
+`;
+
+const TagsWrapper = styled.div`
+  order: 2;
+  width: 100%;
+  max-width: ${({ theme }) => theme.page.width};
+  margin: 0 auto ${({ theme }) => theme.spacing(3)};
+`;
+
+const HeaderTags = styled(Tags)`
+  max-width: ${rem(300)};
 `;
 
 const Detail = styled.span`
@@ -83,7 +96,7 @@ const Image = styled.img`
   margin-bottom: 0;
 `;
 
-function PageHeader({ title, publishDate, readingTime, excerpt, featuredImage, imageFirst }) {
+function PageHeader({ title, publishDate, readingTime, excerpt, featuredImage, imageFirst, tags }) {
   const hasDetails = !!(publishDate || readingTime);
 
   return (
@@ -94,6 +107,11 @@ function PageHeader({ title, publishDate, readingTime, excerpt, featuredImage, i
           {publishDate && <PublishedAt>{publishDate}</PublishedAt>}
           {!!readingTime && <ReadTime>Reading Time: {readingTime} min.</ReadTime>}
         </Details>
+      )}
+      {!!tags && (
+        <TagsWrapper>
+          <HeaderTags tags={tags} />
+        </TagsWrapper>
       )}
       {excerpt && <Excerpt>{excerpt}</Excerpt>}
       {featuredImage && (
@@ -112,6 +130,7 @@ PageHeader.propTypes = {
   publishDate: PropTypes.string,
   readingTime: PropTypes.number,
   title: PropTypes.node,
+  tags: Tags.propTypes.tags,
 };
 
 PageHeader.defaultProps = {
@@ -121,6 +140,7 @@ PageHeader.defaultProps = {
   publishDate: null,
   readingTime: null,
   title: null,
+  tags: [],
 };
 
 export default PageHeader;

@@ -96,4 +96,32 @@ describe('<PageHeader />', () => {
 
     expect(results).toHaveNoViolations();
   });
+
+  it('should render the tags', async () => {
+    expect.assertions(1);
+
+    const tags = [
+      {
+        color: '#ff0000',
+        name: 'Test Tag 1',
+        slug: 'test-tag-1',
+      },
+      {
+        color: '#00ff00',
+        name: 'Test Tag 2',
+        slug: 'test-tag-2',
+      },
+    ];
+
+    const { getByText } = setupPageHeader({
+      title: 'Test Header Text',
+      excerpt: 'Test excerpt text for the page header',
+      featuredImage: 'https://via.placeholder.com/300x200',
+      readingTime: 7,
+      publishDate: '2020-01-01',
+      tags,
+    });
+
+    expect(getByText(tags[0].name)).toBeInTheDocument();
+  });
 });
