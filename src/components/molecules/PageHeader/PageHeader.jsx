@@ -10,7 +10,7 @@ const Header = styled.header`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: ${({ theme }) => theme.headingsMarginBottom};
+  margin-bottom: ${({ theme }) => theme.headingsMarginBottom};
 `;
 
 const Details = styled.div`
@@ -28,11 +28,7 @@ const Title = styled.h1`
   order: 2;
   width: 100%;
   max-width: ${({ theme }) => theme.page.width};
-  margin: 0 auto ${({ theme }) => theme.headingsMarginBottom};
-
-  & + ${Details} {
-    margin-top: calc(0.25rem - ${({ theme }) => theme.headingsMarginBottom});
-  }
+  margin: 0 auto ${({ theme }) => theme.spacing(1)};
 `;
 
 const TagsWrapper = styled.div`
@@ -108,7 +104,7 @@ function PageHeader({ title, publishDate, readingTime, excerpt, featuredImage, i
           {!!readingTime && <ReadTime>Reading Time: {readingTime} min.</ReadTime>}
         </Details>
       )}
-      {!!tags && (
+      {!!tags && !!tags.length && (
         <TagsWrapper>
           <HeaderTags tags={tags} />
         </TagsWrapper>
