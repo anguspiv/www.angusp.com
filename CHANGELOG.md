@@ -1,3 +1,21 @@
+# [1.23.0](https://github.com/anguspiv/www.angusp.com/compare/v1.22.0...v1.23.0) (2022-02-07)
+
+
+### Bug Fixes
+
+* **page-header:** adjusts spacing for no tags ([dbdf17f](https://github.com/anguspiv/www.angusp.com/commit/dbdf17f9037d4fcc67b28107843e7f2e7bd1bdde))
+
+
+### Features
+
+* adds tags component ([b3fad0d](https://github.com/anguspiv/www.angusp.com/commit/b3fad0dc45396747d00775416a5ecd175c2fd4b4))
+* adds tags pages ([adce800](https://github.com/anguspiv/www.angusp.com/commit/adce800be93012527f031f4a00afd949b39cdf6d)), closes [#92](https://github.com/anguspiv/www.angusp.com/issues/92) [#91](https://github.com/anguspiv/www.angusp.com/issues/91)
+* adds the tag component ([3667f60](https://github.com/anguspiv/www.angusp.com/commit/3667f60f6d8f45cf7d4f45535789a65fff9b8478))
+* adds the tags index page ([b561ce9](https://github.com/anguspiv/www.angusp.com/commit/b561ce9290fc2892a6aa2d0cc2564466751a8935))
+* **articles-page:** adds tags to article header ([a96b6db](https://github.com/anguspiv/www.angusp.com/commit/a96b6dbe0d68c6f03e01d06adc35d9e35c4f2614))
+* **page-header:** adds the tags section ([41b1bdd](https://github.com/anguspiv/www.angusp.com/commit/41b1bddf6ad97629064b8be19ea1351c1413f17e)), closes [#111](https://github.com/anguspiv/www.angusp.com/issues/111)
+* **tags:** adds colors to the tags list ([696ae5a](https://github.com/anguspiv/www.angusp.com/commit/696ae5a3036ed07fe16391f491f2d249bc7c6590))
+
 # [1.22.0](https://github.com/anguspiv/www.angusp.com/compare/v1.21.0...v1.22.0) (2022-02-05)
 
 
