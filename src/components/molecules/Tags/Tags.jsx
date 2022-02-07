@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Tag from '../../atoms/Tag';
+import Tag from '@components/atoms/Tag';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,9 +12,17 @@ const Wrapper = styled.div`
 function Tags({ className, tags }) {
   return (
     <Wrapper className={className}>
-      {tags.map(({ color, name, slug }) => (
-        <Tag key={slug} color={color} name={name} slug={slug} />
-      ))}
+      {tags.map(
+        ({
+          // eslint-disable-next-line camelcase
+          accent_color,
+          name,
+          slug,
+        }) => (
+          // eslint-disable-next-line camelcase
+          <Tag key={slug} color={accent_color} name={name} slug={slug} />
+        ),
+      )}
     </Wrapper>
   );
 }
