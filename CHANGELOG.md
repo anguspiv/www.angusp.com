@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/anguspiv/www.angusp.com/compare/v1.25.0...v1.26.0) (2022-02-08)
+
+
+### Features
+
+* adds ga tracking to the site ([3c3d304](https://github.com/anguspiv/www.angusp.com/commit/3c3d3042471dcc5c175cd50022352059b193d022)), closes [#71](https://github.com/anguspiv/www.angusp.com/issues/71)
+
 # [1.25.0](https://github.com/anguspiv/www.angusp.com/compare/v1.24.0...v1.25.0) (2022-02-08)
 
 
