@@ -11,7 +11,7 @@ import Pagination from '@components/molecules/Pagination';
 import Divider from '@components/atoms/Divider';
 
 function Posts({ data, pageContext, location }) {
-  const { edges } = data.posts;
+  const { edges } = data.allGhostPost;
   const posts = edges.map(({ node }) => node);
   const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext;
 
@@ -20,7 +20,7 @@ function Posts({ data, pageContext, location }) {
       <SEO title="Articles - Angus Perkerson" />
       <PageHeader title="Articles" location={location} />
       <PageSection>
-        <FeaturedArticle articles={posts} />
+        <FeaturedArticle />
         {!!posts.length && <ArticleList articles={posts} title="Recent Articles" />}
         {numberOfPages > 1 && (
           <>
@@ -39,7 +39,7 @@ function Posts({ data, pageContext, location }) {
 
 Posts.propTypes = {
   data: PropTypes.shape({
-    posts: PropTypes.shape({
+    allGhostPost: PropTypes.shape({
       edges: ArticleList.propTypes.articles,
     }),
   }),
@@ -65,7 +65,7 @@ export default Posts;
 
 export const query = graphql`
   query postsQuery($skip: Int!, $limit: Int!, $featuredId: String!) {
-    posts: allGhostPost(
+    allGhostPost(
       sort: { fields: created_at, order: DESC }
       limit: $limit
       skip: $skip
