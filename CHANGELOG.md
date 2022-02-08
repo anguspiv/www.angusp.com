@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/anguspiv/www.angusp.com/compare/v1.24.0...v1.25.0) (2022-02-08)
+
+
+### Features
+
+* **home-page:** adds the recent articles ([bcfc3b2](https://github.com/anguspiv/www.angusp.com/commit/bcfc3b27d7822b29e54216f802f59ad9ac526d84)), closes [#85](https://github.com/anguspiv/www.angusp.com/issues/85)
+
 # [1.24.0](https://github.com/anguspiv/www.angusp.com/compare/v1.23.0...v1.24.0) (2022-02-08)
 
 
