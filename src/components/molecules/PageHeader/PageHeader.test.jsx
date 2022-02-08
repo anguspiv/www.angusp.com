@@ -124,4 +124,16 @@ describe('<PageHeader />', () => {
 
     expect(getByText(tags[0].name)).toBeInTheDocument();
   });
+
+  it('should render the breadcrumbs', () => {
+    expect.assertions(1);
+
+    const location = {
+      pathname: '/test-path',
+    };
+
+    const { getByRole } = setupPageHeader({ location });
+
+    expect(getByRole('link', { name: 'Test Path' })).toHaveAttribute('href', '/test-path');
+  });
 });
