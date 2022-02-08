@@ -1,34 +1,37 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { get } from 'lodash';
 import Layout from '@components/templates/Layout';
 import SEO from '@components/organisms/SEO';
-import PageHeader from '@components/molecules/PageHeader';
 import PageSection from '@components/atoms/PageSection';
+import ArticleList from '@components/organisms/ArticleList';
 
 function HomePage({ data }) {
-  const { title, html, meta_title, meta_description, og_image } = data.ghostPage || {};
+  const edges = get(data, 'allGhostPost.edges', []);
+  const posts = edges.map(({ node }) => node);
 
   return (
     <Layout>
-      <SEO title={meta_title} description={meta_description} image={og_image} />
-      <PageHeader title={title} />
-      <PageSection as="article" dangerouslySetInnerHTML={{ __html: html }} />
+      <SEO />
+      <PageSection>
+        <h1>Hi I&apos;m Angus!</h1>
+        <p>
+          I&apos;m a software engineer based in Los Angeles, CA. I specialize in web applications
+          and the JavaScript ecosystem. Feel free to learn more <Link to="/about">about me</Link>,{' '}
+          check out <Link to="/resume">my resume</Link> or read some of my{' '}
+          <Link to="/articles">articles</Link>.
+        </p>
+      </PageSection>
+      <ArticleList articles={posts} title="Recent Articles" />
     </Layout>
   );
 }
 
 HomePage.propTypes = {
   data: PropTypes.shape({
-    ghostPage: PropTypes.shape({
-      title: PropTypes.string,
-      feature_image: PropTypes.string,
-      html: PropTypes.string,
-      meta_title: PropTypes.string,
-      meta_description: PropTypes.string,
-      og_image: PropTypes.string,
-    }),
+    allGhostPost: PropTypes.shape({}),
   }),
 };
 
@@ -39,14 +42,18 @@ HomePage.defaultProps = {
 export default HomePage;
 
 export const query = graphql`
-  {
-    ghostPage(slug: { eq: "home" }) {
-      title
-      feature_image
-      html
-      meta_title
-      meta_description
-      og_image
+  query homePostsQuery {
+    allGhostPost(sort: { fields: created_at, order: DESC }, limit: 10) {
+      edges {
+        node {
+          id
+          created_at(formatString: "MMMM DD, YYYY")
+          excerpt
+          reading_time
+          slug
+          title
+        }
+      }
     }
   }
 `;
