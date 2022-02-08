@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { rem } from 'polished';
 import Tags from '@components/molecules/Tags';
+import BreadCrumbs from '@components/molecules/BreadCrumbs';
 
 const Header = styled.header`
   display: flex;
@@ -92,12 +93,33 @@ const Image = styled.img`
   margin-bottom: 0;
 `;
 
-function PageHeader({ title, publishDate, readingTime, excerpt, featuredImage, imageFirst, tags }) {
+const PageCrumbs = styled.div`
+  order: 2;
+  width: 100%;
+  max-width: ${({ theme }) => theme.page.width};
+  margin: 0 auto ${({ theme }) => theme.spacing(1)};
+`;
+
+function PageHeader({
+  excerpt,
+  featuredImage,
+  imageFirst,
+  location,
+  publishDate,
+  readingTime,
+  tags,
+  title,
+}) {
   const hasDetails = !!(publishDate || readingTime);
 
   return (
     <Header>
       <Title>{title}</Title>
+      {!!location?.pathname && (
+        <PageCrumbs>
+          <BreadCrumbs location={location} />
+        </PageCrumbs>
+      )}
       {hasDetails && (
         <Details>
           {publishDate && <PublishedAt>{publishDate}</PublishedAt>}
@@ -123,20 +145,25 @@ PageHeader.propTypes = {
   excerpt: PropTypes.node,
   featuredImage: PropTypes.string,
   imageFirst: PropTypes.bool,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }),
   publishDate: PropTypes.string,
   readingTime: PropTypes.number,
-  title: PropTypes.node,
   tags: Tags.propTypes.tags,
+  title: PropTypes.node,
 };
 
 PageHeader.defaultProps = {
   excerpt: null,
   featuredImage: null,
   imageFirst: false,
+  location: null,
   publishDate: null,
   readingTime: null,
-  title: null,
   tags: [],
+  title: null,
 };
 
 export default PageHeader;
