@@ -10,7 +10,7 @@ import ArticleList from '@components/organisms/ArticleList';
 import Pagination from '@components/molecules/Pagination';
 import Divider from '@components/atoms/Divider';
 
-function TagPosts({ data, pageContext }) {
+function TagPosts({ data, pageContext, location }) {
   const edges = get(data, 'allGhostPost.edges', []);
   const { name, description } = get(data, 'ghostTag', {});
 
@@ -20,7 +20,7 @@ function TagPosts({ data, pageContext }) {
   return (
     <Layout>
       <SEO title={`Tags - ${name} - Angus Perkerson`} />
-      <PageHeader title={name} excerpt={description} />
+      <PageHeader title={name} excerpt={description} location={location} />
       <PageSection>
         {!!posts.length && <ArticleList articles={posts} />}
         {numberOfPages > 1 && (
@@ -51,9 +51,13 @@ TagPosts.propTypes = {
     humanPageNumber: PropTypes.number,
     tagId: PropTypes.string,
   }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
 };
 
 TagPosts.defaultProps = {
+  location: {},
   data: {},
   pageContext: {},
 };

@@ -10,7 +10,7 @@ import ArticleList from '@components/organisms/ArticleList';
 import Pagination from '@components/molecules/Pagination';
 import Divider from '@components/atoms/Divider';
 
-function Posts({ data, pageContext }) {
+function Posts({ data, pageContext, location }) {
   const { edges } = data.posts;
   const posts = edges.map(({ node }) => node);
   const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext;
@@ -18,7 +18,7 @@ function Posts({ data, pageContext }) {
   return (
     <Layout>
       <SEO title="Articles - Angus Perkerson" />
-      <PageHeader title="Articles" />
+      <PageHeader title="Articles" location={location} />
       <PageSection>
         <FeaturedArticle articles={posts} />
         {!!posts.length && <ArticleList articles={posts} title="Recent Articles" />}
@@ -49,11 +49,16 @@ Posts.propTypes = {
     numberOfPages: PropTypes.number,
     humanPageNumber: PropTypes.number,
   }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }),
 };
 
 Posts.defaultProps = {
   data: {},
   pageContext: {},
+  location: {},
 };
 
 export default Posts;
