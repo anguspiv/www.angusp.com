@@ -1,3 +1,12 @@
+# [1.24.0](https://github.com/anguspiv/www.angusp.com/compare/v1.23.0...v1.24.0) (2022-02-08)
+
+
+### Features
+
+* adds the breadcrumbs component ([55b81a5](https://github.com/anguspiv/www.angusp.com/commit/55b81a58b0e5d27e6ae2158208e19adc3e194bb3)), closes [#113](https://github.com/anguspiv/www.angusp.com/issues/113)
+* **page-header:** adds the breadcrumbs component ([e3ff1c9](https://github.com/anguspiv/www.angusp.com/commit/e3ff1c9390c43b36cab091bb95c9180c81f8cccb)), closes [#113](https://github.com/anguspiv/www.angusp.com/issues/113)
+* **posts:** adds the breadcrumbs to posts lists ([fefa944](https://github.com/anguspiv/www.angusp.com/commit/fefa944a59ee3fec39fbc3654e51564369727bfc)), closes [#113](https://github.com/anguspiv/www.angusp.com/issues/113)
+
 # [1.23.0](https://github.com/anguspiv/www.angusp.com/compare/v1.22.0...v1.23.0) (2022-02-07)
 
 
