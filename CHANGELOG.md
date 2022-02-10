@@ -1,3 +1,15 @@
+# [1.27.0](https://github.com/anguspiv/www.angusp.com/compare/v1.26.0...v1.27.0) (2022-02-10)
+
+
+### Bug Fixes
+
+* **featured:** adds filter for featured to graphql ([d48e9ab](https://github.com/anguspiv/www.angusp.com/commit/d48e9ab22fedb822e7baf4a5da941cbf4e9a123b))
+
+
+### Features
+
+* **site-banner:** adds nav a11y settings ([499cefe](https://github.com/anguspiv/www.angusp.com/commit/499cefe686bdc79a04f540901bbc5fa269581b09))
+
 # [1.26.0](https://github.com/anguspiv/www.angusp.com/compare/v1.25.0...v1.26.0) (2022-02-08)
 
 
