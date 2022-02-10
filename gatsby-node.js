@@ -63,7 +63,11 @@ const createPostPages = async (graphql, actions) => {
   // Create Article Pagination
   const featured = await graphql(`
     {
-      allGhostPost(limit: 1, sort: { order: DESC, fields: created_at }) {
+      allGhostPost(
+        limit: 1
+        sort: { order: DESC, fields: created_at }
+        filter: { featured: { eq: true } }
+      ) {
         edges {
           node {
             id

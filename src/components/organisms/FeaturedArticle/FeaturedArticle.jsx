@@ -13,7 +13,11 @@ const Wrapper = styled.div`
 function FeaturedArticle() {
   const query = graphql`
     {
-      allGhostPost(limit: 1, sort: { order: DESC, fields: created_at }) {
+      allGhostPost(
+        limit: 1
+        sort: { order: DESC, fields: created_at }
+        filter: { featured: { eq: true } }
+      ) {
         edges {
           node {
             slug
