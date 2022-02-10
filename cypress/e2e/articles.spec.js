@@ -9,6 +9,6 @@ describe('Articles Page', () => {
   });
 
   it('should display the page title', () => {
-    cy.findByRole('heading', { name: /Articles/i }).should('exist');
+    cy.findByRole('heading', { name: 'Articles' }).should('exist');
   });
 });

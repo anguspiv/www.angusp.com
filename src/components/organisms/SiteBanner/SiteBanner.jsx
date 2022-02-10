@@ -183,7 +183,7 @@ function SiteBanner({ className }) {
           <FontAwesomeIcon transform="shrink-6" icon={faLinkedinIn} mask={faCircle} />
         </ProfileLink>
       </ProfileLinks>
-      <Nav>
+      <Nav role="navigation" aria-label="Main">
         <Menu>
           {navigation?.map(({ url, label }) => (
             <li key={url}>
