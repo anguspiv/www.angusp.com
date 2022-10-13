@@ -1,7 +1,7 @@
 {
   "branches": [
     {
-      "name": "master"
+      "name": "main"
     }
   ],
   "plugins": [
@@ -20,7 +20,7 @@
           "package.json",
           "package-lock.json",
           "CHANGELOG.md"
-        ],
+        ]
       }
     ]
   ],
