@@ -3,14 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-const nextJest = require('next/jest');
-
-const createJestConfig = nextJest({
-  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  dir: './',
-});
-
-const config = {
+module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -20,7 +13,7 @@ const config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/3r/k08bqdn54g11vpfjll2nvqjr0000gn/T/jest_dx",
 
-  // Automatically clear mock calls, instances, contexts and results before every test
+  // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
@@ -57,11 +50,6 @@ const config = {
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,
 
-  // The default configuration for fake timers
-  // fakeTimers: {
-  //   "enableGlobally": false
-  // },
-
   // Force coverage collection from ignored files using an array of glob patterns
   // forceCoverageMatch: [],
 
@@ -85,8 +73,6 @@ const config = {
   // An array of file extensions your modules use
   // moduleFileExtensions: [
   //   "js",
-  //   "mjs",
-  //   "cjs",
   //   "jsx",
   //   "ts",
   //   "tsx",
@@ -96,18 +82,16 @@ const config = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
-    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^@pages/(.*)$': '<rootDir>/pages/$1',
-    '^@styles/(.*)$': '<rootDir>/styles/$1',
-    '^@public/(.*)$': '<rootDir>/public/$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@styles(.*)$': '<rootDir>/src/styles$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
 
   // Activates notifications for test results
-  // notify: false,
+  notify: true,
 
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
@@ -148,7 +132,7 @@ const config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['./jest.setup.js'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -157,7 +141,7 @@ const config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -172,16 +156,7 @@ const config = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/.next/',
-    '/cypress/',
-    '/coverage/',
-    '/dist/',
-    '/docs/',
-    '/public/',
-    '/archived/',
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/cypress/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -192,8 +167,19 @@ const config = {
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
 
+  // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
+  // testURL: "http://localhost",
+
+  // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
+  // timers: "real",
+
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+    '^.+\\.(js|jsx)$': [
+      'babel-jest',
+      { presets: ['@babel/preset-react', ['@babel/preset-env', { targets: { node: 'current' } }]] },
+    ],
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -213,5 +199,3 @@ const config = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
-
-module.exports = createJestConfig(config);

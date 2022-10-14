@@ -1,37 +1,28 @@
-name: Build and Test
-
-on:
-  push:
-    branches-ignore:
-      - master
-
+name: Checks
+on: push
 env:
   FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
-  GHOST_API_URL: ${{secrets.GHOST_API_URL}}
-  GHOST_CONTENT_API_URL: ${{secrets.GHOST_CONTENT_API_URL}}
-
 jobs:
-  build-and-test:
-    name: Build and Test
+  lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-versions: [16]
-      fail-fast: true
     steps:
       - uses: actions/checkout@v2
-      - name: Use Nodes.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Setup Node
-        uses: actions/setup-node@v2
+          node-version: 16
+      - run: npm ci
+      - run: npm run lint
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - name: Install dependencies
-        run: npm install
-      - name: Lint
-        run: npm run lint
-      - name: Test
-        run: npm test
+          node-version: 16
+      - run: npm ci
+      - run: npm test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
