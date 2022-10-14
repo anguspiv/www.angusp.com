@@ -1,0 +1,37 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
+  GHOST_API_URL: ${{secrets.GHOST_API_URL}}
+  GHOST_CONTENT_API_URL: ${{secrets.GHOST_CONTENT_API_URL}}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-versions: [16]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

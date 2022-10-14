@@ -31,7 +31,6 @@ function HomePage({ data }) {
 
 HomePage.propTypes = {
   data: PropTypes.shape({
-    allGhostPost: PropTypes.shape({}),
   }),
 };
 
@@ -40,20 +39,3 @@ HomePage.defaultProps = {
 };
 
 export default HomePage;
-
-export const query = graphql`
-  query homePostsQuery {
-    allGhostPost(sort: { fields: created_at, order: DESC }, limit: 10) {
-      edges {
-        node {
-          id
-          created_at(formatString: "MMMM DD, YYYY")
-          excerpt
-          reading_time
-          slug
-          title
-        }
-      }
-    }
-  }
-`;
