@@ -112,23 +112,3 @@ Tags.defaultProps = {
 };
 
 export default Tags;
-
-export const query = graphql`
-  {
-    allGhostTag(filter: { visibility: { eq: "public" } }) {
-      edges {
-        node {
-          slug
-          description
-          color: accent_color
-          feature_image
-          name
-          postCount
-          url
-          id
-          ghostId
-        }
-      }
-    }
-  }
-`;

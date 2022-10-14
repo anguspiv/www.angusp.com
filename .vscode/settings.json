@@ -1,0 +1,12 @@
+{
+  "stylelint.snippet": ["css", "less", "postcss", "javascript", "javascriptreact"],
+  "typewriterScrollMode.enable": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#14562c",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1e7f41",
+    "statusBarItem.remoteBackground": "#14562c",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  },
+  "peacock.color": "#14562c"
+}

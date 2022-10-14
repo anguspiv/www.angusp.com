@@ -1,6 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-if [ ! $CI ]; then
-  npx lint-staged
-fi
+npx lint-staged
