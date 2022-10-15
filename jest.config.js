@@ -98,8 +98,8 @@ const config = {
   moduleNameMapper: {
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^@pages/(.*)$': '<rootDir>/pages/$1',
-    '^@styles/(.*)$': '<rootDir>/styles/$1',
+    '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@public/(.*)$': '<rootDir>/public/$1',
   },
 
