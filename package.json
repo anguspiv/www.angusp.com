@@ -11,7 +11,9 @@
     "release": "semantic-release",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
@@ -30,7 +32,9 @@
     "prop-types": "^15.8.1",
     "radash": "^7.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "typography": "^0.16.21",
+    "typography-plugin-code": "^0.16.20"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -41,6 +45,14 @@
     "@emotion/eslint-plugin": "^11.10.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/cypress": "^8.0.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
