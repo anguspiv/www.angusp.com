@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { colors, colorsCSS } from './colors';
 import { fonts, fontsCSS } from './fonts';
 import { elevation, elevationCSS } from './elevation';
-import { elementsCSS, text, link } from './elements';
+import { elementsCSS, text, link, page } from './elements';
 
 export const themeCSS = css`
   ${colorsCSS}
@@ -17,6 +17,7 @@ export const theme = {
   elevation,
   text,
   link,
+  page,
 };
 
 export default theme;

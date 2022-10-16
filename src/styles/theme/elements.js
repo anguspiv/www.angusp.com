@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { rem } from 'polished';
 import { colors } from './colors';
 
 export const link = {
@@ -40,7 +41,16 @@ export const textCSS = css`
   --text-color-muted: ${text.color.muted};
 `;
 
+export const page = {
+  width: rem(800),
+};
+
+export const pageCSS = css`
+  --page-width: ${page.width};
+`;
+
 export const elementsCSS = css`
   ${linkCSS}
   ${textCSS}
+  ${pageCSS}
 `;
