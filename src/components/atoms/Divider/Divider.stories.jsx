@@ -1,6 +1,5 @@
-import React from 'react';
 import { css } from '@emotion/react';
-import Divider from './Divider';
+import { Divider } from './Divider';
 
 export default {
   component: Divider,
