@@ -38,8 +38,8 @@ export const global = css`
     min-width: 100vw;
     background-color: var(--color-background-default);
     color: var(--color-text-default);
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
+    font-family: var(--fonts-family-base);
+    font-size: var(--fonts-size-base);
     line-heignt: 1.5;
     word-wrap: break-word;
   }

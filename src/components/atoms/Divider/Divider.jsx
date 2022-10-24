@@ -1,9 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
 
-function Divider({ vertical, width, height, color }) {
+export function Divider({ vertical, width, height, color, className }) {
   const { colors } = useTheme();
 
   const bgColor = color || colors?.gray;
@@ -28,10 +27,11 @@ function Divider({ vertical, width, height, color }) {
 
   styles.background = `linear-gradient(${deg}, ${transparent} 0%, ${opaque} 20%, ${opaque} 80%, ${transparent} 100%)`;
 
-  return <div css={styles} data-testid="divider" />;
+  return <div css={styles} className={className} data-testid="divider" />;
 }
 
 Divider.propTypes = {
+  className: PropTypes.string,
   color: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   vertical: PropTypes.bool,
@@ -39,6 +39,7 @@ Divider.propTypes = {
 };
 
 Divider.defaultProps = {
+  className: null,
   color: null,
   height: null,
   vertical: false,
