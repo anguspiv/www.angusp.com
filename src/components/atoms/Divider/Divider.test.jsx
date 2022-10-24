@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from '@styles/theme';
-import Divider from './Divider';
+import { Divider } from './Divider';
 
 describe('<Divider />', () => {
   const setupDivider = (props) =>
@@ -82,5 +82,15 @@ describe('<Divider />', () => {
       background:
         'linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 80%,rgba(255,255,255,0) 100%)',
     });
+  });
+
+  it('should set the className', () => {
+    expect.assertions(1);
+
+    const className = 'test-class';
+
+    setupDivider({ className });
+
+    expect(screen.getByTestId('divider')).toHaveClass(className);
   });
 });
