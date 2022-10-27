@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from '@emotion/react';
+import { rem } from 'polished';
 import { theme } from '@styles/theme';
 import { ArticleCard } from './ArticleCard';
 
@@ -26,7 +27,40 @@ describe('<ArticleCard />', () => {
     );
 
     expect(screen.getByText(title)).toBeInTheDocument();
-    expect(screen.getByText(excerpt)).toBeInTheDocument();
+    expect(screen.getByText(excerpt)).toHaveStyle({
+      fontSize: rem(12),
+    });
+    expect(screen.getByText(date)).toBeInTheDocument();
+    expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
+  });
+
+  it('renders a featured article card', () => {
+    expect.assertions(5);
+
+    const title = 'Test Title';
+    const excerpt = 'Test excerpt';
+    const date = '2021-01-01';
+    const readingTime = 1;
+    const slug = 'test-title';
+
+    render(
+      <ThemeProvider theme={theme}>
+        <ArticleCard
+          title={title}
+          excerpt={excerpt}
+          date={date}
+          readingTime={readingTime}
+          slug={slug}
+          featured
+        />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByText(title)).toBeInTheDocument();
+    expect(screen.getByText(excerpt)).toHaveStyle({
+      fontSize: rem(14),
+    });
     expect(screen.getByText(date)).toBeInTheDocument();
     expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
     expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
