@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { rem } from 'polished';
 import { spacing } from '@styles/utils';
-import Divider from '@components/atoms/Divider';
+import { Divider } from '@components/atoms/Divider';
 
 export function SectionTitle({ children, className }) {
   return (
