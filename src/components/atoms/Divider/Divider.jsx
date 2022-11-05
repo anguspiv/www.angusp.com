@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
+import { theme } from '@styles/theme';
+
+const { colors } = theme;
 
 export function Divider({ vertical, width, height, color, className }) {
-  const { colors } = useTheme();
-
   const bgColor = color || colors?.gray;
 
   const styles = {

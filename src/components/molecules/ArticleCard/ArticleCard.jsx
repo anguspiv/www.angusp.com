@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 import Link from 'next/link';
 import { rem } from 'polished';
 import { media, spacing } from '@styles/utils';
 import { Container } from '@components/atoms/Container';
 import { Divider } from '@components/atoms/Divider';
+import { theme } from '@styles/theme';
 
 export function ArticleCard({ date, excerpt, featured, readingTime, slug, title }) {
-  const theme = useTheme();
-
   const detail = css`
     margin-bottom: 0;
     font-size: ${featured ? rem('14px') : rem('12px')};
