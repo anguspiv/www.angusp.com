@@ -24,6 +24,9 @@ module.exports = {
       files: ['**/*.test.js?(x)', './__tests__/**/*.js?(x)'],
       plugins: ['jest', 'testing-library', 'jest-dom'],
       extends: ['plugin:testing-library/react', 'plugin:jest-dom/recommended', 'plugin:jest/all'],
+      rules: {
+        'jest/max-expects': 'off',
+      },
     },
     {
       files: ['**/*.cy.js?(x)', './cypress/**/*.js?(x)', './cypress.config.js'],
