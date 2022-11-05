@@ -24,9 +24,9 @@ Default.args = {
   featuredImage: 'https://via.placeholder.com/1200x800',
   excerpt: 'Test excerpt text for the page header',
   tags: [
-    { name: 'Career', slug: 'career' },
-    { name: 'Technology', slug: 'technology' },
-    { name: 'JavaScript', slug: 'javascript' },
-    { name: 'PokerMans', slug: 'pokermans' },
+    { label: 'Career', slug: 'career' },
+    { label: 'Technology', slug: 'technology' },
+    { label: 'JavaScript', slug: 'javascript' },
+    { label: 'PokerMans', slug: 'pokermans' },
   ],
 };
