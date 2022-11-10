@@ -12,7 +12,7 @@ export function Avatar({ className, width, height, ...props }) {
 
 Avatar.propTypes = {
   ...Image.propTypes,
-  src: PropTypes.oneOfType([PropTypes.string, PropTypes.shape]).isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]).isRequired,
   className: PropTypes.string,
 };
 
