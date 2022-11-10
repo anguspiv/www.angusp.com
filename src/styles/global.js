@@ -37,7 +37,7 @@ export const global = css`
     min-height: 100vh;
     min-width: 100vw;
     background-color: var(--color-background-default);
-    color: var(--color-text-default);
+    color: var(--text-color-default);
     font-family: var(--fonts-family-base);
     font-size: var(--fonts-size-base);
     line-heignt: 1.5;
@@ -63,6 +63,11 @@ export const global = css`
 
   a:hover {
     color: var(--link-color-hover);
+  }
+
+  code,
+  pre {
+    font-family: var(--fonts-family-monospace);
   }
 `;
 
