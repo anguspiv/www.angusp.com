@@ -50,7 +50,7 @@ const headerCss = css`
   }
 
   ${media.lg} {
-    padding: 20vh ${spacing(4)};
+    padding: ${spacing(4)};
 
     &:after {
       position: absolute;
@@ -130,7 +130,9 @@ export function SiteBanner({ className }) {
         <Avatar src={image} css={avatarCss} />
       </Link>
       <span css={titleCss}>Angus Perkerson</span>
-      <p css={subtitleCss}>Software Engineer specializing in Web and Applicaton development.</p>
+      <p css={subtitleCss}>
+        Software Engineer and Manager specializing in Web Applicaton development.
+      </p>
       <a
         href="mailto:angusp@angusp.com"
         aria-label="Email angusp@angusp.com"
