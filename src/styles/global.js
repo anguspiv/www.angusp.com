@@ -46,22 +46,23 @@ export const global = css`
 
   a {
     background-color: transparent;
-    color: var(--color-link-default);
-    text-decoration: underline;
+    color: var(--link-color-default);
+    text-decoration: none;
     transition: color 0.2s ease-in-out;
   }
 
   a:active,
   a:hover {
     outline-width: 0;
+    text-decoration: underline;
   }
 
   a:visted {
-    color: var(--color-link-visited);
+    color: var(--link-color-visited);
   }
 
   a:hover {
-    color: var(--color-link-hover);
+    color: var(--link-color-hover);
   }
 `;
 

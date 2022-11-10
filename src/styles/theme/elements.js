@@ -16,7 +16,7 @@ export const link = {
 };
 
 export const linkCSS = css`
-  --link-color-default: ${link.color.defaault};
+  --link-color-default: ${link.color.default};
   --link-color-visited: ${link.color.visited};
   --link-color-hover: ${link.color.hover};
   --link-color-light: ${link.color.defaault};
