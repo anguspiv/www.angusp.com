@@ -12,7 +12,7 @@ describe('<SiteBanner />', () => {
     expect(screen.getByRole('img')).toBeInTheDocument();
     expect(screen.getByText('Angus Perkerson')).toBeInTheDocument();
     expect(
-      screen.getByText('Software Engineer specializing in Web and Applicaton development.'),
+      screen.getByText('Software Engineer and Manager specializing in Web Applicaton development.'),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Email angusp@angusp.com' })).toHaveAttribute(
       'href',
