@@ -26,11 +26,12 @@ export function TagList({ className, tags }) {
 
 TagList.propTypes = {
   className: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.shape(Tag.propTypes)).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.shape(Tag.propTypes)),
 };
 
 TagList.defaultProps = {
   className: '',
+  tags: [],
 };
 
 export default TagList;
