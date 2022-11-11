@@ -28,7 +28,7 @@ const detailsCss = css`
   order: 2;
   width: 100%;
   max-width: var(--page-width);
-  margin: 0 auto ${spacing(1)};
+  margin: 0 auto;
 `;
 
 const detailCss = css`
