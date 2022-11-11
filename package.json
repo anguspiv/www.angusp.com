@@ -30,6 +30,7 @@
     "@mdx-js/react": "^2.1.5",
     "@next/mdx": "^13.0.2",
     "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
     "emotion-normalize": "^11.0.1",
     "gray-matter": "^4.0.3",
     "next": "^12.3.3",
@@ -38,6 +39,8 @@
     "radash": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
     "typography": "^0.16.21",
     "typography-plugin-code": "^0.16.20"
   },

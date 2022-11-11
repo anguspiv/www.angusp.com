@@ -1,4 +1,9 @@
 module.exports = {
+  globals: {
+    node: true,
+    browser: true,
+    es6: true,
+  },
   extends: ['next/core-web-vitals', 'airbnb', 'airbnb/hooks', 'prettier'],
   plugins: ['prettier', '@emotion'],
   rules: {
