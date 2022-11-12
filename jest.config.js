@@ -100,6 +100,9 @@ const config = {
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@public/(.*)$': '<rootDir>/public/$1',
     '^@lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    '^@context/(.*)$': '<rootDir>/src/context/$1',
+    '^@constants/(.*)$': '<rootDir>/src/constants/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

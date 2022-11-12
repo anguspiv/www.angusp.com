@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
+import { CMS_HOST } from '@constants/hosts';
 import { getPostBySlug, getAllPosts } from '@lib/api';
 import { markdownToHtml } from '@lib/markdownToHtml';
 import { SEO } from '@components/organisms/SEO';
@@ -13,12 +14,17 @@ export default function Post({ post }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const { title, date, content, tags, excerpt } = post;
+  const { title, date, content, tags, excerpt, featuredImage, ogImage } = post;
 
   return (
     <article>
-      <SEO title={title} description={excerpt} />
-      <PageHeader title={title} publishDate={date} tags={tags} />
+      <SEO title={title} description={excerpt} image={`${CMS_HOST}${ogImage}`} />
+      <PageHeader
+        title={title}
+        publishDate={date}
+        tags={tags}
+        featuredImage={`${CMS_HOST}${featuredImage}`}
+      />
       <Container>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -33,9 +39,10 @@ Post.propTypes = {
     slug: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-    excerpt: PropTypes.string.isRequired,
+    featuredImage: PropTypes.string,
+    ogImage: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    excerpt: PropTypes.string,
   }).isRequired,
 };
 
@@ -46,7 +53,8 @@ export async function getStaticProps({ params }) {
     'slug',
     'content',
     'excerpt',
-    'image',
+    'featuredImage',
+    'ogImage',
     'tags',
   ]);
   const content = await markdownToHtml(post.content || '');
