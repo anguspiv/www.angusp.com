@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { SITE_HOST } from '@constants/hosts';
 
 export function SEO({ description, image, title }) {
   const { asPath, isReady } = useRouter();
-  const DEPLOY_URL = process.env.DEPLOY_URL || 'http://localhost:3000';
 
   return (
     <Head>
@@ -25,7 +25,7 @@ export function SEO({ description, image, title }) {
 
       {/* Open Graph */}
       <meta property="og:type" content="website" key="og:type" />
-      {isReady && <meta property="og:url" content={`${DEPLOY_URL}${asPath}`} key="og:url" />}
+      {isReady && <meta property="og:url" content={`${SITE_HOST}${asPath}`} key="og:url" />}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" key="twitter:card" />
