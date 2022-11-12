@@ -13,6 +13,12 @@ jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }));
 
+jest.mock('@constants/hosts', () => ({
+  __esModule: true,
+  SITE_HOST: 'http://www.example.com',
+  CMS_HOST: 'http://www.example.com',
+}));
+
 const getMetaByNameQuery = (container, name) => container.querySelector(`meta[name="${name}"]`);
 
 const getMetaByPropertyQuery = (container, property) =>
@@ -42,11 +48,9 @@ describe('<SEO />', () => {
 
     setup();
 
-    process.env.DEPLOY_URL = 'https://example.com';
-
     const title = 'Test Title';
     const description = 'Test Description';
-    const image = 'https://example.com/image.png';
+    const image = '/image.png';
 
     useRouter.mockReturnValue({
       asPath: '/test',
@@ -65,7 +69,7 @@ describe('<SEO />', () => {
     expect(getMetaByProperty('og:image')).toHaveAttribute('content', image);
     expect(getMetaByName('twitter:image')).toHaveAttribute('content', image);
     expect(getMetaByProperty('og:type')).toHaveAttribute('content', 'website');
-    expect(getMetaByProperty('og:url')).toHaveAttribute('content', 'https://example.com/test');
+    expect(getMetaByProperty('og:url')).toHaveAttribute('content', 'http://www.example.com/test');
     expect(getMetaByName('twitter:card')).toHaveAttribute('content', 'summary');
     expect(getMetaByName('twitter:site')).toHaveAttribute('content', '@angusp');
     expect(getMetaByName('twitter:creator')).toHaveAttribute('content', '@angusp');
@@ -87,7 +91,7 @@ describe('<SEO />', () => {
 
     const { getMetaByProperty } = setupSEO();
 
-    expect(getMetaByProperty('og:url')).toHaveAttribute('content', 'http://localhost:3000/test');
+    expect(getMetaByProperty('og:url')).toHaveAttribute('content', 'http://www.example.com/test');
 
     teardown();
   });

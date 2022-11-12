@@ -17,13 +17,7 @@ describe('<PageHeader />', () => {
         location={location}
         publishDate="Dec. 2, 2010"
         readingTime={10}
-        tags={[
-          {
-            label: 'Test Tag',
-            slug: 'test-tag',
-            color: '#ff0000',
-          },
-        ]}
+        tags={['Test Tag']}
         excerpt={excerpt}
         featuredImage="https://via.placeholder.com/300"
       />,
@@ -59,13 +53,7 @@ describe('<PageHeader />', () => {
         location={location}
         publishDate="Dec. 2, 2010"
         readingTime={10}
-        tags={[
-          {
-            label: 'Test Tag',
-            slug: 'test-tag',
-            color: '#ff0000',
-          },
-        ]}
+        tags={['Test Tag']}
         excerpt={excerpt}
         featuredImage="https://via.placeholder.com/300"
         variant="imageTop"
