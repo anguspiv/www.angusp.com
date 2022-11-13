@@ -109,7 +109,7 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
                 {date}
               </p>
             )}
-            {readingTime && (
+            {!!readingTime && (
               <p
                 css={css`
                   ${detail}
