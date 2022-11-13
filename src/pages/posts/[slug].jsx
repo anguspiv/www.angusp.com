@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
+import { css } from '@emotion/react';
 import { CMS_HOST } from '@constants/hosts';
 import { getPostBySlug, getAllPosts } from '@lib/api';
 import { markdownToHtml } from '@lib/markdownToHtml';
@@ -26,8 +27,16 @@ export default function Post({ post }) {
         featuredImage={`${CMS_HOST}${featuredImage}`}
       />
       <Container>
-        {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div
+          css={css`
+            & img {
+              margin: 0 auto;
+              width: 100%;
+            }
+          `}
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </Container>
     </article>
   );
