@@ -27,9 +27,9 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
   const formattedDate = formatDate(date);
 
   return (
-    <Link href={`/articles/${slug}`} passHref>
+    <Link href={`/posts/${slug}`} passHref>
       <a
-        href={`/articles/${slug}`}
+        href={`/posts/${slug}`}
         data-testid="article-card"
         css={css`
           display: flex;
