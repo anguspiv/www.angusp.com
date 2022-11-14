@@ -38,7 +38,7 @@ const detailCss = css`
 
 const readingTimeCss = css`
   ${detailCss}
-  color: var(--text-muted);
+  color: var(--text-color-muted);
   font-style: italic;
 `;
 
