@@ -12,10 +12,10 @@ export const fonts = {
 };
 
 export const fontsCSS = css`
-  --fonts-family-sans-serif: ${fonts.family.sansSerif};
-  --fonts-family-monospace: ${fonts.family.monospace};
-  --fonts-family-base: ${fonts.family.base};
-  --fonts-size-base: ${fonts.size.base};
+  --font-family-sans-serif: ${fonts.family.sansSerif};
+  --font-family-monospace: ${fonts.family.monospace};
+  --font-family-base: ${fonts.family.base};
+  --font-size-base: ${fonts.size.base};
 `;
 
 export default fonts;
