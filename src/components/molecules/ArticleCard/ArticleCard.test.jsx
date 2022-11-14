@@ -32,7 +32,7 @@ describe('<ArticleCard />', () => {
     });
     expect(screen.getByText('Jan. 1st, 2021')).toBeInTheDocument();
     expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
-    expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
+    expect(screen.getByRole('link')).toHaveAttribute('href', `/posts/${slug}`);
   });
 
   it('renders a featured article card', () => {
@@ -63,6 +63,6 @@ describe('<ArticleCard />', () => {
     });
     expect(screen.getByText('Jan. 1st, 2021')).toBeInTheDocument();
     expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
-    expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
+    expect(screen.getByRole('link')).toHaveAttribute('href', `/posts/${slug}`);
   });
 });
