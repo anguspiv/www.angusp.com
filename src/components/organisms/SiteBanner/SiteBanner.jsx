@@ -20,8 +20,8 @@ const navLinks = [
     label: 'About',
   },
   {
-    href: '/articles',
-    label: 'Articles',
+    href: '/posts',
+    label: 'Posts',
   },
   {
     href: '/resume',
