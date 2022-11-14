@@ -35,11 +35,12 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          margin-bottom: ${spacing(2)};
+          margin: 0 auto ${spacing(2)};
           color: ${theme.text.color.default};
           cursor: pointer;
           transition: all 0.2s ease-in-out;
           text-decoration: none;
+          max-width: var(--page-width);
 
           &:hover {
             color: ${theme.text.color.default};
