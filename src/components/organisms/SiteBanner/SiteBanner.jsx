@@ -115,7 +115,7 @@ const menuCss = css`
   list-style: none;
 
   & > li {
-    margin: ${spacing(1)};
+    margin: ${spacing(0.5)} ${spacing(1)};
     flex: 0 0 auto;
   }
 
