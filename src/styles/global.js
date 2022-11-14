@@ -12,12 +12,17 @@ const typography = new Typography({
   plugins: [new CodePlugin()],
 });
 
+const typographyCSS = typography.toString();
+
 export const global = css`
   ${normalize}
 
   :root {
     ${themeCSS}
   }
+
+  /* Typography.js styles */
+  ${typographyCSS}
 
   html {
     box-sizing: border-box;
@@ -28,8 +33,6 @@ export const global = css`
     box-sizing: inherit;
   }
 
-  ${typography.toString()}
-
   html,
   body {
     padding: 0;
@@ -38,10 +41,6 @@ export const global = css`
     min-width: 100vw;
     background-color: var(--color-background-default);
     color: var(--text-color-default);
-    font-family: var(--fonts-family-base);
-    font-size: var(--fonts-size-base);
-    line-heignt: 1.5;
-    word-wrap: break-word;
   }
 
   a {
@@ -67,7 +66,7 @@ export const global = css`
 
   code,
   pre {
-    font-family: var(--fonts-family-monospace);
+    font-family: var(--font-family-monospace);
   }
 `;
 
