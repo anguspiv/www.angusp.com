@@ -1,52 +1,51 @@
-import Image from 'next/image';
+import { PropTypes } from 'prop-types';
+import Link from 'next/link';
+import { getAllPosts } from '@lib/api';
+import { Container } from '@components/atoms/Container';
+import { PageHeader } from '@components/molecules/PageHeader';
+import { ArticleList } from '@components/organisms/ArticleList';
 
-export default function Home() {
+function Home({ posts }) {
   return (
-    <div>
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
+    <>
+      <PageHeader title="Hi, I'm Angus!" />
+      <Container>
         <p>
-          Get started by editing <code>pages/index.js</code>
+          I&app;m a software engineer and manager based in Los Angeles, CA. I specialize in web
+          applications and the JavaScript ecosystem. Feel free to learn more{' '}
+          <Link href="/about">about me</Link>, check out my <Link href="/resume">resume</Link> or
+          read some of my <Link href="/posts">posts</Link>.
         </p>
-
-        <div>
-          <a href="https://nextjs.org/docs">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/canary/examples">
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            <h2>Deploy &rarr;</h2>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      </Container>
+      {posts.length > 0 && <ArticleList articles={posts} title="Recent Posts" />}
+    </>
   );
 }
+
+Home.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.string,
+      excerpt: PropTypes.string,
+      featured: PropTypes.bool,
+      readingTime: PropTypes.number,
+      slug: PropTypes.string,
+      title: PropTypes.string,
+    }),
+  ),
+};
+
+Home.defaultProps = {
+  posts: [],
+};
+
+export const getStaticProps = async () => {
+  const posts = await getAllPosts(['title', 'date', 'excerpt', 'tags', 'slug']);
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+export default Home;
