@@ -30,7 +30,7 @@ describe('<ArticleCard />', () => {
     expect(screen.getByText(excerpt)).toHaveStyle({
       fontSize: rem(12),
     });
-    expect(screen.getByText(date)).toBeInTheDocument();
+    expect(screen.getByText('Jan. 1st, 2021')).toBeInTheDocument();
     expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
     expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
   });
@@ -61,7 +61,7 @@ describe('<ArticleCard />', () => {
     expect(screen.getByText(excerpt)).toHaveStyle({
       fontSize: rem(14),
     });
-    expect(screen.getByText(date)).toBeInTheDocument();
+    expect(screen.getByText('Jan. 1st, 2021')).toBeInTheDocument();
     expect(screen.getByText(`${readingTime} min. read`)).toBeInTheDocument();
     expect(screen.getByRole('link')).toHaveAttribute('href', `/articles/${slug}`);
   });
