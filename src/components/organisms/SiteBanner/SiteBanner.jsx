@@ -81,6 +81,7 @@ const subtitleCss = css`
   display: block;
   margin: 0 auto ${spacing(1)} auto;
   font-size: ${rem('18px')};
+  font-style: italic;
 `;
 
 const emailCss = css`
