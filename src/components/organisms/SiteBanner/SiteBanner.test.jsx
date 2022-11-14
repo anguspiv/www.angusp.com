@@ -34,7 +34,7 @@ describe('<SiteBanner />', () => {
     expect(screen.getByRole('navigation', { name: 'Main' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
     expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
-    expect(screen.getByRole('link', { name: 'Articles' })).toHaveAttribute('href', '/articles');
+    expect(screen.getByRole('link', { name: 'Posts' })).toHaveAttribute('href', '/posts');
     expect(screen.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/resume');
   });
 });
