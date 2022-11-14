@@ -29,7 +29,6 @@ const pageCss = css`
 const headerWrapperCss = css`
   position: relative;
   grid-area: header;
-  min-height: 100vh;
 `;
 
 const headerContentCss = css`
@@ -39,7 +38,8 @@ const headerContentCss = css`
     position: sticky;
     justify-content: center;
     top: 0;
-    min-height: 100vh;
+    height: 100%;
+    max-height: 100vh;
   }
 `;
 
