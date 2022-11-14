@@ -15,6 +15,7 @@ export function SectionTitle({ children, className }) {
         align-items: center;
         justify-content: flex-start;
         margin-bottom: ${spacing(2)};
+        padding: 0 ${spacing(2)};
       `}
       data-testid="section-title"
     >
