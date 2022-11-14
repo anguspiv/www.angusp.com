@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { spacing, media } from '@styles/utils';
 import { BreadCrumbs } from '@components/molecules/BreadCrumbs';
 import { TagList } from '@components/molecules/TagList';
+import { formatDate } from '@utils/date';
 
 const headerCss = css`
   display: flex;
@@ -90,6 +91,7 @@ export function PageHeader({
 }) {
   const hasDetails = !!publishDate;
   const imageTop = variant === 'imageTop';
+  const formattedDate = formatDate(publishDate);
 
   return (
     <header css={headerCss}>
@@ -97,7 +99,7 @@ export function PageHeader({
       {!!location?.pathname && <BreadCrumbs location={location} />}
       {hasDetails && (
         <div css={detailsCss}>
-          {publishDate && <span css={detailCss}>{publishDate}</span>}
+          {formattedDate && <span css={detailCss}>{formattedDate}</span>}
           {!!readingTime && <span css={readingTimeCss}>Reading Time: {readingTime} min.</span>}
         </div>
       )}

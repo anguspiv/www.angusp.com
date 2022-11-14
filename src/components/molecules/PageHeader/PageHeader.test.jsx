@@ -15,7 +15,7 @@ describe('<PageHeader />', () => {
       <PageHeader
         title="Test Title"
         location={location}
-        publishDate="Dec. 2, 2010"
+        publishDate="2010-12-02"
         readingTime={10}
         tags={['Test Tag']}
         excerpt={excerpt}
@@ -26,7 +26,7 @@ describe('<PageHeader />', () => {
     expect(screen.getByRole('heading', { name: 'Test Title' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Somewhere' })).toHaveAttribute('href', '/somewhere');
     expect(screen.getByText('Else Where')).toBeInTheDocument();
-    expect(screen.getByText('Dec. 2, 2010')).toBeInTheDocument();
+    expect(screen.getByText('Dec. 2nd, 2010')).toBeInTheDocument();
     expect(screen.getByText('Reading Time: 10 min.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Test Tag' })).toHaveAttribute(
       'href',
@@ -51,7 +51,7 @@ describe('<PageHeader />', () => {
       <PageHeader
         title="Test Title"
         location={location}
-        publishDate="Dec. 2, 2010"
+        publishDate="2010-12-02"
         readingTime={10}
         tags={['Test Tag']}
         excerpt={excerpt}
