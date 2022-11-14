@@ -29,14 +29,26 @@ const pageCss = css`
 const headerWrapperCss = css`
   position: relative;
   grid-area: header;
+  min-height: 100vh;
 `;
 
-const headerCss = css`
+const headerContentCss = css`
   ${media.lg} {
+    display: flex;
+    flex-direction: column;
     position: sticky;
+    justify-content: center;
     top: 0;
+    min-height: 100vh;
   }
 `;
+
+const headerBoxCss = css`
+  max-height: 100%;
+  overflow-y: auto;
+`;
+
+const headerCss = css``;
 
 const mainCss = css`
   grid-area: content;
@@ -70,7 +82,11 @@ export function AppLayout({ children }) {
   return (
     <div css={pageCss}>
       <div css={headerWrapperCss}>
-        <SiteBanner css={headerCss} />
+        <div css={headerContentCss}>
+          <div css={headerBoxCss}>
+            <SiteBanner css={headerCss} />
+          </div>
+        </div>
       </div>
       <main role="main" css={mainCss}>
         {children}
