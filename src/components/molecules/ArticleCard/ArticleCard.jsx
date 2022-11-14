@@ -6,6 +6,7 @@ import { media, spacing } from '@styles/utils';
 import { Container } from '@components/atoms/Container';
 import { Divider } from '@components/atoms/Divider';
 import { theme } from '@styles/theme';
+import { formatDate } from '@utils/date';
 
 export function ArticleCard({ date, excerpt, featured, readingTime, slug, title }) {
   const detail = css`
@@ -22,6 +23,8 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
       }
     }
   `;
+
+  const formattedDate = formatDate(date);
 
   return (
     <Link href={`/articles/${slug}`} passHref>
@@ -99,14 +102,14 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
               }
             `}
           >
-            {date && (
+            {formattedDate && (
               <p
                 css={css`
                   ${detail}
                   color: ${theme.colors.blue};
                 `}
               >
-                {date}
+                {formattedDate}
               </p>
             )}
             {!!readingTime && (
