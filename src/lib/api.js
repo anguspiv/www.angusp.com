@@ -90,6 +90,7 @@ export function getTagSlugs() {
 
 export function getAllTags(fields = []) {
   const slugs = getTagSlugs();
+
   const tags = slugs
     .map((slug) => getTagBySlug(slug, fields))
     // sort posts by date in descending order
@@ -99,6 +100,6 @@ export function getAllTags(fields = []) {
 
 export function getPostsByTag(tag, fields = []) {
   const allPosts = getAllPosts(fields);
-  const posts = allPosts.filter((post) => post.tags.includes(tag));
+  const posts = allPosts.filter((post) => hasTag(post, tag));
   return posts;
 }
