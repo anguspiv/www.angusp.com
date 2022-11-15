@@ -8,6 +8,7 @@ import { markdownToHtml } from '@lib/markdownToHtml';
 import { SEO } from '@components/organisms/SEO';
 import { PageHeader } from '@components/molecules/PageHeader';
 import { Container } from '@components/atoms/Container';
+import { BreadCrumbs } from '@components/molecules/BreadCrumbs';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -17,9 +18,16 @@ export default function Post({ post }) {
 
   const { title, date, content, tags, excerpt, featuredImage, ogImage } = post;
 
+  const labels = {
+    '[slug]': title,
+  };
+
   return (
     <article>
       <SEO title={title} description={excerpt} image={`${CMS_HOST}${ogImage}`} />
+      <Container>
+        <BreadCrumbs location={router} labels={labels} />
+      </Container>
       <PageHeader
         title={title}
         publishDate={date}
