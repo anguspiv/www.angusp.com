@@ -40,7 +40,7 @@ Home.defaultProps = {
 };
 
 export const getStaticProps = async () => {
-  const posts = await getAllPosts(['title', 'date', 'excerpt', 'tags', 'slug']);
+  const posts = await getAllPosts(['title', 'date', 'excerpt', 'tags', 'slug', 'readingTime']);
   return {
     props: {
       posts,

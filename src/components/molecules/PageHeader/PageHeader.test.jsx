@@ -62,4 +62,25 @@ describe('<PageHeader />', () => {
 
     expect(screen.getByTestId('featured-image')).toHaveStyle({ order: 1, marginBottom: 0 });
   });
+
+  it('should render the readingTime text', () => {
+    expect.assertions(1);
+
+    const location = {
+      pathname: '/somewhere/else-where',
+    };
+
+    render(
+      <PageHeader
+        title="test"
+        location={location}
+        publishDate="2010-12-02"
+        readingTime={{
+          text: '10 min read',
+        }}
+      />,
+    );
+
+    expect(screen.getByText('10 min read')).toBeInTheDocument();
+  });
 });
