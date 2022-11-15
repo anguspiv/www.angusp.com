@@ -37,13 +37,13 @@ const toTitleCase = (str) =>
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-export function BreadCrumbs({ location, className }) {
+export function BreadCrumbs({ labels, location, className }) {
   const { pathname } = location;
   const segments = pathname.split('/').filter(Boolean);
 
   const crumbs = segments.map((segment, index) => {
     const isLast = index === segments.length - 1;
-    const label = toTitleCase(segment);
+    const label = labels[segment] || toTitleCase(segment);
     const path = `/${segments.slice(0, index + 1).join('/')}`;
 
     return {
@@ -89,6 +89,7 @@ BreadCrumbs.propTypes = {
     pathname: PropTypes.string,
     search: PropTypes.string,
   }),
+  labels: PropTypes.shape({}),
 };
 
 BreadCrumbs.defaultProps = {
@@ -97,6 +98,7 @@ BreadCrumbs.defaultProps = {
     pathname: '',
     search: '',
   },
+  labels: {},
 };
 
 export default BreadCrumbs;
