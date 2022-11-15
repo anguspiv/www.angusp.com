@@ -1,3 +1,75 @@
+# [2.0.0](https://github.com/anguspiv/www.angusp.com/compare/v1.27.0...v2.0.0) (2022-11-15)
+
+
+### Bug Fixes
+
+* **app-layout:** adjusts vertical centering in desktop ([194315d](https://github.com/anguspiv/www.angusp.com/commit/194315dd0b339275a00396d74735e4967ef4944b))
+* **article card:** adds max-width ([5f55d78](https://github.com/anguspiv/www.angusp.com/commit/5f55d78039eb7f1da0df73758247dc7ed4eaccf4)), closes [#171](https://github.com/anguspiv/www.angusp.com/issues/171)
+* **article card:** formats post date ([a05f366](https://github.com/anguspiv/www.angusp.com/commit/a05f3660bcb9a0c5457122b498aadb821660e83c)), closes [#168](https://github.com/anguspiv/www.angusp.com/issues/168)
+* **article card:** hide zero reading time ([6939150](https://github.com/anguspiv/www.angusp.com/commit/693915022226729e5424a3fd00d9cd1faa0bace0)), closes [#169](https://github.com/anguspiv/www.angusp.com/issues/169)
+* **article card:** updates links to /posts ([e596baa](https://github.com/anguspiv/www.angusp.com/commit/e596baa49237aa0f6d0c5f2d9dcef323a4cc99e4))
+* corrects site typography ([6966fea](https://github.com/anguspiv/www.angusp.com/commit/6966fea617c6e1747dc8c0b3c935660b695b1f10)), closes [#191](https://github.com/anguspiv/www.angusp.com/issues/191)
+* **home:** corrects apostrophe typo in intro ([0176377](https://github.com/anguspiv/www.angusp.com/commit/0176377eb8d46374f138eea4f87f5ad99fa65ac1))
+* **page header:** formats date in page header ([6110d8b](https://github.com/anguspiv/www.angusp.com/commit/6110d8bfa1ee6b30955b68954723b4de7c709dd8)), closes [#181](https://github.com/anguspiv/www.angusp.com/issues/181)
+* **site-banner:** fixes centering on larger breakpoints ([919974b](https://github.com/anguspiv/www.angusp.com/commit/919974b4a295af298015efc93999ac22310d44f5)), closes [#187](https://github.com/anguspiv/www.angusp.com/issues/187)
+* **styles:** corrects link global styles ([74d1cd3](https://github.com/anguspiv/www.angusp.com/commit/74d1cd3adbd51f5c325ff695145c8cb67b985a14))
+* **tag-list:** makes tags property not required ([e7d4bb0](https://github.com/anguspiv/www.angusp.com/commit/e7d4bb084571beef02335874c3713d7290ebacb3))
+* **tag:** corrects usage of next/link for tags ([13ecad4](https://github.com/anguspiv/www.angusp.com/commit/13ecad496a174b4eb2729d4f31f8498cd04d47d2))
+
+
+### Build System
+
+* migrates to nextjs framework ([294bb9b](https://github.com/anguspiv/www.angusp.com/commit/294bb9b493ba058c438f8c7dd13d8e0bd121f9c6))
+
+
+### Features
+
+* adds a link component ([5c6d6bf](https://github.com/anguspiv/www.angusp.com/commit/5c6d6bfe03415c0d9ced63bd7911781535e9b640))
+* adds divider component ([d65f7c1](https://github.com/anguspiv/www.angusp.com/commit/d65f7c16e2814614c026d71f22967aab0fcc659b))
+* adds emotion theme and css ([7817f7c](https://github.com/anguspiv/www.angusp.com/commit/7817f7c452d438cee9ee07f62e3b711cdc4e4123))
+* adds google analytics tag ([aafed53](https://github.com/anguspiv/www.angusp.com/commit/aafed53b29e5f66a1ee66d672f73201e83c62676)), closes [#190](https://github.com/anguspiv/www.angusp.com/issues/190)
+* adds google fonts ([7bfe887](https://github.com/anguspiv/www.angusp.com/commit/7bfe887b430e137703edce449441ce5b23a25da2))
+* adds host constants for images ([e387aa2](https://github.com/anguspiv/www.angusp.com/commit/e387aa2674ffe65b6274aadf6214bc22deac2edf)), closes [#182](https://github.com/anguspiv/www.angusp.com/issues/182)
+* adds post reading time ([3148ff3](https://github.com/anguspiv/www.angusp.com/commit/3148ff3277352ef5c7fae5d8781a84ed36ee8854)), closes [#184](https://github.com/anguspiv/www.angusp.com/issues/184)
+* adds the about page ([69b3519](https://github.com/anguspiv/www.angusp.com/commit/69b3519bef63c1f1dd57cf0e5732efdde04ce93c)), closes [#152](https://github.com/anguspiv/www.angusp.com/issues/152)
+* adds the app layout components ([946b4df](https://github.com/anguspiv/www.angusp.com/commit/946b4df89a18ded5fefd3e66214f6163182acbb8)), closes [#148](https://github.com/anguspiv/www.angusp.com/issues/148)
+* adds the app layout to app ([2b844be](https://github.com/anguspiv/www.angusp.com/commit/2b844be5aecda05d83d35ae38e8c3072a2b502dc)), closes [#148](https://github.com/anguspiv/www.angusp.com/issues/148)
+* adds the article list component ([2e5e8a1](https://github.com/anguspiv/www.angusp.com/commit/2e5e8a1f6c874f62a4cc7079f99ebc9dbb796a42)), closes [#144](https://github.com/anguspiv/www.angusp.com/issues/144)
+* adds the custom 404 page ([a0f491d](https://github.com/anguspiv/www.angusp.com/commit/a0f491df136f73d2a7d968db2dcd8b4061024452)), closes [#151](https://github.com/anguspiv/www.angusp.com/issues/151)
+* adds the featured article components ([755833f](https://github.com/anguspiv/www.angusp.com/commit/755833fea5970710babb6e2b9647bfacf0e418c6)), closes [#145](https://github.com/anguspiv/www.angusp.com/issues/145)
+* adds the posts index page ([513438f](https://github.com/anguspiv/www.angusp.com/commit/513438fc5bc398f0c50240d1c7d5f2b04215ad7a)), closes [#196](https://github.com/anguspiv/www.angusp.com/issues/196)
+* adds the posts pages ([70a32a3](https://github.com/anguspiv/www.angusp.com/commit/70a32a3500c559d761a48c9732f08864bb65cf3b)), closes [#154](https://github.com/anguspiv/www.angusp.com/issues/154) [#153](https://github.com/anguspiv/www.angusp.com/issues/153)
+* adds the resume page ([65171bd](https://github.com/anguspiv/www.angusp.com/commit/65171bd8e12633ccd36b6b702a406608ec6ed6e0)), closes [#149](https://github.com/anguspiv/www.angusp.com/issues/149)
+* adds the SEO component ([0688595](https://github.com/anguspiv/www.angusp.com/commit/068859545c0dada814f8a23878fdf87f4f04c347)), closes [#146](https://github.com/anguspiv/www.angusp.com/issues/146)
+* adds the tags index pages ([4847067](https://github.com/anguspiv/www.angusp.com/commit/4847067767887e0f28d36f392f7d0b5244f62b02)), closes [#155](https://github.com/anguspiv/www.angusp.com/issues/155)
+* **article-card:** removes uppercase from publish date ([902cb84](https://github.com/anguspiv/www.angusp.com/commit/902cb848cd20a5968fc2126f04a0c7806197f071))
+* **atoms:** adds avatar component ([9ef1172](https://github.com/anguspiv/www.angusp.com/commit/9ef1172be2f144c67a4d3cc790ca87f35912c5f3)), closes [#139](https://github.com/anguspiv/www.angusp.com/issues/139)
+* **atoms:** adds container component ([648e65c](https://github.com/anguspiv/www.angusp.com/commit/648e65c587c861fbaf843601f0ea99768edc1ae4)), closes [#134](https://github.com/anguspiv/www.angusp.com/issues/134)
+* **atoms:** adds tag component ([94200a4](https://github.com/anguspiv/www.angusp.com/commit/94200a424d6b35ac0652b4a1966d7c358af20b56)), closes [#137](https://github.com/anguspiv/www.angusp.com/issues/137)
+* **bread-crumbs:** adds ability to set crumb labels ([07aaf3d](https://github.com/anguspiv/www.angusp.com/commit/07aaf3dc2c746d7896d311735751f436da913623))
+* **divider:** adds classname property ([c33be6b](https://github.com/anguspiv/www.angusp.com/commit/c33be6b83fd8da87d424c875222606931af7ab84))
+* **home:** updates the home page content ([029c492](https://github.com/anguspiv/www.angusp.com/commit/029c4925af12383b3ca694aa697f3dc378459bd5)), closes [#150](https://github.com/anguspiv/www.angusp.com/issues/150)
+* **molecules:** adds pagination nav ([0d12101](https://github.com/anguspiv/www.angusp.com/commit/0d121014ce4f235d1c083f4768dc417ef358bf74)), closes [#142](https://github.com/anguspiv/www.angusp.com/issues/142)
+* **molecules:** adds section title components ([132b522](https://github.com/anguspiv/www.angusp.com/commit/132b52217542fc302f525694be778544094c64ac)), closes [#136](https://github.com/anguspiv/www.angusp.com/issues/136)
+* **molecules:** adds the article card component ([1bdd295](https://github.com/anguspiv/www.angusp.com/commit/1bdd295278b0cbc249934c5b2c1ea8da179c4279)), closes [#138](https://github.com/anguspiv/www.angusp.com/issues/138)
+* **molecules:** adds the breadcrumbs components ([2a2dc8c](https://github.com/anguspiv/www.angusp.com/commit/2a2dc8cdca1d2ff7b8d36c03fe73c3550e5e0c97)), closes [#140](https://github.com/anguspiv/www.angusp.com/issues/140)
+* **molecules:** adds the page header component ([500bd86](https://github.com/anguspiv/www.angusp.com/commit/500bd8685113edeb91b78303845411b59065c322)), closes [#141](https://github.com/anguspiv/www.angusp.com/issues/141)
+* **molecules:** adds the tag list component ([5346cca](https://github.com/anguspiv/www.angusp.com/commit/5346cca55faa82ac649ee053811b769b228f8dd6))
+* **organism:** adds the site banner ([019a5d4](https://github.com/anguspiv/www.angusp.com/commit/019a5d4db8699d35db82aaf86c38a278f376732c)), closes [#147](https://github.com/anguspiv/www.angusp.com/issues/147)
+* **posts:** adds breadcrumbs to post pages ([53084cb](https://github.com/anguspiv/www.angusp.com/commit/53084cb5d1847776b8a8f73bf65287c3d7dd7e95))
+* **posts:** adds death to legacy code post ([366eef3](https://github.com/anguspiv/www.angusp.com/commit/366eef3782e7ac267c92d731daab94c48595ede5)), closes [#180](https://github.com/anguspiv/www.angusp.com/issues/180)
+* **section title:** adds side padding to section title ([8019a7e](https://github.com/anguspiv/www.angusp.com/commit/8019a7e7bcdcd368ba9a57ae1de0c897702eb7c8))
+* **seo:** adds site meta data ([c979418](https://github.com/anguspiv/www.angusp.com/commit/c979418481194ce9ed640f0092937e75d6dc9b43)), closes [#186](https://github.com/anguspiv/www.angusp.com/issues/186)
+* **tag:** redesigns tags for single tag prop ([c5c3db3](https://github.com/anguspiv/www.angusp.com/commit/c5c3db3e051a586bb18cf78ecdcd2823c8b527a2))
+* **tags:** adds individual tag pages ([567b22a](https://github.com/anguspiv/www.angusp.com/commit/567b22a6def91416286b2dc51767a108c06a1d21)), closes [#156](https://github.com/anguspiv/www.angusp.com/issues/156)
+* updates site banner to italize description ([ecf9c72](https://github.com/anguspiv/www.angusp.com/commit/ecf9c72e03772859c065dfc9b3cbb956b6bb79bf)), closes [#197](https://github.com/anguspiv/www.angusp.com/issues/197)
+* updates site nav to use posts ([33ee5a6](https://github.com/anguspiv/www.angusp.com/commit/33ee5a63f41022e4055d981288b3e713c4804b1f)), closes [#188](https://github.com/anguspiv/www.angusp.com/issues/188)
+
+
+### BREAKING CHANGES
+
+* removes gatsby framework
+
 # [1.27.0](https://github.com/anguspiv/www.angusp.com/compare/v1.26.0...v1.27.0) (2022-02-10)
 
 
