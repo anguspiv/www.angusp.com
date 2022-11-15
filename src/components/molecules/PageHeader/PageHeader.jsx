@@ -70,11 +70,11 @@ const imageWrapperCss = css`
   align-items: center;
   justify-content: center;
   order: 2;
-  width: calc(100% + ${spacing(4)});
+  width: 100%;
   max-width: none;
   height: auto;
   max-height: ${rem(480)};
-  margin: 0 -${spacing(2)} ${spacing(4)};
+  margin: 0 auto ${spacing(4)};
   overflow: hidden;
   aspect-ratio: 16 / 5;
 `;
@@ -100,7 +100,11 @@ export function PageHeader({
       {hasDetails && (
         <div css={detailsCss}>
           {formattedDate && <span css={detailCss}>{formattedDate}</span>}
-          {!!readingTime && <span css={readingTimeCss}>Reading Time: {readingTime} min.</span>}
+          {!!readingTime && (
+            <span css={readingTimeCss}>
+              {readingTime?.text || `Reading Time: ${readingTime} min.`}
+            </span>
+          )}
         </div>
       )}
       {!!tags?.length && (

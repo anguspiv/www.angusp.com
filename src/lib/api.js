@@ -1,5 +1,5 @@
-import matter from 'gray-matter';
-
+const matter = require('gray-matter');
+const readingTime = require('reading-time');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,6 +25,10 @@ export function getPostBySlug(slug, fields = []) {
     }
     if (field === 'content') {
       items[field] = content;
+    }
+
+    if (field === 'readingTime') {
+      items[field] = readingTime(content);
     }
 
     if (data[field]) {

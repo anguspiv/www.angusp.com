@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
 import { spacing } from '@styles/utils';
@@ -32,16 +31,7 @@ function Posts({ posts }) {
 }
 
 Posts.propTypes = {
-  posts: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.string,
-      excerpt: PropTypes.string,
-      featured: PropTypes.bool,
-      readingTime: PropTypes.number,
-      slug: PropTypes.string,
-      title: PropTypes.string,
-    }),
-  ),
+  posts: ArticleList.propTypes.articles,
 };
 
 Posts.defaultProps = {
@@ -49,7 +39,7 @@ Posts.defaultProps = {
 };
 
 export const getStaticProps = async () => {
-  const posts = await getAllPosts(['title', 'date', 'excerpt', 'tags', 'slug']);
+  const posts = await getAllPosts(['title', 'date', 'excerpt', 'tags', 'slug', 'readingTime']);
   return {
     props: {
       posts,

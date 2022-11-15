@@ -16,7 +16,7 @@ export default function Post({ post }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const { title, date, content, tags, excerpt, featuredImage, ogImage } = post;
+  const { title, date, content, tags, excerpt, featuredImage, ogImage, readingTime } = post;
 
   const labels = {
     '[slug]': title,
@@ -33,6 +33,7 @@ export default function Post({ post }) {
         publishDate={date}
         tags={tags}
         featuredImage={`${CMS_HOST}${featuredImage}`}
+        readingTime={readingTime}
       />
       <Container>
         <div
@@ -60,6 +61,12 @@ Post.propTypes = {
     ogImage: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
     excerpt: PropTypes.string,
+    readingTime: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({
+        text: PropTypes.string,
+      }),
+    ]),
   }).isRequired,
 };
 
@@ -73,6 +80,7 @@ export async function getStaticProps({ params }) {
     'featuredImage',
     'ogImage',
     'tags',
+    'readingTime',
   ]);
   const content = await markdownToHtml(post.content || '');
 

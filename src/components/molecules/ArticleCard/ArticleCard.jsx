@@ -12,14 +12,11 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
   const detail = css`
     margin-bottom: 0;
     font-size: ${featured ? rem('14px') : rem('12px')};
-    margin-right: ${spacing(2)};
+    margin-right: ${spacing(0.5)};
 
-    ${media.sm} {
-      & + &::before {
-        margin-right: ${spacing(0.5)};
-        margin-left: ${spacing(0.5)};
-        content: '-';
-      }
+    & + *::before {
+      margin-right: ${spacing(0.5)};
+      content: '-';
     }
   `;
 
@@ -120,7 +117,7 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
                   font-style: italic;
                 `}
               >
-                {readingTime} min. read
+                {readingTime?.text || `${readingTime} min. read`}
               </p>
             )}
           </div>
@@ -134,7 +131,7 @@ ArticleCard.propTypes = {
   date: PropTypes.string,
   excerpt: PropTypes.string,
   featured: PropTypes.bool,
-  readingTime: PropTypes.number,
+  readingTime: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({ text: PropTypes.string })]),
   slug: PropTypes.string,
   title: PropTypes.string,
 };

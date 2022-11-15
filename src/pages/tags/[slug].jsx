@@ -69,6 +69,7 @@ export async function getStaticProps({ params }) {
     'featuredImage',
     'ogImage',
     'tags',
+    'readingTime',
   ]);
 
   return {
