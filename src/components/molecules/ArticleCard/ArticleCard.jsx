@@ -12,7 +12,6 @@ export function ArticleCard({ date, excerpt, featured, readingTime, slug, title 
   const detail = css`
     margin-bottom: 0;
     font-size: ${featured ? rem('14px') : rem('12px')};
-    text-transform: uppercase;
     margin-right: ${spacing(2)};
 
     ${media.sm} {
