@@ -11,7 +11,7 @@ function Home({ posts }) {
       <PageHeader title="Hi, I'm Angus!" />
       <Container>
         <p>
-          I&app;m a software engineer and manager based in Los Angeles, CA. I specialize in web
+          I&apos;m a software engineer and manager based in Los Angeles, CA. I specialize in web
           applications and the JavaScript ecosystem. Feel free to learn more{' '}
           <Link href="/about">about me</Link>, check out my <Link href="/resume">resume</Link> or
           read some of my <Link href="/posts">posts</Link>.
