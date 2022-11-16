@@ -128,7 +128,7 @@ export function SiteBanner({ className }) {
   return (
     <header role="banner" className={className} css={headerCss}>
       <Link href="/" passHref aria-label="Angus Perkerson">
-        <Avatar src={image} css={avatarCss} />
+        <Avatar src={image} css={avatarCss} alt="Angus Perkerson" />
       </Link>
       <span css={titleCss}>Angus Perkerson</span>
       <p css={subtitleCss}>
