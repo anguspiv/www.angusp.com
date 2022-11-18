@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('about page', () => {
   beforeEach(() => {
     cy.visit('/about');
     cy.injectAxe();
