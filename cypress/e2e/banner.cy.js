@@ -8,7 +8,6 @@ describe('site banner', () => {
     cy.checkA11y();
 
     cy.findByRole('link', { name: 'Angus Perkerson' }).should('exist');
-    cy.findByRole('link', { name: 'About' }).should('exist');
     cy.findByRole('link', { name: 'Resume' }).should('exist');
     cy.findByRole('link', { name: 'Posts' }).should('exist');
     cy.findByRole('link', { name: 'Home' }).should('exist');
@@ -16,11 +15,6 @@ describe('site banner', () => {
     cy.findByRole('link', { name: 'Github Profile' }).should('exist');
     cy.findByRole('link', { name: 'Twitter Profile' }).should('exist');
     cy.findByRole('link', { name: 'LinkedIn Profile' }).should('exist');
-  });
-
-  it('navigates to the about page', () => {
-    cy.findByRole('link', { name: 'About' }).click();
-    cy.url().should('include', '/about');
   });
 
   it('navigates to the resume page', () => {
