@@ -1,6 +1,22 @@
 import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 
+const isInternalLink = (href) => {
+  if (href === '') {
+    return true;
+  }
+
+  if (href?.startsWith('/')) {
+    return true;
+  }
+
+  if (href?.startsWith('#')) {
+    return true;
+  }
+
+  return false;
+};
+
 export function Link({
   as,
   children,
@@ -14,20 +30,28 @@ export function Link({
   locale,
   ...props
 }) {
+  if (isInternalLink(href)) {
+    return (
+      <NextLink
+        href={href}
+        legacyBehavior={legacyBehavior}
+        passHref={passHref}
+        replace={replace}
+        scroll={scroll}
+        shallow={shallow}
+        locale={locale}
+      >
+        <a href={href} {...props}>
+          {children}
+        </a>
+      </NextLink>
+    );
+  }
+
   return (
-    <NextLink
-      href={href}
-      legacyBehavior={legacyBehavior}
-      passHref={passHref}
-      replace={replace}
-      scroll={scroll}
-      shallow={shallow}
-      locale={locale}
-    >
-      <a href={href} {...props}>
-        {children}
-      </a>
-    </NextLink>
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+      {children}
+    </a>
   );
 }
 

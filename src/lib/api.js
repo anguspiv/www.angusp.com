@@ -5,6 +5,7 @@ const path = require('path');
 
 const postDir = path.join(process.cwd(), '_posts');
 const tagDir = path.join(process.cwd(), '_tags');
+const contentDir = path.join(process.cwd(), '_content');
 
 export function getPostSlugs() {
   return fs.readdirSync(postDir);
@@ -106,4 +107,30 @@ export function getPostsByTag(tag, fields = []) {
   const allPosts = getAllPosts(fields);
   const posts = allPosts.filter((post) => hasTag(post, tag));
   return posts;
+}
+
+export function getContentBySlug(slug, fields = []) {
+  const realSlug = slug.replace(/\.md$/, '');
+  const fullPath = path.join(contentDir, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+  const { data, content } = matter(fileContents);
+
+  const items = {};
+
+  // Ensure only the minimal needed data is exposed
+  fields.forEach((field) => {
+    if (field === 'slug') {
+      items[field] = realSlug;
+    }
+    if (field === 'content') {
+      items[field] = content;
+    }
+
+    if (data[field]) {
+      items[field] = data[field];
+    }
+  });
+
+  return items;
 }
