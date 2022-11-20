@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/anguspiv/www.angusp.com/compare/v2.0.0...v2.1.0) (2022-11-20)
+
+
+### Bug Fixes
+
+* correctly renders custom markdown elements ([930265e](https://github.com/anguspiv/www.angusp.com/commit/930265e197ce1caf43313b0f2724213207ea60e6))
+
+
+### Features
+
+* **home:** adds about content ([40118d8](https://github.com/anguspiv/www.angusp.com/commit/40118d8f536fef5d8a5a3c370b1cbb297cf67dc3)), closes [#216](https://github.com/anguspiv/www.angusp.com/issues/216)
+* **home:** updates the about me section ([1e2cc7b](https://github.com/anguspiv/www.angusp.com/commit/1e2cc7bab00387d5293c12d24f0a99a456b29cb6)), closes [#216](https://github.com/anguspiv/www.angusp.com/issues/216)
+* removes the about page ([3e636d1](https://github.com/anguspiv/www.angusp.com/commit/3e636d1fb64ef5f83edcc17d357a6f8bb5c23730)), closes [#216](https://github.com/anguspiv/www.angusp.com/issues/216)
+
 # [2.0.0](https://github.com/anguspiv/www.angusp.com/compare/v1.27.0...v2.0.0) (2022-11-15)
 
 
