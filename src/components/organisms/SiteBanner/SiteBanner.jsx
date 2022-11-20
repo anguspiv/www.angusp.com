@@ -130,41 +130,41 @@ export function SiteBanner({ className }) {
       <p css={subtitleCss}>
         Software Engineer and Manager specializing in Web Applicaton development.
       </p>
-      <a
+      <Link
         href="mailto:angusp@angusp.com"
         aria-label="Email angusp@angusp.com"
         title="Email"
         css={emailCss}
       >
         angusp@angusp.com
-      </a>
+      </Link>
       <div css={profileLinksListCss}>
-        <a
+        <Link
           href="https://github.com/anguspiv"
           aria-label="Github Profile"
           title="Github Profile"
           css={profileLinkCss}
         >
           <FontAwesomeIcon icon={faGithub} />
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="https://twitter.com/angusp"
           aria-label="Twitter Profile"
           title="Twitter Profile"
           css={profileLinkCss}
         >
           <FontAwesomeIcon icon={faTwitter} mask={faCircle} transform="shrink-6" />
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="https://www.linkedin.com/in/aperkerson"
           aria-label="LinkedIn Profile"
           title="LinkedIn Profile"
           css={profileLinkCss}
         >
           <FontAwesomeIcon icon={faLinkedinIn} mask={faCircle} transform="shrink-6" />
-        </a>
+        </Link>
       </div>
       <nav role="navigation" aria-label="Main">
         <ul css={menuCss}>
