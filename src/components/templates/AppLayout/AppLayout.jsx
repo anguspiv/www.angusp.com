@@ -14,13 +14,13 @@ const pageCss = css`
   margin: 0 auto;
 
   ${media.lg} {
-    grid-template-areas: 'header content' 'empty footer';
+    grid-template-areas: 'header content' 'header footer';
     grid-template-rows: 1fr auto;
     grid-template-columns: minmax(auto, 320px) 1fr;
   }
 
   ${media.xl} {
-    grid-template-areas: 'header content spacer' 'empty footer spacer';
+    grid-template-areas: 'header content spacer' 'header footer spacer';
     grid-template-rows: 1fr auto;
     grid-template-columns: minmax(auto, 320px) minmax(800px, 1fr) minmax(auto, 320px);
   }
