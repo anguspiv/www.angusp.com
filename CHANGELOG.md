@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/anguspiv/www.angusp.com/compare/v2.1.0...v2.2.0) (2022-11-27)
+
+
+### Features
+
+* **resume:** adds disney experience ([5513c33](https://github.com/anguspiv/www.angusp.com/commit/5513c33f8bfaedd12333b77bcdaabc4672eea2a2)), closes [#215](https://github.com/anguspiv/www.angusp.com/issues/215)
+
 # [2.1.0](https://github.com/anguspiv/www.angusp.com/compare/v2.0.0...v2.1.0) (2022-11-20)
 
 
