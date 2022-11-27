@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/anguspiv/www.angusp.com/compare/v2.2.0...v2.2.1) (2022-11-27)
+
+
+### Bug Fixes
+
+* fixes fouc from emotion cache ([23ff585](https://github.com/anguspiv/www.angusp.com/commit/23ff58548249b961d318afd3698aecb01d8b08f2)), closes [#226](https://github.com/anguspiv/www.angusp.com/issues/226)
+
 # [2.2.0](https://github.com/anguspiv/www.angusp.com/compare/v2.1.0...v2.2.0) (2022-11-27)
 
 
