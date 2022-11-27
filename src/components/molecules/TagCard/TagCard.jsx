@@ -40,11 +40,11 @@ const postCountCss = css`
   }
 `;
 
-export function TagCard({ title, description, className, postCount }) {
+export function TagCard({ title, description, className, postCount, color }) {
   return (
     <div data-testid="tag-card" css={cardCss} className={className}>
       <header css={headerCss}>
-        <Tag tag={title} />
+        <Tag label={title} color={color} />
         {!!postCount && (
           <span css={postCountCss}>
             {postCount} {postCount === 1 ? 'post' : 'posts'}
@@ -61,12 +61,14 @@ TagCard.propTypes = {
   description: PropTypes.string,
   postCount: PropTypes.number,
   className: PropTypes.string,
+  color: PropTypes.string,
 };
 
 TagCard.defaultProps = {
   description: '',
   className: '',
   postCount: null,
+  color: null,
 };
 
 export default TagCard;

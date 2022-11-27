@@ -22,7 +22,7 @@ function Tags({ tags }) {
       >
         <BreadCrumbs location={location} />
       </Container>
-      {tags.map(({ title, slug, content, postCount }, index) => (
+      {tags.map(({ title, slug, content, postCount, color }, index) => (
         <>
           {tags.length > 1 && index !== 0 && (
             <Divider
@@ -38,6 +38,7 @@ function Tags({ tags }) {
             description={content}
             slug={slug}
             postCount={postCount}
+            color={color}
           />
         </>
       ))}
@@ -62,7 +63,7 @@ Tags.defaultProps = {
 };
 
 export const getStaticProps = async () => {
-  const tags = await getAllTags(['title', 'description', 'slug', 'content', 'postCount']);
+  const tags = await getAllTags(['title', 'description', 'slug', 'content', 'postCount', 'color']);
   return {
     props: {
       tags,

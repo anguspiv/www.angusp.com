@@ -15,10 +15,6 @@ const listCss = css`
   & > li {
     margin: 0;
 
-    &::after {
-      content: ',';
-    }
-
     &:first-of-type {
       span {
         font-size: ${rem(12)};
@@ -42,9 +38,9 @@ export function TagList({ className, tags }) {
       <li>
         <span>Tags: </span>
       </li>
-      {tags.map((tag) => (
-        <li key={tag}>
-          <Tag tag={tag} />
+      {tags.map(({ label, color }) => (
+        <li key={label}>
+          <Tag label={label} color={color} />
         </li>
       ))}
     </ul>

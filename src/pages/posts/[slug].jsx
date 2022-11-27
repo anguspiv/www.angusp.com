@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { css } from '@emotion/react';
 import { CMS_HOST } from '@constants/hosts';
-import { getPostBySlug, getAllPosts } from '@lib/api';
+import { getPostBySlug, getAllPosts, getTagBySlug } from '@lib/api';
 import { markdownToHtml } from '@lib/markdownToHtml';
 import { SEO } from '@components/organisms/SEO';
 import { PageHeader } from '@components/molecules/PageHeader';
@@ -84,10 +84,21 @@ export async function getStaticProps({ params }) {
   ]);
   const content = await markdownToHtml(post.content || '');
 
+  const tags = post.tags.map((tag) => {
+    const slug = tag.toLowerCase().replace(/ /g, '-');
+
+    const { color } = getTagBySlug(slug, ['color']);
+    return {
+      label: tag,
+      color,
+    };
+  });
+
   return {
     props: {
       post: {
         ...post,
+        tags,
         content,
       },
     },

@@ -10,4 +10,5 @@ const Template = (args) => <Tag {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   tag: 'Test Tag',
+  color: '#fff000',
 };
