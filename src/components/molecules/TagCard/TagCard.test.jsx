@@ -12,6 +12,7 @@ describe('<TagCard />', () => {
         description="Test description"
         postCount={1}
         className="test-class"
+        color="#fff000"
       />,
     );
 

@@ -29,7 +29,7 @@ export function SEO({ description, image, title }) {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" key="twitter:card" />
-      <meta name="twitter:site" content="@angusp" key="twitter:creator" />
+      <meta name="twitter:site" content="@angusp" key="twitter:site" />
       <meta name="twitter:creator" content="@angusp" key="twitter:creator" />
     </Head>
   );
