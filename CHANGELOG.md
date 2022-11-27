@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/anguspiv/www.angusp.com/compare/v2.2.1...v2.3.0) (2022-11-27)
+
+
+### Features
+
+* **tag:** updates style to be color pill ([3014be1](https://github.com/anguspiv/www.angusp.com/commit/3014be1c23686a3d6f2906d0cfb03250e49fd709)), closes [#183](https://github.com/anguspiv/www.angusp.com/issues/183)
+
 ## [2.2.1](https://github.com/anguspiv/www.angusp.com/compare/v2.2.0...v2.2.1) (2022-11-27)
 
 
