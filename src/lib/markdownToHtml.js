@@ -5,6 +5,7 @@ import parse from 'remark-parse';
 import rehype from 'remark-rehype';
 import react from 'rehype-react';
 import slug from 'rehype-slug';
+import headings from 'rehype-autolink-headings';
 import { Link } from '@components/atoms/Link';
 import { Divider } from '@components/atoms/Divider';
 import { Image } from '@components/molecules/Image';
@@ -14,6 +15,9 @@ export async function markdownToHtml(markdown) {
     .use(parse)
     .use(rehype)
     .use(slug)
+    .use(headings, {
+      behavior: 'wrap',
+    })
     .use(react, {
       createElement,
       components: {
