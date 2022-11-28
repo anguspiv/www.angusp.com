@@ -1,3 +1,18 @@
+# [2.4.0](https://github.com/anguspiv/www.angusp.com/compare/v2.3.0...v2.4.0) (2022-11-28)
+
+
+### Bug Fixes
+
+* **tag-list:** corrects proptypes error for tags ([79a7c2a](https://github.com/anguspiv/www.angusp.com/commit/79a7c2abd1fb1f3d55ae3fda0589451fd38ea4de))
+
+
+### Features
+
+* adds a generic image components ([a7faaec](https://github.com/anguspiv/www.angusp.com/commit/a7faaec0b903dc1833ecafec3b41927743b6bd66)), closes [#225](https://github.com/anguspiv/www.angusp.com/issues/225)
+* adds custom image to markdown content ([79aaddf](https://github.com/anguspiv/www.angusp.com/commit/79aaddfee942b4ed8209202c7cc0ba485396d2c5)), closes [#225](https://github.com/anguspiv/www.angusp.com/issues/225)
+* adds header links to markdown content ([7a0937b](https://github.com/anguspiv/www.angusp.com/commit/7a0937bc9e1b50edf216c8280e804b0a8563ae6f))
+* **avatar:** adds blur placeholder ([d209206](https://github.com/anguspiv/www.angusp.com/commit/d209206561e418d54c08ea6de3771e4ed0673e49))
+
 # [2.3.0](https://github.com/anguspiv/www.angusp.com/compare/v2.2.1...v2.3.0) (2022-11-27)
 
 
