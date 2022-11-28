@@ -7,6 +7,7 @@ import react from 'rehype-react';
 import slug from 'rehype-slug';
 import { Link } from '@components/atoms/Link';
 import { Divider } from '@components/atoms/Divider';
+import { Image } from '@components/molecules/Image';
 
 export async function markdownToHtml(markdown) {
   const file = unified()
@@ -18,6 +19,7 @@ export async function markdownToHtml(markdown) {
       components: {
         a: Link,
         hr: Divider,
+        img: Image,
       },
     })
     .processSync(markdown);

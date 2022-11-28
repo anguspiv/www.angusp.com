@@ -21,7 +21,7 @@ who wrote it is no longer around to explain what is going on. What's worse is,
 we know if we break it, bad things are going to happen. But what is legacy code
 exactly, what is the actual definition?
 
-![via GIPHY](https://media.giphy.com/media/l0IynvPneUpb7SnBe/giphy.gif)
+![giant dumpster fire of legacy code](https://media.giphy.com/media/l0IynvPneUpb7SnBe/giphy.gif 'Legacy Code in Action')
 
 > Legacy code is code you're afraid to touch.  
 > -- Eli Lopian, [Defining Legacy Code](https://dzone.com/articles/defining-legacy-code)
@@ -53,7 +53,7 @@ I walk into?
 - Things were written so poorly that adding more than 4 of our custom designed
   select boxes would cause an infinite render loop and crash the page
 
-![via GIPHY](https://media.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif)
+![This is Fine says a dog inside a house on fire](https://media.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif 'This is Fine')
 
 At the time, I had never used AngularJS before, and I wasn't sure if it was a
 lack of experience that was the problem. After a few months of though, it became
@@ -109,7 +109,7 @@ traffic requests between them. This meant that for our new app and our old app
 to run side by side, we'd have to rethink our entire infrastructure. We couldn't
 launch our replacement, but we still made strides forward.
 
-![via GIPHY](https://media.giphy.com/media/FjhCTrjPaPy6s/giphy.gif)
+![Man carrying a fire extinguisher that is on fire saying "I'll just put this over here with the rest of the fire"](https://media.giphy.com/media/FjhCTrjPaPy6s/giphy.gif 'Yay, more legacy code')
 
 We learned that our DevOps needed a lot of love, and that we needed to address
 the scaling problems we discovered. We also loved React and its ecosystem, and
@@ -138,7 +138,7 @@ infrastructure as our old app, living side by side in production.
 
 We finally found success!
 
-![via GIPHY](https://media.giphy.com/media/10bHcDcPM925ry/giphy.gif)
+![Man raising a drink glass to congratulate, with fireworks in the background](https://media.giphy.com/media/10bHcDcPM925ry/giphy.gif 'Congrats! We did it!')
 
 We now had pages that loaded under 3 seconds. Our code was much cleaner and new
 developers were able to onboard and be contributing much faster. Each page took
@@ -178,7 +178,7 @@ great solutions at the time, they are no longer maintained and will soon break
 in future versions of React. This growing tech debt has now affected our site
 performance and our page has degraded to 5–6sec page load times.
 
-![via GIPHY](https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif)
+![Man asking people to calmly disperse, with giant explosions behind him.](https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif 'Okay so maybe a few more problems')
 
 ## The Lessons Learned... Painfully
 
