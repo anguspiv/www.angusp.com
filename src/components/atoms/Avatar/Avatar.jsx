@@ -5,7 +5,7 @@ import { frame, image } from './styles';
 export function Avatar({ className, width, height, ...props }) {
   return (
     <div data-testid="avatar" className={className} css={frame}>
-      <Image {...props} layout="fill" css={image} />
+      <Image {...props} layout="fill" css={image} placeholder="blur" />
     </div>
   );
 }
