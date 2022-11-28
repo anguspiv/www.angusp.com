@@ -1,4 +1,5 @@
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import headings from 'rehype-autolink-headings';
+import slug from 'rehype-slug';
 import mdx from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
@@ -9,7 +10,7 @@ const withMDX = mdx({
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
-    rehypePlugins: [rehypeAutolinkHeadings],
+    rehypePlugins: [slug, headings],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
