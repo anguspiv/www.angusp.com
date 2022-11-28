@@ -119,7 +119,7 @@ export function PageHeader({
             ${imageWrapperCss}
             ${imageTop && 'order: 1; margin-bottom: 0;'}
           `}
-          data-testId="featured-image"
+          data-testid="featured-image"
         >
           <Image src={featuredImage} layout="fill" alt="" objectFit="cover" />
         </div>
