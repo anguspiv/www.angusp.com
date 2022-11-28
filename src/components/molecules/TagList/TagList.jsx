@@ -49,7 +49,7 @@ export function TagList({ className, tags }) {
 
 TagList.propTypes = {
   className: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
+  tags: PropTypes.arrayOf(PropTypes.shape(Tag.propTypes)),
 };
 
 TagList.defaultProps = {
