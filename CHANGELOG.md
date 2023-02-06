@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/anguspiv/www.angusp.com/compare/v2.4.0...v2.5.0) (2023-02-06)
+
+
+### Features
+
+* **resume:** updates resume with latest work ([5f0dcac](https://github.com/anguspiv/www.angusp.com/commit/5f0dcac60f7bbcc277eea132c27065be51864660))
+
 # [2.4.0](https://github.com/anguspiv/www.angusp.com/compare/v2.3.0...v2.4.0) (2022-11-28)
 
 
