@@ -8,7 +8,7 @@
     "build": "astro build",
     "build-storybook": "storybook build",
     "dev": "astro dev",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint .",
     "prepare": "husky",
     "preview": "astro preview",
     "storybook": "storybook dev -p 6006",
