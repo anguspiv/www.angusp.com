@@ -63,7 +63,13 @@ jobs:
         run: npm install
 
       - name: 'Test'
-        run: npx vitest
+        run: npx vitest --coverage
+
+      - name: 'Report Coverage'
+        # Set if: always() to also generate the report if tests are failing
+        # Only works if you set `reportOnFailure: true` in your vite config as specified above
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
 
   commitlint:
     permissions:
