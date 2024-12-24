@@ -1,3 +1,4 @@
-import { getViteConfig } from 'astro/config';
+import { defineConfig } from 'vite';
+import { config } from './astro.config.mjs';
 
-export default getViteConfig({});
+export default defineConfig({ ...config });

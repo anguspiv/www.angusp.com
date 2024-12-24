@@ -4,19 +4,19 @@ import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
 export const config = {
-  integrations: [react()],
-  vite: {
-    plugins: [vanillaExtractPlugin({})],
-    resolve: {
-      alias: {
-        '@': '/src',
-        '~': '/',
-      },
+  plugins: [vanillaExtractPlugin({})],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '~/': '/',
     },
   },
-  output: 'static',
-  adapter: netlify(),
 };
 
 // https://astro.build/config
-export default defineConfig(config);
+export default defineConfig({
+  integrations: [react()],
+  vite: config,
+  output: 'static',
+  adapter: netlify(),
+});
