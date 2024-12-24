@@ -1,0 +1,51 @@
+name: '🍻 Pull Request'
+description: Create a new pull request.
+assignees: ['anguspiv']
+title: '🍻 [PR] - <title>'
+body:
+  - type: select
+    id: type
+    attributes:
+      label: 'Type'
+      description: What type of change does this PR introduce ?
+      options:
+        - '🐛 Bug fix'
+        - '💡 Feature'
+        - '🔨 Refactor'
+        - '📚 Documentation'
+        - '🔧 Configuration'
+        - '🚀 Performance'
+        - '🔖 Release'
+        - '🚧 WIP'
+      validations:
+        required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 'Description'
+      description: Please enter an explicit description of your issue
+      placeholder: Short and explicit description of your incident...
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 'Screenshots'
+      description: If applicable, add screenshots or recordings to help explain your changes.
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 'Checklist'
+      description: Have you completed all of the following ?
+      options:
+        - 'Written appropriate tests'
+        - 'Updated the documentation'
+        - 'Followed the coding style'
+        - 'Followed the commit message guidelines'
+      validations:
+        required: true

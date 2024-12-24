@@ -9,10 +9,12 @@
     "build-storybook": "storybook build",
     "dev": "astro dev",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix . && prettier --write .",
     "prepare": "husky",
     "preview": "astro preview",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest"
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@astrojs/netlify": "^6.0.1",
