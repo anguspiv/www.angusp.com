@@ -4,17 +4,23 @@ on:
     branches:
       - main
       - next
+  push:
+    branches:
+      - main
+      - next
 
 jobs:
-  test:
+  deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-
     permissions:
       # Required to checkout the code
       contents: read
       # Required to put a comment into the pull-request
       pull-requests: write
 
+    outputs:
+      deploy-url: ${{ steps.netlify.outputs.deploy-url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,11 +42,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: 'Test'
-        run: npx vitest --coverage
+      - name: Build
+        run: npm run build
 
-      - name: 'Report Coverage'
-        # Set if: always() to also generate the report if tests are failing
-        # Only works if you set `reportOnFailure: true` in your vite config as specified above
-        if: always()
-        uses: davelosert/vitest-coverage-report-action@v2
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          production-deploy: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
