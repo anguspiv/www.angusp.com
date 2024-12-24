@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@astrojs/react';
 
-// https://astro.build/config
-export default defineConfig({
+export const config = {
   integrations: [react()],
   vite: {
     plugins: [vanillaExtractPlugin({})],
@@ -14,4 +13,7 @@ export default defineConfig({
       },
     },
   },
-});
+};
+
+// https://astro.build/config
+export default defineConfig(config);
