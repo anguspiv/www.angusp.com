@@ -1,48 +1,37 @@
-# Astro Starter Kit: Basics
+# [angusp.com](https://angusp.com)
 
-```sh
-npm create astro@latest -- --template basics
-```
+The code building [angusp.com](https://angusp.com).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Description
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[angusp.com](https://angusp.com) is a personal website built using:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Astro](https://astro.build/)
+- [React](https://react.dev/)
+- [Vanilla Extract](https://vanilla-extract.style/)
+- [Vitest](https://vitejs.dev/)
+- [Testing Library](https://testing-library.com/)
+- [Storybook](https://storybook.js.org/)
 
-## 🚀 Project Structure
+The website is hosted on [Netlify](https://www.netlify.com/).
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contributing
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+For information on how to contribute to this project, please refer to the
+[CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Code of Conduct
 
-## 🧞 Commands
+For information on the code of conduct for this project, please refer to the
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
 
-All commands are run from the root of the project, from a terminal:
+## Documentation
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+All documentation for this project can be viewed at
+[anguspiv.github.io/www.angusp.com](https://anguspiv.github.io/www.angusp.com).
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md)
+file for details.
