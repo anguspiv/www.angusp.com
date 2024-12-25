@@ -33,5 +33,5 @@ All documentation for this project can be viewed at
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE)
 file for details.
