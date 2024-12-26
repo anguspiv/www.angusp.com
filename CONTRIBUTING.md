@@ -438,7 +438,7 @@ minutes to familiarize yourself with them.
 
 A conventional commit message should have the following format:
 
-``
+```plaintext
 <type>[optional scope]: <description>
 
 [optional body]
@@ -505,4 +505,3 @@ docs: update README
 ## Attribution
 
 This guide is based on the [contributing.md](https://contributing.md/generator)!
-```
