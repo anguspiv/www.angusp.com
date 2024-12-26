@@ -15,7 +15,7 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
 
 # macOS-specific files
 .DS_Store
@@ -26,4 +26,3 @@ pnpm-debug.log*
 *storybook.log
 coverage
 .netlify
-.env.sentry-build-plugin
