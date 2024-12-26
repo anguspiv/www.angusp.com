@@ -20,6 +20,8 @@
     "@astrojs/netlify": "^6.0.1",
     "@astrojs/react": "^4.1.2",
     "@astrojs/ts-plugin": "^1.10.4",
+    "@sentry/astro": "^8.47.0",
+    "@sentry/profiling-node": "^8.47.0",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-storysource": "^8.4.7",
     "@vanilla-extract/css": "^1.17.0",
