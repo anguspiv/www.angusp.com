@@ -1,0 +1,114 @@
+name: Bug Report
+description: 'Report a bug or issue.'
+title: '[Bug]: '
+labels:
+  - 'bug'
+  - 'needs-triage'
+projects:
+  - 'www.angusp.com'
+assignees:
+  - anguspiv
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the details below.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A clear and concise description of what the bug is.
+      placeholder: 'I encountered a bug when...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the problem you're facing.
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction Steps
+      description: Provide a step-by-step guide to reproduce the bug.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen.
+      placeholder: 'I expected...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain the issue.
+      placeholder: 'Here is a screenshot...'
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: Select the operating system you're using.
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Select the browser you're using.
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Internet Explorer
+        - Opera
+        - Arc
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      description: Select the device you're using.
+      options:
+        - Desktop
+        - Laptop
+        - Tablet
+        - Mobile
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Add any other context about the problem here.
+      placeholder: 'Here is some additional information...'
