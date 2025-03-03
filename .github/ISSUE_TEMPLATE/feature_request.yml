@@ -5,7 +5,7 @@ labels:
   - 'feature'
   - 'needs-triage'
 projects:
-  - 'www.angusp.com'
+  - anguspiv/2
 assignees:
   - 'anguspiv'
 body:
