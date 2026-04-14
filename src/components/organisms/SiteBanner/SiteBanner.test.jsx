@@ -24,9 +24,9 @@ describe('<SiteBanner />', () => {
       'href',
       'https://github.com/anguspiv',
     );
-    expect(screen.getByRole('link', { name: 'Twitter Profile' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Bluesky Profile' })).toHaveAttribute(
       'href',
-      'https://twitter.com/angusp',
+      'https://bsky.app/profile/angusp.dev',
     );
 
     expect(screen.getByRole('link', { name: 'LinkedIn Profile' })).toHaveAttribute(
