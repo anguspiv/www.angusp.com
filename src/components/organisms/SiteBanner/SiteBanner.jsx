@@ -128,7 +128,7 @@ export function SiteBanner({ className }) {
       </Link>
       <span css={titleCss}>Angus Perkerson</span>
       <p css={subtitleCss}>
-        Software Engineer and Manager specializing in Web Applicaton development.
+        Software Engineer and Manager specializing in Web Application development.
       </p>
       <Link
         href="mailto:angusp@angusp.com"
