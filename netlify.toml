@@ -3,7 +3,7 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "16"
+  NODE_VERSION = "20"
   CYPRESS_INSTALL_BINARY = "0"
 
 # Mirror the /about redirect from next.config.mjs since Next.js
