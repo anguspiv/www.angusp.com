@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "16"
+  CYPRESS_INSTALL_BINARY = "0"
+
+# Mirror the /about redirect from next.config.mjs since Next.js
+# ignores redirects during `next export`.
+[[redirects]]
+  from = "/about"
+  to = "/"
+  status = 301
+  force = true
