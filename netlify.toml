@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   CYPRESS_INSTALL_BINARY = "0"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # Mirror the /about redirect from next.config.mjs since Next.js
 # ignores redirects during `next export`.
