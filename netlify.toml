@@ -1,10 +1,20 @@
 [build]
-  command = "npm run build"
+  command = "npm run build && rm -rf .next"
   publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
   CYPRESS_INSTALL_BINARY = "0"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+# Ensure skip env var is set before Essential plugin initialization
+[context.production.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[context.deploy-preview.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[context.branch-deploy.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # Mirror the /about redirect from next.config.mjs since Next.js
