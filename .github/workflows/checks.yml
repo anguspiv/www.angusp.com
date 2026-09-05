@@ -3,6 +3,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 env:
   CYPRESS_INSTALL_BINARY: "0"
 
@@ -58,6 +61,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:
       - lint
