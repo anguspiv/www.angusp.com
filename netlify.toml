@@ -1,5 +1,5 @@
 [build]
-  command = "echo '=== node/npm ===' && node -v && npm -v && echo '=== next build ===' && npx next build 2>&1; echo "EXIT(next-build):$?"; npx next export 2>&1; echo "EXIT(next-export):$?"; rm -rf .next && echo '=== done ==='"
+  command = "echo '=== node/npm ===' && node -v && npm -v && echo '=== next build ===' && npx next build; echo 'EXIT next-build:' $?; npx next export; echo 'EXIT next-export:' $?; rm -rf .next && echo '=== done ==='"
   publish = "out"
 
 [build.environment]
