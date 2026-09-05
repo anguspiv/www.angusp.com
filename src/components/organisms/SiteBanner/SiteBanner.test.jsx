@@ -12,7 +12,9 @@ describe('<SiteBanner />', () => {
     expect(screen.getByRole('img')).toBeInTheDocument();
     expect(screen.getByText('Angus Perkerson')).toBeInTheDocument();
     expect(
-      screen.getByText('Software Engineer and Manager specializing in Web Applicaton development.'),
+      screen.getByText(
+        'Software Engineer and Manager specializing in Web Application development.',
+      ),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Email angusp@angusp.com' })).toHaveAttribute(
       'href',
@@ -22,9 +24,9 @@ describe('<SiteBanner />', () => {
       'href',
       'https://github.com/anguspiv',
     );
-    expect(screen.getByRole('link', { name: 'Twitter Profile' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Bluesky Profile' })).toHaveAttribute(
       'href',
-      'https://twitter.com/angusp',
+      'https://bsky.app/profile/angusp.dev',
     );
 
     expect(screen.getByRole('link', { name: 'LinkedIn Profile' })).toHaveAttribute(

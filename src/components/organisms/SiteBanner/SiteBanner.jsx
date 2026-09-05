@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBluesky, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { css } from '@emotion/react';
@@ -128,7 +128,7 @@ export function SiteBanner({ className }) {
       </Link>
       <span css={titleCss}>Angus Perkerson</span>
       <p css={subtitleCss}>
-        Software Engineer and Manager specializing in Web Applicaton development.
+        Software Engineer and Manager specializing in Web Application development.
       </p>
       <Link
         href="mailto:angusp@angusp.com"
@@ -149,12 +149,12 @@ export function SiteBanner({ className }) {
         </Link>
 
         <Link
-          href="https://twitter.com/angusp"
-          aria-label="Twitter Profile"
-          title="Twitter Profile"
+          href="https://bsky.app/profile/angusp.dev"
+          aria-label="Bluesky Profile"
+          title="Bluesky Profile"
           css={profileLinkCss}
         >
-          <FontAwesomeIcon icon={faTwitter} mask={faCircle} transform="shrink-6" />
+          <FontAwesomeIcon icon={faBluesky} mask={faCircle} transform="shrink-6" />
         </Link>
 
         <Link
