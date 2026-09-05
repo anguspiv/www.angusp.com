@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && rm -rf .next"
+  command = "echo '=== node/npm ===' && node -v && npm -v && echo '=== next build ===' && npx next build 2>&1; echo "EXIT(next-build):$?"; npx next export 2>&1; echo "EXIT(next-export):$?"; rm -rf .next && echo '=== done ==='"
   publish = "out"
 
 [build.environment]
@@ -7,7 +7,6 @@
   CYPRESS_INSTALL_BINARY = "0"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Ensure skip env var is set before Essential plugin initialization
 [context.production.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
@@ -17,8 +16,6 @@
 [context.branch-deploy.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Mirror the /about redirect from next.config.mjs since Next.js
-# ignores redirects during `next export`.
 [[redirects]]
   from = "/about"
   to = "/"
