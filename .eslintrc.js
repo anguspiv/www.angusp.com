@@ -31,6 +31,7 @@ module.exports = {
       extends: ['plugin:testing-library/react', 'plugin:jest-dom/recommended', 'plugin:jest/all'],
       rules: {
         'jest/max-expects': 'off',
+        'jest/no-untyped-mock-factory': 'off',
       },
     },
     {
