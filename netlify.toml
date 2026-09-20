@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && rm -rf .next"
+  command = "mkdir -p out && echo '<h1>Netlify test deploy</h1>' > out/index.html"
   publish = "out"
 
 [build.environment]
