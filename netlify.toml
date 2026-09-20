@@ -1,12 +1,11 @@
 [build]
-  command = "mkdir -p out && echo '<h1>Netlify test deploy</h1>' > out/index.html"
+  command = "npm run build && rm -rf .next"
   publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
   CYPRESS_INSTALL_BINARY = "0"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  NEXT_PLUGIN_FORCE_RUN = "false"
 
 [[redirects]]
   from = "/about"
